@@ -9,21 +9,61 @@
 /* Begin PBXBuildFile section */
 		B26E233F244A15BB003EA66A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E233E244A15BB003EA66A /* AppDelegate.swift */; };
 		B26E2341244A15BB003EA66A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2340244A15BB003EA66A /* SceneDelegate.swift */; };
-		B26E2343244A15BB003EA66A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2342244A15BB003EA66A /* ViewController.swift */; };
+		B26E2343244A15BB003EA66A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2342244A15BB003EA66A /* LoginViewController.swift */; };
 		B26E2346244A15BB003EA66A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26E2344244A15BB003EA66A /* Main.storyboard */; };
 		B26E2348244A15BF003EA66A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26E2347244A15BF003EA66A /* Assets.xcassets */; };
 		B26E234B244A15BF003EA66A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26E2349244A15BF003EA66A /* LaunchScreen.storyboard */; };
+		B26E2353244A176F003EA66A /* TabarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2352244A176F003EA66A /* TabarViewController.swift */; };
+		B26E2355244A17DC003EA66A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2354244A17DC003EA66A /* HomeViewController.swift */; };
+		B26E2357244A17E7003EA66A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2356244A17E7003EA66A /* SearchViewController.swift */; };
+		B26E2359244A17F7003EA66A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2358244A17F7003EA66A /* ProfileViewController.swift */; };
+		B26E235B244A180A003EA66A /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E235A244A180A003EA66A /* UploadViewController.swift */; };
+		B26E235D244A1904003EA66A /* ManageJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E235C244A1904003EA66A /* ManageJobViewController.swift */; };
+		B26E235F244A1B32003EA66A /* NaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E235E244A1B32003EA66A /* NaviViewController.swift */; };
+		B26E2368244A34B6003EA66A /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2367244A34B6003EA66A /* BannerCell.swift */; };
+		B26E236A244A34E1003EA66A /* BannerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2369244A34E1003EA66A /* BannerItem.swift */; };
+		B29A921A244D643400B5FF88 /* JobTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A9219244D643400B5FF88 /* JobTimeCell.swift */; };
+		B29A921C244D674600B5FF88 /* HeaderJobTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A921B244D674600B5FF88 /* HeaderJobTimeCell.swift */; };
+		B29A921E244D6AFF00B5FF88 /* salaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A921D244D6AFF00B5FF88 /* salaryCell.swift */; };
+		B29A9220244D749100B5FF88 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A921F244D749100B5FF88 /* testViewController.swift */; };
+		B2FDA4BE244AA23600A86DE3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA4BD244AA23600A86DE3 /* Data.swift */; };
+		B2FDA4C1244AAB9200A86DE3 /* DetailJTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA4C0244AAB9200A86DE3 /* DetailJTimeViewController.swift */; };
+		B2FDA4C3244AABED00A86DE3 /* DetailJprodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA4C2244AABED00A86DE3 /* DetailJprodViewController.swift */; };
+		B2FDA4C5244AB3AD00A86DE3 /* footerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA4C4244AB3AD00A86DE3 /* footerCell.swift */; };
+		B2FDA4C7244AB92C00A86DE3 /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA4C6244AB92C00A86DE3 /* JobCell.swift */; };
+		B2FDA4C9244AE0C300A86DE3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA4C8244AE0C300A86DE3 /* CollectionViewCell.swift */; };
+		B2FDA4CB244AEC5900A86DE3 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA4CA244AEC5900A86DE3 /* MoreCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B26E233B244A15BB003EA66A /* DemoQuickJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoQuickJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26E233E244A15BB003EA66A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B26E2340244A15BB003EA66A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B26E2342244A15BB003EA66A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B26E2342244A15BB003EA66A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B26E2345244A15BB003EA66A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B26E2347244A15BF003EA66A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B26E234A244A15BF003EA66A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B26E234C244A15BF003EA66A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B26E2352244A176F003EA66A /* TabarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabarViewController.swift; sourceTree = "<group>"; };
+		B26E2354244A17DC003EA66A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B26E2356244A17E7003EA66A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B26E2358244A17F7003EA66A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B26E235A244A180A003EA66A /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		B26E235C244A1904003EA66A /* ManageJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageJobViewController.swift; sourceTree = "<group>"; };
+		B26E235E244A1B32003EA66A /* NaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviViewController.swift; sourceTree = "<group>"; };
+		B26E2367244A34B6003EA66A /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		B26E2369244A34E1003EA66A /* BannerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerItem.swift; sourceTree = "<group>"; };
+		B29A9219244D643400B5FF88 /* JobTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTimeCell.swift; sourceTree = "<group>"; };
+		B29A921B244D674600B5FF88 /* HeaderJobTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderJobTimeCell.swift; sourceTree = "<group>"; };
+		B29A921D244D6AFF00B5FF88 /* salaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = salaryCell.swift; sourceTree = "<group>"; };
+		B29A921F244D749100B5FF88 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		B2FDA4BD244AA23600A86DE3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		B2FDA4C0244AAB9200A86DE3 /* DetailJTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJTimeViewController.swift; sourceTree = "<group>"; };
+		B2FDA4C2244AABED00A86DE3 /* DetailJprodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJprodViewController.swift; sourceTree = "<group>"; };
+		B2FDA4C4244AB3AD00A86DE3 /* footerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerCell.swift; sourceTree = "<group>"; };
+		B2FDA4C6244AB92C00A86DE3 /* JobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
+		B2FDA4C8244AE0C300A86DE3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		B2FDA4CA244AEC5900A86DE3 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +98,97 @@
 			children = (
 				B26E233E244A15BB003EA66A /* AppDelegate.swift */,
 				B26E2340244A15BB003EA66A /* SceneDelegate.swift */,
-				B26E2342244A15BB003EA66A /* ViewController.swift */,
-				B26E2344244A15BB003EA66A /* Main.storyboard */,
 				B26E2347244A15BF003EA66A /* Assets.xcassets */,
+				B26E2344244A15BB003EA66A /* Main.storyboard */,
 				B26E2349244A15BF003EA66A /* LaunchScreen.storyboard */,
 				B26E234C244A15BF003EA66A /* Info.plist */,
+				B26E2360244A3411003EA66A /* ViewController */,
+				B2FDA4BD244AA23600A86DE3 /* Data.swift */,
 			);
 			path = DemoQuickJob;
+			sourceTree = "<group>";
+		};
+		B26E2360244A3411003EA66A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B26E235E244A1B32003EA66A /* NaviViewController.swift */,
+				B26E2352244A176F003EA66A /* TabarViewController.swift */,
+				B26E2366244A3450003EA66A /* login */,
+				B26E2365244A3443003EA66A /* profile */,
+				B26E2364244A343C003EA66A /* manage */,
+				B26E2363244A342B003EA66A /* Upload */,
+				B26E2362244A3425003EA66A /* Search */,
+				B26E2361244A341F003EA66A /* Home */,
+				B2FDA4BF244AAB7400A86DE3 /* Detail Job */,
+				B2FDA4C8244AE0C300A86DE3 /* CollectionViewCell.swift */,
+				B29A921F244D749100B5FF88 /* testViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B26E2361244A341F003EA66A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B26E2354244A17DC003EA66A /* HomeViewController.swift */,
+				B26E2367244A34B6003EA66A /* BannerCell.swift */,
+				B26E2369244A34E1003EA66A /* BannerItem.swift */,
+				B2FDA4C4244AB3AD00A86DE3 /* footerCell.swift */,
+				B2FDA4C6244AB92C00A86DE3 /* JobCell.swift */,
+				B2FDA4CA244AEC5900A86DE3 /* MoreCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B26E2362244A3425003EA66A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B26E2356244A17E7003EA66A /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B26E2363244A342B003EA66A /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				B26E235A244A180A003EA66A /* UploadViewController.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
+		B26E2364244A343C003EA66A /* manage */ = {
+			isa = PBXGroup;
+			children = (
+				B26E235C244A1904003EA66A /* ManageJobViewController.swift */,
+			);
+			path = manage;
+			sourceTree = "<group>";
+		};
+		B26E2365244A3443003EA66A /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				B26E2358244A17F7003EA66A /* ProfileViewController.swift */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		B26E2366244A3450003EA66A /* login */ = {
+			isa = PBXGroup;
+			children = (
+				B26E2342244A15BB003EA66A /* LoginViewController.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		B2FDA4BF244AAB7400A86DE3 /* Detail Job */ = {
+			isa = PBXGroup;
+			children = (
+				B2FDA4C0244AAB9200A86DE3 /* DetailJTimeViewController.swift */,
+				B2FDA4C2244AABED00A86DE3 /* DetailJprodViewController.swift */,
+				B29A9219244D643400B5FF88 /* JobTimeCell.swift */,
+				B29A921B244D674600B5FF88 /* HeaderJobTimeCell.swift */,
+				B29A921D244D6AFF00B5FF88 /* salaryCell.swift */,
+			);
+			path = "Detail Job";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +262,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B26E2343244A15BB003EA66A /* ViewController.swift in Sources */,
+				B26E2357244A17E7003EA66A /* SearchViewController.swift in Sources */,
+				B26E235D244A1904003EA66A /* ManageJobViewController.swift in Sources */,
+				B29A921A244D643400B5FF88 /* JobTimeCell.swift in Sources */,
+				B29A921E244D6AFF00B5FF88 /* salaryCell.swift in Sources */,
+				B2FDA4C9244AE0C300A86DE3 /* CollectionViewCell.swift in Sources */,
+				B26E235B244A180A003EA66A /* UploadViewController.swift in Sources */,
+				B2FDA4C1244AAB9200A86DE3 /* DetailJTimeViewController.swift in Sources */,
+				B26E2355244A17DC003EA66A /* HomeViewController.swift in Sources */,
+				B29A921C244D674600B5FF88 /* HeaderJobTimeCell.swift in Sources */,
+				B26E236A244A34E1003EA66A /* BannerItem.swift in Sources */,
+				B26E235F244A1B32003EA66A /* NaviViewController.swift in Sources */,
+				B2FDA4C3244AABED00A86DE3 /* DetailJprodViewController.swift in Sources */,
+				B26E2343244A15BB003EA66A /* LoginViewController.swift in Sources */,
+				B26E2353244A176F003EA66A /* TabarViewController.swift in Sources */,
+				B2FDA4C5244AB3AD00A86DE3 /* footerCell.swift in Sources */,
+				B2FDA4BE244AA23600A86DE3 /* Data.swift in Sources */,
+				B26E2359244A17F7003EA66A /* ProfileViewController.swift in Sources */,
+				B2FDA4C7244AB92C00A86DE3 /* JobCell.swift in Sources */,
+				B29A9220244D749100B5FF88 /* testViewController.swift in Sources */,
 				B26E233F244A15BB003EA66A /* AppDelegate.swift in Sources */,
+				B2FDA4CB244AEC5900A86DE3 /* MoreCell.swift in Sources */,
 				B26E2341244A15BB003EA66A /* SceneDelegate.swift in Sources */,
+				B26E2368244A34B6003EA66A /* BannerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,12 +7,20 @@
 //
 
 import UIKit
-
+let Main_Storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    func GoToTabbar(){
+        
+        let tabbar = Main_Storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+        self.window?.rootViewController = tabbar
+    }
+    func GoToLogin(){
+        
+        let login = Main_Storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.window?.rootViewController = login
+    }
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
