@@ -7,7 +7,10 @@
 //
 
 import UIKit
-
+import IQKeyboardManagerSwift
+import UserNotifications
+import MomoiOSSwiftSdk
+import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        IQKeyboardManager.shared.enable = true
+        FirebaseApp.configure()
+        return true
+    }
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        print(url, "a")
+        MoMoPayment.handleOpenUrl(url: url, sourceApp: sourceApplication!)
+        return true
+    }
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        print(url)
+        MoMoPayment.handleOpenUrl(url: url, sourceApp: "")
         return true
     }
 
@@ -32,6 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    
 }
 

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Apply Personal Job View Controller-->
+        <scene sceneID="cpW-FX-dGt">
+            <objects>
+                <viewController storyboardIdentifier="ApplyPersonalJobViewController" id="WkK-1Y-Diw" customClass="ApplyPersonalJobViewController" customModule="DemoQuickJob" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cip-ws-6g3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vài lời tự ứng cử " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETb-IM-eCE">
+                                <rect key="frame" x="119.5" y="128" width="175" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="j4x-dW-zla"/>
+                                    <constraint firstAttribute="width" constant="175" id="mEL-3c-UF7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vvN-Mq-w74">
+                                <rect key="frame" x="0.0" y="155" width="414" height="707"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số tiền bạn muốn nhận cho congọ việc này" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCH-QL-q6q">
+                                <rect key="frame" x="20" y="74" width="312" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="8bP-fV-ZhH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajl-Gc-xj5">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="iMK-Cu-jZY"/>
+                                </constraints>
+                                <state key="normal" title="Ứng tuyển">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Aplly:" destination="WkK-1Y-Diw" eventType="touchUpInside" id="mC0-gw-JWf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcc-ET-e0B">
+                                <rect key="frame" x="352" y="79" width="42" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="MUp-RF-kx6"/>
+                                    <constraint firstAttribute="width" constant="42" id="Qn3-qI-Utx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vvN-Mq-w74" firstAttribute="top" secondItem="ETb-IM-eCE" secondAttribute="bottom" id="148-pe-agu"/>
+                            <constraint firstItem="Zcc-ET-e0B" firstAttribute="leading" secondItem="jCH-QL-q6q" secondAttribute="trailing" constant="20" id="Bre-Xr-mfS"/>
+                            <constraint firstItem="jCH-QL-q6q" firstAttribute="leading" secondItem="PAx-pH-aN7" secondAttribute="leading" constant="20" id="HmN-mZ-guS"/>
+                            <constraint firstItem="Ajl-Gc-xj5" firstAttribute="bottom" secondItem="PAx-pH-aN7" secondAttribute="bottom" id="ILs-7q-NH7"/>
+                            <constraint firstItem="PAx-pH-aN7" firstAttribute="trailing" secondItem="Zcc-ET-e0B" secondAttribute="trailing" constant="20" id="NPW-MG-V7s"/>
+                            <constraint firstItem="Zcc-ET-e0B" firstAttribute="top" secondItem="PAx-pH-aN7" secondAttribute="top" constant="35" id="PjU-LV-0kK"/>
+                            <constraint firstItem="PAx-pH-aN7" firstAttribute="bottom" secondItem="vvN-Mq-w74" secondAttribute="bottom" id="SZN-TS-RT1"/>
+                            <constraint firstItem="vvN-Mq-w74" firstAttribute="leading" secondItem="PAx-pH-aN7" secondAttribute="leading" id="UIS-W2-25R"/>
+                            <constraint firstItem="ETb-IM-eCE" firstAttribute="centerX" secondItem="PAx-pH-aN7" secondAttribute="centerX" id="VhW-Vh-tDR"/>
+                            <constraint firstItem="PAx-pH-aN7" firstAttribute="trailing" secondItem="Zcc-ET-e0B" secondAttribute="trailing" constant="20" id="Wsg-dZ-s3m"/>
+                            <constraint firstItem="jCH-QL-q6q" firstAttribute="top" secondItem="PAx-pH-aN7" secondAttribute="top" constant="30" id="ggI-k6-lqb"/>
+                            <constraint firstItem="Ajl-Gc-xj5" firstAttribute="leading" secondItem="PAx-pH-aN7" secondAttribute="leading" id="hXH-aH-Ffm"/>
+                            <constraint firstItem="ETb-IM-eCE" firstAttribute="top" secondItem="jCH-QL-q6q" secondAttribute="bottom" constant="20" id="ni9-oL-2Pj"/>
+                            <constraint firstItem="PAx-pH-aN7" firstAttribute="trailing" secondItem="Ajl-Gc-xj5" secondAttribute="trailing" id="pPl-9q-7C8"/>
+                            <constraint firstItem="vvN-Mq-w74" firstAttribute="trailing" secondItem="PAx-pH-aN7" secondAttribute="trailing" id="q6p-1P-7Bc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PAx-pH-aN7"/>
+                    </view>
+                    <connections>
+                        <outlet property="introduction" destination="vvN-Mq-w74" id="xxs-sF-qyQ"/>
+                        <outlet property="moneyTf" destination="jCH-QL-q6q" id="xfq-ak-WUm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kY6-GU-wK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-172.46376811594203" y="-237.05357142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="65f-qP-Bbm">
+            <objects>
+                <viewController id="R4e-cl-Q10" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mgo-kG-RuV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="oiI-Hc-g9K"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VHa-Iq-JRC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="706" y="-237"/>
+        </scene>
+    </scenes>
+</document>
