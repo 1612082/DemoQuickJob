@@ -19,6 +19,7 @@ class ManageJobViewController: UIViewController {
     var allApplicant:[JobAllApply?] = []
     var allJobPost:[JobAllPost?] = []
     var flag = ""
+    var CommonVC = CommonViewModel()
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -320,7 +321,22 @@ extension ManageJobViewController:UITableViewDataSource, UITableViewDelegate{
                 self.present(alert2, animated: true, completion: nil)
                 
             }
-            return [delete]
+            let review = UITableViewRowAction(style: .default, title: "Đánh giá") { (action, indexPath) in
+                let vc = Home_Storyboard.instantiateViewController(withIdentifier: "ReviewViewController" ) as! ReviewViewController
+//                vc.idApplicant = self.allApplicant[indexPath.row]?.
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            let report = UITableViewRowAction(style: .default, title: "Báo cáo") { (action, indexPath) in
+                
+            }
+            switch self.allApplicant[indexPath.row]?.id_status {
+            case 1:
+                return [delete]
+            case 2:
+                return [delete,report]
+            default:
+                return [review]
+            }
         } 
         return []
         

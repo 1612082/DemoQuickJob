@@ -144,6 +144,8 @@
 		B2FDA4C5244AB3AD00A86DE3 /* footerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA4C4244AB3AD00A86DE3 /* footerCell.swift */; };
 		B2FDA4C7244AB92C00A86DE3 /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA4C6244AB92C00A86DE3 /* JobCell.swift */; };
 		B2FDA4CB244AEC5900A86DE3 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA4CA244AEC5900A86DE3 /* MoreCell.swift */; };
+		BA0DA0C424BEB20200905893 /* ReviewAndReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0DA0C324BEB20200905893 /* ReviewAndReportViewModel.swift */; };
+		BA0DA0C624BEB28100905893 /* APIReviewReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0DA0C524BEB28100905893 /* APIReviewReport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -289,6 +291,8 @@
 		B2FDA4C4244AB3AD00A86DE3 /* footerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerCell.swift; sourceTree = "<group>"; };
 		B2FDA4C6244AB92C00A86DE3 /* JobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
 		B2FDA4CA244AEC5900A86DE3 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
+		BA0DA0C324BEB20200905893 /* ReviewAndReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAndReportViewModel.swift; sourceTree = "<group>"; };
+		BA0DA0C524BEB28100905893 /* APIReviewReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReviewReport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +406,7 @@
 				B2E8D60324A5161100D1C10E /* APIManageJob.swift */,
 				B2E8D60924A5DB2A00D1C10E /* APIInfoEmployer.swift */,
 				B28A077424B78EC4002056F1 /* APIMomo.swift */,
+				BA0DA0C524BEB28100905893 /* APIReviewReport.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				B2E8D60B24A5EEAD00D1C10E /* InforEmployerViewModel.swift */,
 				B28A077624B78FAF002056F1 /* MomoViewModel.swift */,
 				B28A079824BCBC78002056F1 /* CommonViewModel.swift */,
+				BA0DA0C324BEB20200905893 /* ReviewAndReportViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -850,7 +856,7 @@
 				};
 			};
 			buildConfigurationList = B26E2336244A15BB003EA66A /* Build configuration list for PBXProject "DemoQuickJob" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -952,6 +958,7 @@
 				B29A921E244D6AFF00B5FF88 /* salaryCell.swift in Sources */,
 				B235D10624B220C8009C257A /* NotificationCell.swift in Sources */,
 				B2E8D60024A36F1900D1C10E /* AllApplicant.swift in Sources */,
+				BA0DA0C624BEB28100905893 /* APIReviewReport.swift in Sources */,
 				B243E0F424534F2F00408060 /* timeCell.swift in Sources */,
 				B26E235B244A180A003EA66A /* ChatViewController.swift in Sources */,
 				B243E0F024534E5100408060 /* imgdetailCell.swift in Sources */,
@@ -986,6 +993,7 @@
 				B2C3235E2472FD0D00584C2C /* highFilterViewController.swift in Sources */,
 				B2D4E495245746CD0006AF39 /* CateJobItem.swift in Sources */,
 				B243E0F224534F0700408060 /* detailCell.swift in Sources */,
+				BA0DA0C424BEB20200905893 /* ReviewAndReportViewModel.swift in Sources */,
 				B2FDA4C5244AB3AD00A86DE3 /* footerCell.swift in Sources */,
 				B235D0FF24B1ABF9009C257A /* ContentChatCell.swift in Sources */,
 				B243E0F624534F8B00408060 /* listAuctionCell.swift in Sources */,
@@ -1209,6 +1217,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFW74L548G;
 				INFOPLIST_FILE = DemoQuickJob/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1231,6 +1240,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFW74L548G;
 				INFOPLIST_FILE = DemoQuickJob/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

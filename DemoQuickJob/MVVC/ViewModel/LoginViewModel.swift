@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 class LobbyViewModel {
     var idLobby:String = ""{
         didSet{}
@@ -20,12 +21,18 @@ class LobbyViewModel {
     var password:String = ""{
         didSet{}
     }
-    
+    var provinceID:Int = 1452{
+        didSet{}
+    }
     func GetDistrict(completion:@escaping GetDistrictlHandel){
-        let param = [
-            "token": "TokenStaging"
+        let headers: HTTPHeaders = [
+            "token": "95c31521-c667-11ea-8ce4-7a1dae48308a",
+            "Accept": "application/json"
         ]
-        APIAddress.shared.GetDistrict(parameters: param, headers: nil) { (model) in
+        let param = [
+            "province_id":self.provinceID
+        ]
+        APIAddress.shared.GetDistrict(parameters: param, headers: headers) { (model) in
             guard let model = model else {
                 completion(nil)
                 return
@@ -34,11 +41,14 @@ class LobbyViewModel {
         }
     }
     func GetWard(completion:@escaping GetWardlHandel){
+        let headers: HTTPHeaders = [
+            "token": "95c31521-c667-11ea-8ce4-7a1dae48308a",
+            "Accept": "application/json"
+        ]
         let param = [
-            "token": "TokenStaging",
-            "DistrictID": DistrictID
+            "district_id": DistrictID
             ] as [String : Any]
-        APIAddress.shared.GetWard(parameters: param, headers: nil) { (model) in
+        APIAddress.shared.GetWard(parameters: param, headers: headers) { (model) in
             guard let model = model else {
                 completion(nil)
                 return

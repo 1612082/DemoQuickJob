@@ -56,7 +56,7 @@ class ManageJobViewModel{
             "page": "1",
             "take": "10",
             "isASC":"true",
-            "status":"0"
+            "status":"0" //1 đang tuyển 2: đang làm 3: đã làm xong
         ]
 
         ManageJobAPI.shared.getAllApplicant(parameters: param, headers: headers) { (model) in

@@ -10,9 +10,10 @@ import Foundation
 
 public struct DistrictResponse:Codable {
 
-        public var code : Int
-        public var data : [DISTRICT]
-        public var msg : String
+    public var code : Int
+    public var data : [DISTRICT]
+    public var msg : String
+
         
 }
 public struct DISTRICT:Codable {

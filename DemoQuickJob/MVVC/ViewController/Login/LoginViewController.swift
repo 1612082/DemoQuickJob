@@ -107,33 +107,17 @@ class LoginViewController: UIViewController {
     
     //MARK: - FILL AND BIND DATA
     func fillData() {
-        LoginVM.GetDistrict { (model) in
-            guard let model = model else {
-                return
-            }
-            if model.code == 1 {
-                listDtrict = model.data
-            }
-        }
-        LoginVM.GetWard { (model) in
-             guard let model = model else {
-                return
-            }
-            if model.code == 1{
-                listWard = model.data.Wards
-            }
-        }
+        
     }
        
     //MARK: - BUTTON ACTIONS
     
     @IBAction func Login(_ sender: Any) {
-//        self.LoginVM.email = tfUsername.text!
-//        self.LoginVM.password = tfPass.text!
-//        login()
+        self.LoginVM.email = tfUsername.text!
+        self.LoginVM.password = tfPass.text!
+        login()
 
-        let vc = Home_Storyboard.instantiateViewController(withIdentifier: "ReviewViewController" ) as! ReviewViewController
-        navigationController?.pushViewController(vc, animated: true)
+
     }
     @IBAction func Signup(_ sender: Any) {
         let signupFirstVC = Main_Storyboard.instantiateViewController(withIdentifier: "SignFirstViewController") as! SignFirstViewController
