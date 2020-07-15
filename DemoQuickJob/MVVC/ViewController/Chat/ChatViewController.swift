@@ -24,52 +24,6 @@ class ChatViewController: UIViewController {
     //MARK: VIEW LIFE CYCLE
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        db.collection("chats").getDocuments(){ (querySnapshot, err) in
-//            if let querySnapshot = querySnapshot {
-//                self.task = querySnapshot.documents.compactMap({ (document) in
-//                    do{
-//                        document.get("img").map { (field)  in
-//                            let a = field as! NSArray
-//                            print(a)
-//                            if a.count != 0{
-//                                let b = a[0] as! NSDictionary
-//                                let t = b.dictionaryWithValues(forKeys: ["email"]) as? [String:String]
-//                                let text:String = t!["email"]!
-//                                print(text)
-//                                
-//                            }
-//                            else{
-//                                
-//                            }
-//                        }
-//                        let x = try document.data(as: dataFirecloud.self)
-//                        self.task.append(x!)
-//                        print(x)
-//                    }catch{
-//                        print(error)
-//                    }
-//                    return nil
-//                })
-//            }
-//        }
-//        if arr[0] != ""{
-//            let docref2 = db.collection("test").document(arr[0])
-//            docref2.getDocument { (document2, error) in
-//                if let document2 = document2, document2.exists {
-//                    do{
-//                        print("------")
-//                        print(document2.data())
-//                        let dataDescription = try document2.data(as: dataFirecloud.self)
-//                        print("Document data: \(dataDescription)")
-//                    }catch{
-//                        print("can't parse")
-//                    }
-//
-//                } else {
-//                    print("Document does not exist")
-//                }
-//            }
-//        }
         setupVar()
     }
     override func viewDidLoad() {
@@ -118,7 +72,7 @@ class ChatViewController: UIViewController {
     
     //MARK: - SETUP UI
     func setupUI() {
-        
+        self.navigationItem.title = "Chat"
     }
     
     //MARK: - CALL API

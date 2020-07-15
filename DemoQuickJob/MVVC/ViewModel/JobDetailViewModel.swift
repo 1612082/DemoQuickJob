@@ -30,7 +30,8 @@ class JobDetailViewModel {
         numberFormatter.numberStyle = .currency
         numberFormatter.locale = Locale.current
         numberFormatter.currencySymbol = "VND"
-        return numberFormatter.string(from: NSNumber(value: amount))!
+        let a = numberFormatter.string(from: NSNumber(value: amount))!
+        return String(a.prefix(a.count - 3))
     }
     func convertCurrencyToDouble(input: String) -> Double? {
          let numberFormatter = NumberFormatter()
@@ -57,7 +58,7 @@ class JobDetailViewModel {
         if let date = dateFormatterGet.date(from: s) {
             return dateFormatterPrint.string(from: date)
         } else {
-           return"There was an error decoding the string"
+           return "2020-01-01"
         }
     }
 }

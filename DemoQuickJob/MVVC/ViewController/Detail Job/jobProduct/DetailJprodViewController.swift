@@ -12,6 +12,7 @@ import Foundation
 class DetailJprodViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btn: UIButton!
     
     //MARK: OTHER VARIABLES
     var idJob:Int?
@@ -33,7 +34,7 @@ class DetailJprodViewController: UIViewController {
     
     //MARK: - SETUP UI
     func setupUI() {
-        
+        btn.layer.cornerRadius = 20
     }
     //MARK: - CALL API
     func callAPI() {
@@ -133,7 +134,15 @@ extension DetailJprodViewController:UITableViewDataSource, UITableViewDelegate{
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! detailCell
             cell.bindData(CurrentJob!)
             cell.selectionStyle = .none
-
+            cell.didOpenMap = {
+                if (Int.init(self.CurrentJob!.lng) != 0 && Int.init(self.CurrentJob!.lng) != 0){
+                    let MapVC = Apply_Storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+                    MapVC.lon = Double.init(self.CurrentJob!.lng)
+                    MapVC.lat = Double.init(self.CurrentJob!.lat)
+                    MapVC.addr = "\(self.CurrentJob!.address), \(self.CurrentJob!.area_district), \(self.CurrentJob!.area_province)"
+                    self.navigationController?.pushViewController(MapVC, animated: true)
+                }
+            }
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath) as! timeCell

@@ -50,6 +50,7 @@ public struct MomoConfirm:Codable {
 typealias GetHashHandel = ((_ model: HashMomoResponse?)->Void)
 typealias GetMomoConfirmHandel = ((_ model: ConfirmMomoResponse?)->Void)
 typealias GetSignHandel = ((_ model: SignatureMomoResponse?)->Void)
+typealias AcceptApplicantHandel = ((_ model: dataResponse?)->Void)
 
 
 struct APIMomo {
@@ -99,4 +100,20 @@ struct APIMomo {
             }
         }
     }
+    func AcceptApplicant(parameters:[String:Any]?, headers:HTTPHeaders?, completion:@escaping AcceptApplicantHandel){
+        let url = "https://f2l-client.herokuapp.com/applicants/acceptApplicant"
+        RequestService.shared.AFRequestWithRawData(url: url, method: .post, parameters: parameters, headers: headers, objectType: dataResponse.self) { (result, data, error) in
+            if result {
+                guard let model = data as? dataResponse else{
+                    completion(nil)
+                    return
+                }
+                completion(model)
+            } else {
+                print(error?.localizedDescription ?? "error at response data")
+                completion(nil)
+            }
+        }
+    }
+    
 }

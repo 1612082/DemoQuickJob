@@ -19,6 +19,8 @@ class ManageApplicantViewController: UIViewController {
     var idJob:String = ""
     var applying:listCandidate = listCandidate(applicantsList: [], page: 0, total: 0)
     var applyed:listCandidate = listCandidate(applicantsList: [], page: 0, total: 0)
+    var id_status = 0 //1 dang tuyen 2 dang thuc hien 3 hoan thanh
+    var MomoVM = MomoViewModel()
     //MARK: VIEW LIFE CYCLE
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -54,19 +56,23 @@ class ManageApplicantViewController: UIViewController {
     
     //MARK: - FILL AND BIND DATA
     func fillData() {
-        ManaJobVM.status = "0"
-        ManaJobVM.token = token
+        
         ManaJobVM.idJob = self.idJob
-        ManaJobVM.GetAllCandidate { (model) in
-            guard let model = model else {
-                return
-            }
-            if model.code == "200"{
-                self.applying = model.data
-                self.tableView.reloadData()
+        if id_status == 1{
+            ManaJobVM.status = "0"
+            ManaJobVM.token = token
+            ManaJobVM.GetAllCandidate { (model) in
+                guard let model = model else {
+                    return
+                }
+                if model.code == "200"{
+                    self.applying = model.data
+                    self.tableView.reloadData()
+                }
             }
         }
         
+        ManaJobVM2.idJob = self.idJob
         ManaJobVM2.status = "1"
         ManaJobVM2.token = token
         ManaJobVM2.GetAllCandidate { (model) in
@@ -90,7 +96,14 @@ class ManageApplicantViewController: UIViewController {
 }
 extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        switch id_status {
+        case 1:
+            return 3
+        case 2:
+            return 1
+        default:
+            return 1
+        }
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch  section {
@@ -106,10 +119,12 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 1
+            if id_status == 1{
+                return 1
+            }
+            return applyed.applicantsList.count
         case 1:
             return applying.applicantsList.count
-
         default:
             return applyed.applicantsList.count
         }
@@ -118,7 +133,13 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch  indexPath.section {
         case 0:
-            return UITableViewCell()
+            if id_status == 1{
+                return UITableViewCell()
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ApplicantCell", for: indexPath) as! ApplicantCell
+                cell.bindData(applyed.applicantsList[indexPath.row]!)
+                return cell
+            }
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ApplicantCell", for: indexPath) as! ApplicantCell
             switch indexPath.section {
@@ -129,6 +150,53 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
             }
             return cell
         }
+    }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if indexPath.section == 1{
+            let Accept = UITableViewRowAction(style: .default, title: "Chấp nhận") { action, index in
+                let MomoVC = Main_Storyboard.instantiateViewController(withIdentifier: "PayMomoController") as! PayMomoController
+                MomoVC.idApplicant = self.applying.applicantsList[indexPath.row]?.id_applicant as! Int
+                MomoVC.amount = self.applying.applicantsList[indexPath.row]?.proposed_price as! Int
+                MomoVC.nameApplicant = self.applying.applicantsList[indexPath.row]?.fullname
+                self.navigationController?.pushViewController(MomoVC, animated: true)
+                
+            }
+            
+            let Refuse = UITableViewRowAction(style: .destructive, title: "Từ chối") { action, index in
+                
+            }
+            let Review = UITableViewRowAction(style: .destructive, title: "Đánh giá") { action, index in
+                
+            }
+            let Report = UITableViewRowAction(style: .destructive, title: "Báo cáo") { action, index in
+                
+            }
+            switch id_status {
+            case 1:
+                return [Accept, Refuse]
+            case 2:
+                return [Report]
+            default:
+                return [Review]
+            }
+            
+        }
+        return []
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section{
+        case 1:
+            let detailVC = Home_Storyboard.instantiateViewController(identifier: "InfoPublicViewController") as InfoPublicViewController
+            detailVC.id = "\(self.applying.applicantsList[indexPath.row]?.id_user ?? 0)"
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        case 2:
+            let detailVC = Home_Storyboard.instantiateViewController(identifier: "InfoPublicViewController") as InfoPublicViewController
+            detailVC.id = "\(self.applyed.applicantsList[indexPath.row]?.id_user ?? 0)"
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        default:
+            print("-")
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

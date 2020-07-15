@@ -58,7 +58,8 @@ class ManageJobViewController: UIViewController {
             }
             if model.code == "200"{
                 self.allApplicant = model.data.jobList
-                print("ok")
+                self.tableView.reloadData()
+                
             } else {
                 print(model.code)
             }
@@ -68,8 +69,9 @@ class ManageJobViewController: UIViewController {
                 return
             }
             if model.code == "200"{
-                print("ok2")
+                
                 self.allJobPost = model.data.jobList
+                self.tableView.reloadData()
             } else {
                 print(model.code)
             }
@@ -128,7 +130,7 @@ extension ManageJobViewController:UITableViewDataSource, UITableViewDelegate{
                 cell.selectionStyle = .none
                 cell.bindData2(allApplicant[indexPath.row]!)
                 return cell
-            } else{
+            } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ContentManageCell", for: indexPath) as! ContentManageCell
                 cell.bindData(allJobPost[indexPath.row]!)
                 cell.selectionStyle = .none
@@ -180,43 +182,55 @@ extension ManageJobViewController:UITableViewDataSource, UITableViewDelegate{
                 navigationController?.pushViewController(detailVC, animated: true)
             }
         }else if cateManage == 2 {
-//            if allJobPost[indexPath.row]!.job_type == false{
-//                let detailVC = Home_Storyboard.instantiateViewController(identifier: "DetailJTimeViewController") as DetailJTimeViewController
-//                detailVC.idJob = allJobPost[indexPath.row]?.id_job
-//                navigationController?.pushViewController(detailVC, animated: true)
-//            } else {
-//                let detailVC = Home_Storyboard.instantiateViewController(identifier: "DetailJprodViewController") as DetailJprodViewController
-//                detailVC.idJob = allJobPost[indexPath.row]?.id_job
-//                navigationController?.pushViewController(detailVC, animated: true)
-//            }
             let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-            alert.addAction(UIAlertAction(title: "Quản lý ứng viên", style: .default , handler:{ (UIAlertAction)in
-                let detailVC = Main_Storyboard.instantiateViewController(identifier: "ManageApplicantViewController") as ManageApplicantViewController
-                let a = self.allJobPost[indexPath.row]!.id_job
-                print(a)
-                detailVC.idJob = "\(self.allJobPost[indexPath.row]!.id_job)"
-                self.navigationController?.pushViewController(detailVC, animated: true)
-            }))
-
-            alert.addAction(UIAlertAction(title: "Xem và Sửa công việc", style: .default , handler:{ (UIAlertAction)in
-                let detailVC = PushJob_Storyboard.instantiateViewController(identifier: "PersonalPushJobViewController") as PersonalPushJobViewController
-                detailVC.idJobEdit = self.allJobPost[indexPath.row]!.id_job
-                detailVC.isEdit = true
-                self.navigationController?.pushViewController(detailVC, animated: true)
-            }))
-
-            alert.addAction(UIAlertAction(title: "Ngừng tuyển", style: .default , handler:{ (UIAlertAction)in
-                self.flag = "StopApply"
-            }))
-
-            alert.addAction(UIAlertAction(title: "Xoá công việc", style: .destructive, handler:{ (UIAlertAction)in
-                self.flag = "deleteJob"
+            if allJobPost[indexPath.row]?.id_status == 1{
                 
-            }))
-            alert.addAction(UIAlertAction(title: "Đóng", style: .cancel, handler:{ (UIAlertAction)in
-            }))
+                alert.addAction(UIAlertAction(title: "Quản lý ứng viên", style: .default , handler:{ (UIAlertAction)in
+                    let detailVC = Main_Storyboard.instantiateViewController(identifier: "ManageApplicantViewController") as ManageApplicantViewController
+                    let a = self.allJobPost[indexPath.row]!.id_job
+                    detailVC.id_status = self.allJobPost[indexPath.row]!.id_status
+                    detailVC.idJob = "\(self.allJobPost[indexPath.row]!.id_job)"
+                    self.navigationController?.pushViewController(detailVC, animated: true)
+                }))
+                alert.addAction(UIAlertAction(title: "Kết thúc công việc", style: .default , handler:{ (UIAlertAction)in
+                    
+                }))
 
+
+                alert.addAction(UIAlertAction(title: "Xem và Sửa công việc", style: .default , handler:{ (UIAlertAction)in
+                    let detailVC = PushJob_Storyboard.instantiateViewController(identifier: "PersonalPushJobViewController") as PersonalPushJobViewController
+                    detailVC.idJobEdit = self.allJobPost[indexPath.row]!.id_job
+                    detailVC.isEdit = true
+                    self.navigationController?.pushViewController(detailVC, animated: true)
+                }))
+
+                alert.addAction(UIAlertAction(title: "Ngừng tuyển", style: .default , handler:{ (UIAlertAction)in
+                    self.flag = "StopApply"
+                }))
+
+                alert.addAction(UIAlertAction(title: "Xoá công việc", style: .destructive, handler:{ (UIAlertAction)in
+                    self.flag = "deleteJob"
+                    
+                }))
+                alert.addAction(UIAlertAction(title: "Đóng", style: .cancel, handler:{ (UIAlertAction)in
+                }))
+            }else if allJobPost[indexPath.row]?.id_status == 2{
+                alert.addAction(UIAlertAction(title: "Báo cáo ứng viên", style: .default , handler:{ (UIAlertAction)in
+                    let detailVC = Main_Storyboard.instantiateViewController(identifier: "ManageApplicantViewController") as ManageApplicantViewController
+                    let a = self.allJobPost[indexPath.row]!.id_job
+                    detailVC.id_status = self.allJobPost[indexPath.row]!.id_status
+                    detailVC.idJob = "\(self.allJobPost[indexPath.row]!.id_job)"
+                    self.navigationController?.pushViewController(detailVC, animated: true)
+                }))
+            }else{
+                alert.addAction(UIAlertAction(title: "Nhận xét ứng viên", style: .default , handler:{ (UIAlertAction)in
+                    let detailVC = Main_Storyboard.instantiateViewController(identifier: "ManageApplicantViewController") as ManageApplicantViewController
+                    let a = self.allJobPost[indexPath.row]!.id_job
+                    detailVC.idJob = "\(self.allJobPost[indexPath.row]!.id_job)"
+                    detailVC.id_status = self.allJobPost[indexPath.row]!.id_status
+                    self.navigationController?.pushViewController(detailVC, animated: true)
+                }))
+            }
             self.present(alert, animated: true, completion: {
                 if self.flag == "deleteJob"{
                     self.dismiss(animated: true) {
@@ -307,9 +321,7 @@ extension ManageJobViewController:UITableViewDataSource, UITableViewDelegate{
                 
             }
             return [delete]
-        } else {
-           
-        }
+        } 
         return []
         
         

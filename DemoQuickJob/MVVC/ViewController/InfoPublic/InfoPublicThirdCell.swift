@@ -17,6 +17,7 @@ class InfoPublicThirdCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        star.settings.fillMode = .precise
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

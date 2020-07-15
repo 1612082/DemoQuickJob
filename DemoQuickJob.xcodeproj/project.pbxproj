@@ -69,6 +69,9 @@
 		B27E60D52471B2C600B3C18B /* CatePushJobItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E60D42471B2C600B3C18B /* CatePushJobItem.swift */; };
 		B28A077524B78EC4002056F1 /* APIMomo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A077424B78EC4002056F1 /* APIMomo.swift */; };
 		B28A077724B78FAF002056F1 /* MomoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A077624B78FAF002056F1 /* MomoViewModel.swift */; };
+		B28A079924BCBC78002056F1 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A079824BCBC78002056F1 /* CommonViewModel.swift */; };
+		B28A079B24BCC000002056F1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A079A24BCC000002056F1 /* MapViewController.swift */; };
+		B28A079E24BE0A76002056F1 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A079D24BE0A76002056F1 /* ReviewViewController.swift */; };
 		B29A7827248954A700D6D1BB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A7826248954A700D6D1BB /* Address.swift */; };
 		B29A78292489730200D6D1BB /* APIAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A78282489730200D6D1BB /* APIAddress.swift */; };
 		B29A782B248974D700D6D1BB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A782A248974D700D6D1BB /* LoginViewModel.swift */; };
@@ -90,7 +93,7 @@
 		B29A784F2490A1EC00D6D1BB /* EditAddrCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A784E2490A1EC00D6D1BB /* EditAddrCell.swift */; };
 		B29A78512490A20C00D6D1BB /* EditGenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A78502490A20C00D6D1BB /* EditGenderCell.swift */; };
 		B29A78532490A95B00D6D1BB /* ChangePassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A78522490A95B00D6D1BB /* ChangePassCell.swift */; };
-		B29A785524953B0400D6D1BB /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A785424953B0400D6D1BB /* TestViewController.swift */; };
+		B29A785524953B0400D6D1BB /* PayMomoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A785424953B0400D6D1BB /* PayMomoController.swift */; };
 		B29A78572495445400D6D1BB /* PushJobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A78562495445400D6D1BB /* PushJobViewModel.swift */; };
 		B29A7859249544A800D6D1BB /* APIPushJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A7858249544A800D6D1BB /* APIPushJob.swift */; };
 		B29A785B249544BA00D6D1BB /* PushJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A785A249544BA00D6D1BB /* PushJobModel.swift */; };
@@ -211,6 +214,9 @@
 		B27E60D42471B2C600B3C18B /* CatePushJobItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatePushJobItem.swift; sourceTree = "<group>"; };
 		B28A077424B78EC4002056F1 /* APIMomo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMomo.swift; sourceTree = "<group>"; };
 		B28A077624B78FAF002056F1 /* MomoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomoViewModel.swift; sourceTree = "<group>"; };
+		B28A079824BCBC78002056F1 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
+		B28A079A24BCC000002056F1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B28A079D24BE0A76002056F1 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		B29A7826248954A700D6D1BB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		B29A78282489730200D6D1BB /* APIAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAddress.swift; sourceTree = "<group>"; };
 		B29A782A248974D700D6D1BB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -232,7 +238,7 @@
 		B29A784E2490A1EC00D6D1BB /* EditAddrCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddrCell.swift; sourceTree = "<group>"; };
 		B29A78502490A20C00D6D1BB /* EditGenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenderCell.swift; sourceTree = "<group>"; };
 		B29A78522490A95B00D6D1BB /* ChangePassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassCell.swift; sourceTree = "<group>"; };
-		B29A785424953B0400D6D1BB /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		B29A785424953B0400D6D1BB /* PayMomoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayMomoController.swift; sourceTree = "<group>"; };
 		B29A78562495445400D6D1BB /* PushJobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushJobViewModel.swift; sourceTree = "<group>"; };
 		B29A7858249544A800D6D1BB /* APIPushJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPushJob.swift; sourceTree = "<group>"; };
 		B29A785A249544BA00D6D1BB /* PushJobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushJobModel.swift; sourceTree = "<group>"; };
@@ -437,6 +443,7 @@
 				B2E8D60524A5178E00D1C10E /* ManageJobViewModel.swift */,
 				B2E8D60B24A5EEAD00D1C10E /* InforEmployerViewModel.swift */,
 				B28A077624B78FAF002056F1 /* MomoViewModel.swift */,
+				B28A079824BCBC78002056F1 /* CommonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -599,6 +606,7 @@
 				B2240012247E151200D1BCC7 /* CodeTypeViewController.swift */,
 				B26E235E244A1B32003EA66A /* NaviViewController.swift */,
 				B26E2352244A176F003EA66A /* TabarViewController.swift */,
+				B28A079C24BE0A4E002056F1 /* ReviewAndReport */,
 				B235D10224B21F0F009C257A /* Notification */,
 				B2E8D60D24A5F4EF00D1C10E /* InfoPublic */,
 				B29A786324A03E0F00D6D1BB /* ApplyJob */,
@@ -615,7 +623,6 @@
 				B2C323582472FCA500584C2C /* HighFilter */,
 				B26E2361244A341F003EA66A /* Home */,
 				B2FDA4BF244AAB7400A86DE3 /* Detail Job */,
-				B29A785424953B0400D6D1BB /* TestViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -661,6 +668,7 @@
 				B23DF1AD246117260094DFDD /* content */,
 				B23DF1AC246117190094DFDD /* calender */,
 				B26E235C244A1904003EA66A /* ManageJobViewController.swift */,
+				B29A785424953B0400D6D1BB /* PayMomoController.swift */,
 			);
 			path = ManageJob;
 			sourceTree = "<group>";
@@ -687,9 +695,9 @@
 		B27E60C42471A52700B3C18B /* STORYBOARD */ = {
 			isa = PBXGroup;
 			children = (
+				B26E2349244A15BF003EA66A /* LaunchScreen.storyboard */,
 				B26E2344244A15BB003EA66A /* Main.storyboard */,
 				B27E60C52471A55300B3C18B /* PushJob.storyboard */,
-				B26E2349244A15BF003EA66A /* LaunchScreen.storyboard */,
 				B224FFFB247B881500D1BCC7 /* ApllyJob.storyboard */,
 				B2240000247D3FCC00D1BCC7 /* Home.storyboard */,
 				B29A783B248D6E4A00D6D1BB /* Profile.storyboard */,
@@ -710,6 +718,14 @@
 				B27E60C82471ABC300B3C18B /* PersonalPushJobViewController.swift */,
 			);
 			path = PushJob;
+			sourceTree = "<group>";
+		};
+		B28A079C24BE0A4E002056F1 /* ReviewAndReport */ = {
+			isa = PBXGroup;
+			children = (
+				B28A079D24BE0A76002056F1 /* ReviewViewController.swift */,
+			);
+			path = ReviewAndReport;
 			sourceTree = "<group>";
 		};
 		B29A782C2489CBAD00D6D1BB /* SignUp */ = {
@@ -780,8 +796,8 @@
 		B2E8D61C24A8B99200D1C10E /* ManageApplicant */ = {
 			isa = PBXGroup;
 			children = (
-				B2E8D61D24A8B9B500D1C10E /* ApplicantCell.swift */,
 				B2E8D61F24A8B9D800D1C10E /* ManageApplicantViewController.swift */,
+				B2E8D61D24A8B9B500D1C10E /* ApplicantCell.swift */,
 			);
 			path = ManageApplicant;
 			sourceTree = "<group>";
@@ -791,6 +807,7 @@
 			children = (
 				B2240002247D6FC900D1BCC7 /* jobCompany */,
 				B243E0ED24534D0E00408060 /* jobProduct */,
+				B28A079A24BCC000002056F1 /* MapViewController.swift */,
 			);
 			path = "Detail Job";
 			sourceTree = "<group>";
@@ -928,6 +945,7 @@
 				B29A921A244D643400B5FF88 /* JobTimeCell.swift in Sources */,
 				B2E8D60C24A5EEAD00D1C10E /* InforEmployerViewModel.swift in Sources */,
 				B2E8D61124A5F55200D1C10E /* InfoPublicFirstCell.swift in Sources */,
+				B28A079924BCBC78002056F1 /* CommonViewModel.swift in Sources */,
 				B2E8D61324A5F56B00D1C10E /* InfoPublicSecondCell.swift in Sources */,
 				B2240005247D706800D1BCC7 /* ImageContentJobCell.swift in Sources */,
 				B23DF1A7246116DC0094DFDD /* HeaderManageCell.swift in Sources */,
@@ -952,6 +970,7 @@
 				B2240013247E151200D1BCC7 /* CodeTypeViewController.swift in Sources */,
 				B224000D247E0F8500D1BCC7 /* JobPostModel.swift in Sources */,
 				B26E235F244A1B32003EA66A /* NaviViewController.swift in Sources */,
+				B28A079E24BE0A76002056F1 /* ReviewViewController.swift in Sources */,
 				B29A7844248DFACE00D6D1BB /* ProfileViewModel.swift in Sources */,
 				B29A782B248974D700D6D1BB /* LoginViewModel.swift in Sources */,
 				B27E60C92471ABC300B3C18B /* PersonalPushJobViewController.swift in Sources */,
@@ -1010,7 +1029,7 @@
 				B235D0FC24B1ABD6009C257A /* ChatCell.swift in Sources */,
 				B224FFFA247B815900D1BCC7 /* dateWorkingCell.swift in Sources */,
 				B2E8D61524A5F57900D1C10E /* InfoPublicThirdCell.swift in Sources */,
-				B29A785524953B0400D6D1BB /* TestViewController.swift in Sources */,
+				B29A785524953B0400D6D1BB /* PayMomoController.swift in Sources */,
 				B2E8D60F24A5F52000D1C10E /* InfoPublicViewController.swift in Sources */,
 				B29A786924A0672700D6D1BB /* ApplyModel.swift in Sources */,
 				B29A784B24909F2D00D6D1BB /* EditInforCell.swift in Sources */,
@@ -1027,6 +1046,7 @@
 				B2D4E49D24574AB40006AF39 /* noneCell.swift in Sources */,
 				B235D10124B1AC0C009C257A /* ContentChatViewController.swift in Sources */,
 				B235D10424B21F44009C257A /* NotificationViewController.swift in Sources */,
+				B28A079B24BCC000002056F1 /* MapViewController.swift in Sources */,
 				B243E0F824534F9F00408060 /* detailOwnerCell.swift in Sources */,
 				B2C3235A2472FCCB00584C2C /* highFilterItem.swift in Sources */,
 				B26E233F244A15BB003EA66A /* AppDelegate.swift in Sources */,
@@ -1185,6 +1205,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DemoQuickJob/DemoQuickJob.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFW74L548G;
 				INFOPLIST_FILE = DemoQuickJob/Info.plist;
@@ -1194,6 +1215,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mrDa.DemoQuickJob;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1205,6 +1227,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DemoQuickJob/DemoQuickJob.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFW74L548G;
 				INFOPLIST_FILE = DemoQuickJob/Info.plist;
@@ -1214,6 +1237,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mrDa.DemoQuickJob;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

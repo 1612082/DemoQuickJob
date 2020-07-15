@@ -21,7 +21,10 @@ class LoginViewController: UIViewController {
     
     //MARK: OTHER VARIABLES
     var LoginVM = LobbyViewModel()
+    var LoadingView = UIView()
+    var CommonVM = CommonViewModel()
     
+    //MARK: LIFE CIRCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -61,6 +64,7 @@ class LoginViewController: UIViewController {
         tf.font = UIFont(name: "", size: 20)
     }
     func login(){
+        CommonVM.Loading(&self.LoadingView, self.view)
         self.LoginVM.Login { (model) in
             guard let model = model else {
                 return
@@ -76,6 +80,7 @@ class LoginViewController: UIViewController {
                     {
                         UserDefaults.standard.set(1, forKey: "isLogin")
                         let scene = self.view.window?.windowScene?.delegate as! SceneDelegate
+                        self.LoadingView.removeFromSuperview()
                         scene.GoToTabbar()
                         
                     }
@@ -123,11 +128,12 @@ class LoginViewController: UIViewController {
     //MARK: - BUTTON ACTIONS
     
     @IBAction func Login(_ sender: Any) {
-        self.LoginVM.email = tfUsername.text!
-        self.LoginVM.password = tfPass.text!
-        login()
-//        let scene = self.view.window?.windowScene?.delegate as! SceneDelegate
-//        scene.GoToTabbar()
+//        self.LoginVM.email = tfUsername.text!
+//        self.LoginVM.password = tfPass.text!
+//        login()
+
+        let vc = Home_Storyboard.instantiateViewController(withIdentifier: "ReviewViewController" ) as! ReviewViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func Signup(_ sender: Any) {
         let signupFirstVC = Main_Storyboard.instantiateViewController(withIdentifier: "SignFirstViewController") as! SignFirstViewController

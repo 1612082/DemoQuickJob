@@ -50,7 +50,8 @@ class JobCell: UITableViewCell {
         }
         
         tvName.text = data.title
-        lbAddr.text = "\(data.address), \(data.district), \(data.province)"
+        let addr:String = data.address ?? ""
+        lbAddr.text = "\(addr), \(data.district), \(data.province)"
         lbSalary.text = JobDetailVM.convertDoubleToCurrency(amount: data.salary)
         if data.job_type == true{
             lbCate.text = "Sản phẩm"

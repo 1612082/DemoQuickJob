@@ -27,30 +27,11 @@ class addressCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func openMap(_ sender: Any) {
-//        if didOpenMap != nil {
-//            didOpenMap()
-//        }
-//        UIApplication.shared.openURL(NSURL(string: "http://maps.apple.com/?address=HoChiMinhCity")! as URL)
-        let geocoder = CLGeocoder()
-        let str = "Quan 1" // A string of the address info you already have
-        geocoder.geocodeAddressString(str) { (placemarksOptional, error) -> Void in
-          if let placemarks = placemarksOptional {
-            print("placemark| \(String(describing: placemarks.first))")
-            if let location = placemarks.first?.location {
-              let query = "?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
-              let path = "http://maps.apple.com/" + query
-              if let url = NSURL(string: path) {
-                UIApplication.shared.open(url as URL)
-              } else {
-                // Could not construct url. Handle error.
-              }
-            } else {
-              // Could not get a location from the geocode request. Handle error.
-            }
-          } else {
-            // Didn't get any placemarks. Handle error.
-          }
+        
+        if didOpenMap != nil {
+            didOpenMap()
         }
+        
     }
     
     func bindData(_ P:TYPEJOBDETAIL){

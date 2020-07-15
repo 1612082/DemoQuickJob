@@ -13,7 +13,7 @@ class detailCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var tf: UITextView!
     @IBOutlet weak var tfAddr: UITextView!
-    
+    var didOpenMap:(()->Void)! = nil
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,5 +30,10 @@ class detailCell: UITableViewCell {
         tf.text = P.description
         tfAddr.text = "Địa chỉ: \(P.address)"
     }
-
+    @IBAction func seeMap(_ sender: Any) {
+        if didOpenMap != nil {
+            didOpenMap()
+        }
+    }
+    
 }

@@ -22,10 +22,10 @@ class InfoImageCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func bindData(_ data:InfoEmployer){
-        if data.avatarImg == "" {
+        if data.avatarImg == "" || data.avatarImg == nil {
             img.image = #imageLiteral(resourceName: "avatar")
         } else {
-            let dataDecoded:NSData = NSData(base64Encoded: data.avatarImg, options: NSData.Base64DecodingOptions(rawValue: 0))!
+            let dataDecoded:NSData = NSData(base64Encoded: data.avatarImg!, options: NSData.Base64DecodingOptions(rawValue: 0))!
             let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
             img.image = decodedimage
         }

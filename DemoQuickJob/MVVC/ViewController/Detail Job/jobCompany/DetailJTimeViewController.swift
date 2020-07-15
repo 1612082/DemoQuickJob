@@ -11,6 +11,8 @@ import UIKit
 class DetailJTimeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btn: UIButton!
+    
 //    var PostJob:TYPEJOBPOST?
     var idJob:Int?
     var decodedimage:UIImage?
@@ -32,7 +34,7 @@ class DetailJTimeViewController: UIViewController {
     
     //MARK: - SETUP UI
     func setupUI() {
-        
+        btn.layer.cornerRadius = 20
     }
     //MARK: - CALL API
     func callAPI() {
@@ -111,12 +113,29 @@ extension DetailJTimeViewController:UITableViewDataSource,UITableViewDelegate{
             let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! addressCell
             cell.selectionStyle = .none
             cell.bindData(CurrentJob!)
+            cell.didOpenMap = {
+                if (Int.init(self.CurrentJob!.lng) != 0 && Int.init(self.CurrentJob!.lng) != 0){
+                    let MapVC = Apply_Storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+                    MapVC.lon = Double.init(self.CurrentJob!.lng)
+                    MapVC.lat = Double.init(self.CurrentJob!.lat)
+                    MapVC.addr = "\(self.CurrentJob!.address), \(self.CurrentJob!.area_district), \(self.CurrentJob!.area_province)"
+                    self.navigationController?.pushViewController(MapVC, animated: true)
+                }
+            }
             return cell
         default:
 //            let image = UIColor.orange.image()
             let cell = tableView.dequeueReusableCell(withIdentifier: "JobTimeCell", for: indexPath) as! JobTimeCell
             if indexPath.section == 2{
-                cell.bindData("\(CurrentJob?.start_date ?? "") - \(CurrentJob?.end_date ?? "")", #imageLiteral(resourceName: "calendar-1"), "Time to work")
+                var a = "\(CurrentJob?.start_date ?? "")"
+                if a != ""{
+                    a = String(a.prefix(10))
+                }
+                var b = "\(CurrentJob?.end_date ?? "")"
+                if a != ""{
+                    b = String(b.prefix(10))
+                }
+                cell.bindData("\(a) - \(b)", #imageLiteral(resourceName: "calendar-1"), "Time to work")
             }else if indexPath.section == 4{
                 cell.bindData(CurrentJob?.description ?? "", #imageLiteral(resourceName: "star"), "Description")
             }else if indexPath.section == 5{

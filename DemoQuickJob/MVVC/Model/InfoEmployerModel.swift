@@ -22,7 +22,7 @@ public struct DataEmployer:Codable {
 }
 public struct InfoEmployer:Codable {
     public var address : String
-    public var avatarImg : String
+    public var avatarImg : String?
     public var dial : String
     public var dob : String
     public var email : String
@@ -31,6 +31,7 @@ public struct InfoEmployer:Codable {
     public var id_user : Int
     public var identity : String?
     public var isBusinessUser : Bool
+    
         
 }
 public struct Employer:Codable {

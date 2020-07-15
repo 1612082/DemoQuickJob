@@ -55,6 +55,7 @@ class PersonalPushJobViewController: UIViewController {
             doneBtn.setTitle("Đăng công việc", for: .normal)
         }
         doneBtn.titleLabel?.font =  .systemFont(ofSize: 22)
+        doneBtn.layer.cornerRadius = 10
     }
     
     //MARK: - CALL API

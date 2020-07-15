@@ -64,6 +64,7 @@ struct RequestService {
                     let json = try JSONDecoder.init().decode(objectType.self, from: data!)
                     // tra gia ra ben ngoai ham bang completion handeler
                     print(parameters)
+                    print(headers)
                     completion(true, json, nil)
                 } catch {
                     //parse json khong dc

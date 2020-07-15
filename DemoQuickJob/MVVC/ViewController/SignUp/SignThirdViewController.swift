@@ -50,7 +50,7 @@ class SignThirdViewController: UIViewController {
                     guard let model = model else {
                         return
                     }
-                    if model.code == "201"{
+                    if model.code == "102"{
                         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                         self.present(alert, animated: true, completion: nil)
                         self.signupVM.showAlert( "Tạo công việc mới thành công", alert)

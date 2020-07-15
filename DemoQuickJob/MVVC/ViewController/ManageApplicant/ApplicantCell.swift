@@ -29,7 +29,8 @@ class ApplicantCell: UITableViewCell {
         name.text = data.fullname
         email.text = data.email
         dial.text = data.dial
-        price.text = "\(data.proposed_price)"
+        let pri:Int = data.proposed_price ?? 0
+        price.text = "\(pri)"
     }
 
 }

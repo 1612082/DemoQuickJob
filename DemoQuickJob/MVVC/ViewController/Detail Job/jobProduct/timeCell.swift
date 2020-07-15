@@ -32,8 +32,7 @@ class timeCell: UITableViewCell {
     }
     func bindData(_ P:TYPEJOBDETAIL){
         budget.text = "\(P.salary)"
-        
         yourPrice.text = JobDetailVM.FindYourPrice(P.dealers)
-        counter.text = JobDetailVM.DateFormater(P.end_date ?? "2020-00-00 00:00:00") 
+        counter.text = JobDetailVM.DateFormater(P.end_date ?? "2020-01-01 00:00:00") 
     }
 }

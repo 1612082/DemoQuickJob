@@ -42,7 +42,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajl-Gc-xj5">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <rect key="frame" x="20" y="812" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="iMK-Cu-jZY"/>
@@ -78,14 +78,15 @@
                             <constraint firstItem="ETb-IM-eCE" firstAttribute="centerX" secondItem="PAx-pH-aN7" secondAttribute="centerX" id="VhW-Vh-tDR"/>
                             <constraint firstItem="PAx-pH-aN7" firstAttribute="trailing" secondItem="Zcc-ET-e0B" secondAttribute="trailing" constant="20" id="Wsg-dZ-s3m"/>
                             <constraint firstItem="jCH-QL-q6q" firstAttribute="top" secondItem="PAx-pH-aN7" secondAttribute="top" constant="30" id="ggI-k6-lqb"/>
-                            <constraint firstItem="Ajl-Gc-xj5" firstAttribute="leading" secondItem="PAx-pH-aN7" secondAttribute="leading" id="hXH-aH-Ffm"/>
+                            <constraint firstItem="Ajl-Gc-xj5" firstAttribute="leading" secondItem="PAx-pH-aN7" secondAttribute="leading" constant="20" id="hXH-aH-Ffm"/>
                             <constraint firstItem="ETb-IM-eCE" firstAttribute="top" secondItem="jCH-QL-q6q" secondAttribute="bottom" constant="20" id="ni9-oL-2Pj"/>
-                            <constraint firstItem="PAx-pH-aN7" firstAttribute="trailing" secondItem="Ajl-Gc-xj5" secondAttribute="trailing" id="pPl-9q-7C8"/>
+                            <constraint firstItem="PAx-pH-aN7" firstAttribute="trailing" secondItem="Ajl-Gc-xj5" secondAttribute="trailing" constant="20" id="pPl-9q-7C8"/>
                             <constraint firstItem="vvN-Mq-w74" firstAttribute="trailing" secondItem="PAx-pH-aN7" secondAttribute="trailing" id="q6p-1P-7Bc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PAx-pH-aN7"/>
                     </view>
                     <connections>
+                        <outlet property="btnApply" destination="Ajl-Gc-xj5" id="5lA-IR-zE3"/>
                         <outlet property="introduction" destination="vvN-Mq-w74" id="xxs-sF-qyQ"/>
                         <outlet property="moneyTf" destination="jCH-QL-q6q" id="xfq-ak-WUm"/>
                     </connections>
@@ -94,16 +95,30 @@
             </objects>
             <point key="canvasLocation" x="-172.46376811594203" y="-237.05357142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="65f-qP-Bbm">
             <objects>
-                <viewController id="R4e-cl-Q10" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="R4e-cl-Q10" customClass="MapViewController" customModule="DemoQuickJob" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgo-kG-RuV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RyT-hc-Yuh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RyT-hc-Yuh" firstAttribute="top" secondItem="oiI-Hc-g9K" secondAttribute="top" id="Dxn-ex-1sY"/>
+                            <constraint firstItem="oiI-Hc-g9K" firstAttribute="trailing" secondItem="RyT-hc-Yuh" secondAttribute="trailing" id="K3m-MJ-mV1"/>
+                            <constraint firstItem="oiI-Hc-g9K" firstAttribute="bottom" secondItem="RyT-hc-Yuh" secondAttribute="bottom" id="dSX-e1-dLU"/>
+                            <constraint firstItem="RyT-hc-Yuh" firstAttribute="leading" secondItem="oiI-Hc-g9K" secondAttribute="leading" id="lwC-oR-FEw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oiI-Hc-g9K"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="RyT-hc-Yuh" id="ozE-5h-QNV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHa-Iq-JRC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

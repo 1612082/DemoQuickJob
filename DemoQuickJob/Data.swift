@@ -69,7 +69,6 @@ let listApply:[APPLY] = [
     APPLY(name: "Thư", price: "100 000"),
     APPLY(name: "Bảo", price: "100 000"),
     APPLY(name: "Bình", price: "100 000"),
-    
 ]
 let arrHeaderMange:[String] = ["Lịch làm việc","Đã đăng ký","Bài đăng"]
 let date = Date()

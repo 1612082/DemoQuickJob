@@ -13,16 +13,31 @@ class ApplyPersonalJobViewController: UIViewController {
 
     @IBOutlet weak var moneyTf: UITextField!
     @IBOutlet weak var introduction: UITextView!
+    @IBOutlet weak var btnApply: UIButton!
     var ApplicantVM = ApplyJobViewModel()
     var idJob:Int?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        introduction.text = ""
-        moneyTf.keyboardType = .numberPad
+        
+        setupUI()
+        setupVar()
+    }
+    //MARK: - SETUP VAR
+    func setupVar() {
+        
     }
     
+    //MARK: - SETUP UI
+    func setupUI() {
+        introduction.text = ""
+        moneyTf.keyboardType = .numberPad
+        btnApply.layer.cornerRadius = 10
+    }
+
+    
+    //MARK: - BUTTON ACTIONS
     @IBAction func Aplly(_ sender: Any) {
         ApplicantVM.id_job = "\(idJob ?? -1)"
         ApplicantVM.id_user = "\(currentUser!.id_user)"
@@ -38,6 +53,7 @@ class ApplyPersonalJobViewController: UIViewController {
                     let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                     self.present(alert, animated: true, completion: nil)
                     self.ApplicantVM.showAlert( "Đăng ký thành công", alert)
+                    self.navigationController?.popToRootViewController(animated: true)
 
                 }else if model.code == "-202"{
                     let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)

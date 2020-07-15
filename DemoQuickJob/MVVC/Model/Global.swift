@@ -8,8 +8,8 @@
 
 import Foundation
 import  UIKit
-//let SERVER = "https://f2l-client.herokuapp.com"
-let SERVER = "http://localhost:8000"
+let SERVER = "https://f2l-client.herokuapp.com"
+//let SERVER = "http://localhost:8000"
 
 let Home_Storyboard:UIStoryboard = UIStoryboard.init(name: "Home", bundle: nil)
 let Main_Storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -63,7 +63,3 @@ public struct dataResponse:Codable{
 }
 
 
-//PUBLIC key Momo
-let publicKeyMomo = "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA6yFnbg8ZwTlBaX/trMLnFCeUo/xluMQCIyCcNu6XAj0Cls0VuIxdWrDgakveaaDoTdlyzAmp9S0Y1uL+wERkvaNM0CItVDubUZsCyI4nqdQtl1EaP+cjDcNJnEm9jXVpYQE5ZSZMecC6zAsbQBAnLHKgEaR5iJKvA5xza9MLRudwavipuZgVZLkqfb3AFsOIMY7MDZpQk4if0GBfcsmDrrAGwtJcJpqo4tcalILq3GjLEeixpH2LrJwZF8ZoDr2MRtud5Y/pnNYUgi6Lf3Zm2rm9K3wSfYK2oitqvXddMk1lcyeLaeg6Kg9zv2QJN+6ve5der+wwSGsDSqG32R1Lhs38LifSkw4vR9Ywf5NxtPOnQTpUVQ3O/qm3I9cW+OljH0BKzSmg0dGzQL5UHTb8Pb4KUvqB2EhrwdK+FZrLhJ7sBCer7Sylwd8wSVC3IwO6uLn4G3bFRKb9ok6SRqH7PM0sQPQ6MP6Hx14C73OmdYJzkcbXLbl1iIzO3nvEGvv8L0vDF4Q9EfhKR9ymGgjDNnpvJG8Ev+xX1XL2elEyMO7WhhSAxFnP4FwgGtvDW7JuNYwihfEZq/C1ccWavKCn/6GecdNeBDkHtvHhdb8kX7lM3QG23UJ7/w4V05I88tytFWDgbFG7vzmXb21pl6HO+nBpVCn5jemSMKGT7IbTJmMCAwEAAQ=="
-
-let dataHashDemo =  "nTZWwGdRKdkvY59O9CuSKVwfeDkvE36ttK11Z8G06QOe7raatUuF+B82/fpSx3Q1Njf2bKTdYczvPGwNUWSxcWqI7DWr3frVFeKoTQILo86p2jWefRjeDoBlBokAnP3bKUK/CYYV0+I/tgV1C2tHBgarM3xiZ/acEayY22AV9iMsv6Ed7zY3FF5PxJk0u0ioEqJzAQhFeG5oclLHVwj5NoHoqcf4Q9rXzW0Ng0IxWzh3dBlj7M8Wuxwi2A96KSZUex1+xkJiKgawVyB+Ay6UH9F2xY1JE8shWg/Yd2/tP9+lc/hQzTaQjEUIasa4BUT91DU1ZWeHo30UFGBAGB987t8CpxJGGctTbm7lzlGwuTk8Yj8YPR+GjNgfxvpfTP5ziOFf507rk/UCY3IhiSzVwHrQfYVdKerY+KUGhkR1MiCddgczY4oX2i3WNtXG8qJtkx4zrONZ/OFEdWo2zmVY7A6/+/1uqcK5FMiugEPvkWuZ0sv4wjGmoEmrS1gdDGKsQDTiU+SlgyH19f9F12Nj9vL08MCyZdlaKW2jRxkTAASu9J2Qc3I0Hpz14neOOuAJ2YZLODjccOuP4svsk/YIf4z3gFeZkUwTPyd6NrY5LjU8JvF2p6L8kMrL6QfD2Fe5xJBQfgQsiNZ4hLtloBF9MWBLGKG/00bzjZ1W4snMP/0="

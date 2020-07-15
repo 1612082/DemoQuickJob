@@ -12,10 +12,17 @@ import Security
 import  Alamofire
 var status = false
 public let NameNotification = Notification.Name("NoficationCenterTokenReceived")
-class TestViewController: UIViewController {
+class PayMomoController: UIViewController {
+    
+    //MARK: IBOUTLETS
+    @IBOutlet weak var nameApply: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var buttonPay: UIButton!
+    @IBOutlet weak var lblMessage: UILabel!
+    //MARK: OTHER VARIABLES
     var hashFromAPI = ""
     let paymentinfo = NSMutableDictionary()
-    let buttonPay = UIButton()
+//    let buttonPay = UIButton()
     var timestamp = NSNumber()
     var partnerRefId:String = ""
     var number:String = ""
@@ -23,8 +30,8 @@ class TestViewController: UIViewController {
     var idApplicant = 90
     var amount = 11000
     var MomoVM = MomoViewModel()
-    @IBOutlet weak var lblMessage: UILabel!
-    
+    var nameApplicant:String?
+    //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,25 +51,31 @@ class TestViewController: UIViewController {
     
     //MARK: - SETUP UI
     func setupUI() {
+        nameApply.text = nameApplicant!
+        price.text = "\(amount) VND"
         //STEP 3: INIT LAYOUT - ADD BUTTON PAYMENT VIA MOMO
-        let buttonPay = UIButton()
-        buttonPay.frame = CGRect(x: 20, y: 200, width: 260, height: 40)
-        
         // Button title: ENGLISH = MoMo Wallet , VIETNAMESE = Ví MoMo
-        buttonPay.setTitle("Pay Via MoMo Wallet", for: .normal)
+        buttonPay.setTitle("Ví MoMo", for: .normal)
         buttonPay.setTitleColor(UIColor.white, for: .normal)
         buttonPay.titleLabel!.font = UIFont.systemFont(ofSize: 15)
         buttonPay.backgroundColor = UIColor.purple
-        // Add Button Action to OPEN MOMO APPs
-        buttonPay.addTarget(self, action: #selector(self.gettoken), for: .touchUpInside) //see @objc func gettoken()
         self.view.addSubview(buttonPay)
+        // Add Button Action to OPEN MOMO APPs
+//        buttonPay.translatesAutoresizingMaskIntoConstraints = false
+//        buttonPay.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
+//        buttonPay.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
+//        buttonPay.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -70).isActive = true
+//        buttonPay.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        buttonPay.titleLabel?.adjustsFontSizeToFitWidth = true
+        buttonPay.layer.cornerRadius = 20
+        buttonPay.addTarget(self, action: #selector(self.gettoken), for: .touchUpInside) //see @objc func gettoken()
     }
     
     @objc func gettoken() {
         timestamp = Int64((NSDate().timeIntervalSince1970 * 1000).rounded()) as NSNumber
         MomoVM.requestId = Int(truncating: timestamp)
         paymentinfo["merchantcode"] = "MOMODJRT20200622"
-        paymentinfo["merchantname"] = "my app"
+        paymentinfo["merchantname"] = "STeam-Coop"
         paymentinfo["merchantnamelabel"] = "Service"
         paymentinfo["orderId"] = "\(idApplicant)" + "-F2L" + "\(timestamp)"
         partnerRefId = "\(idApplicant)" + "-F2L" + "\(timestamp)"
@@ -70,8 +83,8 @@ class TestViewController: UIViewController {
 //        partnerRefId = "102-F2L1594318499214"
         paymentinfo["amount"] = self.amount
         paymentinfo["fee"] = 0
-        paymentinfo["description"] = "Thanh toán vé xem phim"
-        paymentinfo["username"] = "MOMODJRT20200622"
+        paymentinfo["description"] = "Thanh toán tiền công"
+        paymentinfo["username"] = nameApplicant!
         paymentinfo["appScheme"] = "momodjrt20200622"
         
         MoMoPayment.createPaymentInformation(info: paymentinfo)
@@ -82,7 +95,7 @@ class TestViewController: UIViewController {
     @objc func NoficationCenterTokenReceived(notif: NSNotification) {
         //Token Replied - Call Payment to MoMo Server
         print("::MoMoPay Log::Received Token Replied::\(notif.object!)")
-        lblMessage.text = "RequestToken response:\n  \(notif.object as Any)"
+        print("RequestToken response:\n  \(notif.object as Any)")
         
         let response:NSMutableDictionary = notif.object! as! NSMutableDictionary
 
@@ -100,7 +113,7 @@ class TestViewController: UIViewController {
  
         }
         else{
-            lblMessage.text = "RequestToken response:\n \(notif.object!) | Fail token. Please check input params "
+            print("RequestToken response:\n \(notif.object!) | Fail token. Please check input params ")
         }
     }
     
@@ -143,6 +156,23 @@ class TestViewController: UIViewController {
                                     }
                                     if model.status == 0{
                                         print("Success confirm")
+                                        self.MomoVM.idApplicant = "\(self.idApplicant)"
+                                        self.MomoVM.AcceptApplicant { (model) in
+                                            guard let model = model else{
+                                                return
+                                            }
+                                            if model.code == "202"{
+                                                let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+                                                self.present(alert, animated: true, completion: nil)
+                                                self.MomoVM.showAlert( "Chấp nhận ứng viên thành công", alert)
+                                                self.navigationController?.popViewController(animated: true)
+                                            }else{
+                                                let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+                                                self.present(alert, animated: true, completion: nil)
+                                                self.MomoVM.showAlert( "Chấp nhận ứng viên thất bại \(model.code)", alert)
+                                            }
+                                            
+                                        }
                                     }else{
                                         print(model)
                                     }
