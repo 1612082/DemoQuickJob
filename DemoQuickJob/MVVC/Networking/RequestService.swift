@@ -53,7 +53,9 @@ struct RequestService {
         }
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         do {
-            request.httpBody   = try JSONSerialization.data(withJSONObject: parameters as Any)
+            if parameters != nil{
+                request.httpBody   = try JSONSerialization.data(withJSONObject: parameters as Any)
+            }
         } catch let error {
             print("Error : \(error.localizedDescription)")
         }

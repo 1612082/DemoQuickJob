@@ -17,7 +17,11 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var lbStar: UILabel!
     
     //MARK: OTHER VARIABLES
-    
+    var ReviewReportVM = ReviewAndReportViewModel()
+    var CommonVM = CommonViewModel()
+    var status:Bool? //true from employer, false from employee
+    var idApplicant:String?
+    var idJob:String?
     //MARK: VIEW LIFE CYCLE
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -44,7 +48,7 @@ class ReviewViewController: UIViewController {
     //MARK: - SETUP UI
     func setupUI() {
         cosMosView.settings.updateOnTouch = true
-        cosMosView.settings.fillMode = .precise
+        cosMosView.settings.fillMode = .full
         btn.layer.cornerRadius = 20
     }
     
@@ -62,8 +66,42 @@ class ReviewViewController: UIViewController {
     //MARK: - BUTTON ACTIONS
     
     @IBAction func sendReview(_ sender: Any) {
-        print(reviewText.text)
-        print(cosMosView.rating)
+        self.ReviewReportVM.rating = Int.init(cosMosView.rating)
+        self.ReviewReportVM.feedback = reviewText.text
+        self.ReviewReportVM.id_applicant = idApplicant!
+        self.ReviewReportVM.id_job = idJob!
+        if status!{
+            self.ReviewReportVM.reviewFromEmployer { (model) in
+                guard let model = model else{
+                    return
+                }
+                if model.code == "200"{
+                    self.alertReview("Review thành công")
+                    self.navigationController?.popViewController(animated: true)
+                    
+                }else{
+                    self.alertReview("Review không thành công \(model.code)")
+                }
+            }
+        }else{
+            self.ReviewReportVM.reviewFromEmployee { (model) in
+                guard let model = model else{
+                    return
+                }
+                if model.code == "200"{
+                    self.alertReview("Review thành công")
+                    self.navigationController?.popViewController(animated: true)
+                    
+                }else{
+                    self.alertReview("Review không thành công \(model.code)")
+                }
+            }
+        }
+    }
+    func alertReview(_ message:String){
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        self.CommonVM.showAlert(message, alert)
     }
     
 }

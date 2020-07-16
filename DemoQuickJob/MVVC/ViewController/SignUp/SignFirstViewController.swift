@@ -22,7 +22,8 @@ class SignFirstViewController: UIViewController {
     var userSignup:USERSIGNUP = USERSIGNUP(email: "", password: "", dob: "", fullname: "", dial: "", gender: -1, addr: "", confirm: "m")
     let signupVM = SignupViewModel()
     var LoginVM = LobbyViewModel()
-    
+    var GetAddrVM = GetAddrViewModel()
+    var commonVC = CommonViewModel()
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,16 @@ class SignFirstViewController: UIViewController {
     }
     //MARK: - SETUP VAR
     func setupVar() {
-        
+        if listProvince.count == 0 {
+            GetAddrVM.GetProvince { (model) in
+                guard let model = model else{
+                    return
+                }
+                if model.code == 200{
+                    listProvince = model.data
+                }
+            }
+        }
     }
     
     //MARK: - SETUP UI
@@ -55,7 +65,7 @@ class SignFirstViewController: UIViewController {
         } else{
             let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-            self.signupVM.showAlert( "Phải điền đày đủ thông tin", alert)
+            self.commonVC.showAlert( "Phải điền đày đủ thông tin", alert)
         }
         
     }

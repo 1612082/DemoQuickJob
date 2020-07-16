@@ -19,6 +19,8 @@ class DetailJTimeViewController: UIViewController {
     var CurrentJob:TYPEJOBDETAIL?
     var JobDetailVM = JobDetailViewModel()
     var ApplicantVM = ApplyJobViewModel()
+    var CommonVC = CommonViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,19 +70,19 @@ class DetailJTimeViewController: UIViewController {
                // the alert view
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.ApplicantVM.showAlert( "Đăng ký thành công", alert)
+                self.CommonVC.showAlert( "Đăng ký thành công", alert)
                 self.navigationController?.popToRootViewController(animated: true)
 
             }else if model.code == "-202"{
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.ApplicantVM.showAlert( "Đăng ký thất bại", alert)
+                self.CommonVC.showAlert( "Đăng ký thất bại", alert)
 
                
             }else{
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.ApplicantVM.showAlert( "Lỗi hệ thống \(model.code)", alert)
+                self.CommonVC.showAlert( "Lỗi hệ thống \(model.code)", alert)
             }
         }
     }

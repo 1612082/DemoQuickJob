@@ -43,6 +43,9 @@
 		B243E0F624534F8B00408060 /* listAuctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B243E0F524534F8B00408060 /* listAuctionCell.swift */; };
 		B243E0F824534F9F00408060 /* detailOwnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B243E0F724534F9F00408060 /* detailOwnerCell.swift */; };
 		B243E0FC2453551900408060 /* imgdetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B243E0FB2453551900408060 /* imgdetailItem.swift */; };
+		B263A14024C0A8CF00C7C119 /* ReviewAndReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A13F24C0A8CF00C7C119 /* ReviewAndReportViewModel.swift */; };
+		B263A14224C0A95200C7C119 /* GetAddrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A14124C0A95200C7C119 /* GetAddrViewModel.swift */; };
+		B263A14424C0AADA00C7C119 /* APIReviewReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A14324C0AADA00C7C119 /* APIReviewReport.swift */; };
 		B26E233F244A15BB003EA66A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E233E244A15BB003EA66A /* AppDelegate.swift */; };
 		B26E2341244A15BB003EA66A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2340244A15BB003EA66A /* SceneDelegate.swift */; };
 		B26E2343244A15BB003EA66A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2342244A15BB003EA66A /* LoginViewController.swift */; };
@@ -186,6 +189,9 @@
 		B243E0F524534F8B00408060 /* listAuctionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listAuctionCell.swift; sourceTree = "<group>"; };
 		B243E0F724534F9F00408060 /* detailOwnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailOwnerCell.swift; sourceTree = "<group>"; };
 		B243E0FB2453551900408060 /* imgdetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imgdetailItem.swift; sourceTree = "<group>"; };
+		B263A13F24C0A8CF00C7C119 /* ReviewAndReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAndReportViewModel.swift; sourceTree = "<group>"; };
+		B263A14124C0A95200C7C119 /* GetAddrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAddrViewModel.swift; sourceTree = "<group>"; };
+		B263A14324C0AADA00C7C119 /* APIReviewReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReviewReport.swift; sourceTree = "<group>"; };
 		B26E233B244A15BB003EA66A /* DemoQuickJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoQuickJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26E233E244A15BB003EA66A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B26E2340244A15BB003EA66A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -402,6 +408,7 @@
 				B2E8D60324A5161100D1C10E /* APIManageJob.swift */,
 				B2E8D60924A5DB2A00D1C10E /* APIInfoEmployer.swift */,
 				B28A077424B78EC4002056F1 /* APIMomo.swift */,
+				B263A14324C0AADA00C7C119 /* APIReviewReport.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -444,6 +451,8 @@
 				B2E8D60B24A5EEAD00D1C10E /* InforEmployerViewModel.swift */,
 				B28A077624B78FAF002056F1 /* MomoViewModel.swift */,
 				B28A079824BCBC78002056F1 /* CommonViewModel.swift */,
+				B263A13F24C0A8CF00C7C119 /* ReviewAndReportViewModel.swift */,
+				B263A14124C0A95200C7C119 /* GetAddrViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -981,11 +990,13 @@
 				B26E2343244A15BB003EA66A /* LoginViewController.swift in Sources */,
 				B2FC7C3A2485567B001EA2A3 /* JobDetailViewModel.swift in Sources */,
 				B29A78322489CBFD00D6D1BB /* SignThirdViewController.swift in Sources */,
+				B263A14424C0AADA00C7C119 /* APIReviewReport.swift in Sources */,
 				B26E2353244A176F003EA66A /* TabarViewController.swift in Sources */,
 				B2D4E49B2457473A0006AF39 /* cateJobCell.swift in Sources */,
 				B2C3235E2472FD0D00584C2C /* highFilterViewController.swift in Sources */,
 				B2D4E495245746CD0006AF39 /* CateJobItem.swift in Sources */,
 				B243E0F224534F0700408060 /* detailCell.swift in Sources */,
+				B263A14024C0A8CF00C7C119 /* ReviewAndReportViewModel.swift in Sources */,
 				B2FDA4C5244AB3AD00A86DE3 /* footerCell.swift in Sources */,
 				B235D0FF24B1ABF9009C257A /* ContentChatCell.swift in Sources */,
 				B243E0F624534F8B00408060 /* listAuctionCell.swift in Sources */,
@@ -1057,6 +1068,7 @@
 				B2FDA4CB244AEC5900A86DE3 /* MoreCell.swift in Sources */,
 				B26E2341244A15BB003EA66A /* SceneDelegate.swift in Sources */,
 				B224FFF0247A38C600D1BCC7 /* RequestService.swift in Sources */,
+				B263A14224C0A95200C7C119 /* GetAddrViewModel.swift in Sources */,
 				B26E2368244A34B6003EA66A /* BannerCell.swift in Sources */,
 				B2E8D62024A8B9D800D1C10E /* ManageApplicantViewController.swift in Sources */,
 				B29A784D24909F4600D6D1BB /* EditImageCell.swift in Sources */,

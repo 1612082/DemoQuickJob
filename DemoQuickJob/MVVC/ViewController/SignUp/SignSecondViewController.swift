@@ -9,7 +9,7 @@
 import UIKit
 
 class SignSecondViewController: UIViewController, UITextFieldDelegate {
-
+    
     //MARK: IBOUTLETS
     @IBOutlet weak var btn: UIButton!    
     @IBOutlet weak var scrollView: UIScrollView!
@@ -17,23 +17,24 @@ class SignSecondViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tfProvice: UITextField!
     @IBOutlet weak var tfDistric: UITextField!
     @IBOutlet weak var tfWard: UITextField!
+    
     //MARK: OTHER VARIABLES
     var caseAddr:Int = 0
     var datePicker : UIDatePicker!
-    var idProvice:Int = 0
-    var idDistrict:Int = 0
     var LoginVM = LobbyViewModel()
-    var listDistictFilter:[DISTRICT] = []
     var userSignup:USERSIGNUP?
     let signupVM = SignupViewModel()
+    var listDistrict:[DISTRICTGHN] = []
+    var listWard:[WARDGHN] = []
+    var GetAddrVM = GetAddrViewModel()
     
     
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-
+        
         setupVar()
         setupUI()
     }
@@ -58,7 +59,7 @@ class SignSecondViewController: UIViewController, UITextFieldDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         tfDob.text = dateFormatter.string(from: datePicker.date)
-
+        
     }
     
     @IBAction func next(_ sender: Any) {
@@ -80,26 +81,34 @@ class SignSecondViewController: UIViewController, UITextFieldDelegate {
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         switch textField {
         case tfProvice:
-            for i in arrProvice {
-                let location = UIAlertAction(title: i.name, style: .default) { (action) in
-                    self.tfProvice.text = i.name
-                    self.idProvice = i.id
-                    self.listDistictFilter = listDtrict.filter{ $0.ProvinceID == i.id}
+            for i in listProvince {
+                let location = UIAlertAction(title: i.ProvinceName, style: .default) { (action) in
+                    self.tfProvice.text = i.ProvinceName
+                    self.GetAddrVM.provinceID = i.ProvinceID
+                    //                    self.listDistictFilter = listDtrict.filter{ $0.ProvinceID == i.id}
+                    self.GetAddrVM.GetDistrict {  (model) in
+                        guard let model = model else{
+                            return
+                        }
+                        if model.code == 200{
+                            self.listDistrict = model.data
+                        }
+                        
+                    }
                 }
                 actionSheet.addAction(location)
             }
         case tfDistric:
-            for i in self.listDistictFilter {
+            for i in self.listDistrict {
                 let location = UIAlertAction(title: i.DistrictName, style: .default) { (action) in
                     self.tfDistric.text = i.DistrictName
-                    self.idDistrict = i.DistrictID
-                    self.LoginVM.DistrictID = i.DistrictID
-                    self.LoginVM.GetWard { (model) in
-                         guard let model = model else {
+                    self.GetAddrVM.districtID = i.DistrictID
+                    self.GetAddrVM.GetWard { (model) in
+                        guard let model = model else {
                             return
                         }
-                        if model.code == 1{
-                            listWard = model.data.Wards
+                        if model.code == 200{
+                            self.listWard = model.data
                         }
                     }
                 }
@@ -117,5 +126,6 @@ class SignSecondViewController: UIViewController, UITextFieldDelegate {
         actionSheet.addAction(cancel)
         present(actionSheet, animated: true, completion: nil)
     }
-
+    
+    
 }

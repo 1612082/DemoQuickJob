@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 class LoginViewController: UIViewController {
-
+    
     //MARK: IBOUTLETS
     
     @IBOutlet weak var loginBtn: UIButton!
@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
                 return
             }
             if model.code == "101"{
-//                lay token va luu token
+                //                lay token va luu token
                 UserDefaults.standard.set(model.data?.token, forKey: "token")
                 currentUser = model.data?.user
                 token = model.data!.token
@@ -95,7 +95,7 @@ class LoginViewController: UIViewController {
                     alert.dismiss(animated: true, completion: nil)
                 }
             }
-
+            
         }
     }
     
@@ -107,39 +107,23 @@ class LoginViewController: UIViewController {
     
     //MARK: - FILL AND BIND DATA
     func fillData() {
-        LoginVM.GetDistrict { (model) in
-            guard let model = model else {
-                return
-            }
-            if model.code == 1 {
-                listDtrict = model.data
-            }
-        }
-        LoginVM.GetWard { (model) in
-             guard let model = model else {
-                return
-            }
-            if model.code == 1{
-                listWard = model.data.Wards
-            }
-        }
+        
     }
-       
+    
     //MARK: - BUTTON ACTIONS
     
     @IBAction func Login(_ sender: Any) {
-//        self.LoginVM.email = tfUsername.text!
-//        self.LoginVM.password = tfPass.text!
-//        login()
-
-        let vc = Home_Storyboard.instantiateViewController(withIdentifier: "ReviewViewController" ) as! ReviewViewController
-        navigationController?.pushViewController(vc, animated: true)
+        self.LoginVM.email = tfUsername.text!
+        self.LoginVM.password = tfPass.text!
+        login()
+        
+        
     }
     @IBAction func Signup(_ sender: Any) {
         let signupFirstVC = Main_Storyboard.instantiateViewController(withIdentifier: "SignFirstViewController") as! SignFirstViewController
         navigationController?.pushViewController(signupFirstVC, animated: true)
     }
     
-
+    
 }
 

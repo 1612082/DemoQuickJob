@@ -31,6 +31,7 @@ class PayMomoController: UIViewController {
     var amount = 11000
     var MomoVM = MomoViewModel()
     var nameApplicant:String?
+    var CommonVC = CommonViewModel()
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,12 +165,12 @@ class PayMomoController: UIViewController {
                                             if model.code == "202"{
                                                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                                                 self.present(alert, animated: true, completion: nil)
-                                                self.MomoVM.showAlert( "Chấp nhận ứng viên thành công", alert)
+                                                self.CommonVC.showAlert( "Chấp nhận ứng viên thành công", alert)
                                                 self.navigationController?.popViewController(animated: true)
                                             }else{
                                                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                                                 self.present(alert, animated: true, completion: nil)
-                                                self.MomoVM.showAlert( "Chấp nhận ứng viên thất bại \(model.code)", alert)
+                                                self.CommonVC.showAlert( "Chấp nhận ứng viên thất bại \(model.code)", alert)
                                             }
                                             
                                         }

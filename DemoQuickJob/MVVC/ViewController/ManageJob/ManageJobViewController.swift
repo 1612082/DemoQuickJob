@@ -19,6 +19,7 @@ class ManageJobViewController: UIViewController {
     var allApplicant:[JobAllApply?] = []
     var allJobPost:[JobAllPost?] = []
     var flag = ""
+    var CommonVC = CommonViewModel()
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -257,13 +258,13 @@ extension ManageJobViewController:UITableViewDataSource, UITableViewDelegate{
             if model.code == "202"{
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.ManageVM.showAlert( "Xoá thành công", alert)
+                self.CommonVC.showAlert( "Xoá thành công", alert)
                 self.allApplicant.remove(at: i)
                 self.tableView.reloadData()
             } else {
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.ManageVM.showAlert( "Xoá thất bại \(model.code)", alert)
+                self.CommonVC.showAlert( "Xoá thất bại \(model.code)", alert)
             }
         }
     }
@@ -277,13 +278,13 @@ extension ManageJobViewController:UITableViewDataSource, UITableViewDelegate{
             if model.code == "202"{
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.ManageVM.showAlert( "Ngưng thành công", alert)
+                self.CommonVC.showAlert( "Ngưng thành công", alert)
                 self.allApplicant.remove(at: i)
                 self.tableView.reloadData()
             } else {
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.ManageVM.showAlert( "Ngưng thất bại \(model.code)", alert)
+                self.CommonVC.showAlert( "Ngưng thất bại \(model.code)", alert)
             }
         }
     }
@@ -297,13 +298,13 @@ extension ManageJobViewController:UITableViewDataSource, UITableViewDelegate{
             if model.code == "202"{
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.ManageVM.showAlert( "Xoá thành công", alert)
+                self.CommonVC.showAlert( "Xoá thành công", alert)
                 self.allApplicant.remove(at: i)
                 self.tableView.reloadData()
             } else {
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.ManageVM.showAlert( "Xoá thất bại \(model.code)", alert)
+                self.CommonVC.showAlert( "Xoá thất bại \(model.code)", alert)
             }
         }
     }

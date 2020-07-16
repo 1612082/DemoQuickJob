@@ -19,7 +19,8 @@ class SignThirdViewController: UIViewController {
     //MARK: OTHER VARIABLES
     var userSignup:USERSIGNUP?
     var signupVM = SignupViewModel()
-    
+    var CommonVC = CommonViewModel()
+
     
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
@@ -53,25 +54,25 @@ class SignThirdViewController: UIViewController {
                     if model.code == "102"{
                         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                         self.present(alert, animated: true, completion: nil)
-                        self.signupVM.showAlert( "Tạo công việc mới thành công", alert)
+                        self.CommonVC.showAlert( "Tạo công việc mới thành công", alert)
                         self.navigationController?.popToRootViewController(animated: true)
                         
                     } else {
                         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                         self.present(alert, animated: true, completion: nil)
-                        self.signupVM.showAlert( "Tạo tài khoản mới thất bại \(model.code)", alert)
+                        self.CommonVC.showAlert( "Tạo tài khoản mới thất bại \(model.code)", alert)
                     }
                 }
             }else{
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.signupVM.showAlert( "Mật khẩu không trùng khớp", alert)
+                self.CommonVC.showAlert( "Mật khẩu không trùng khớp", alert)
             }
             
         } else {
             let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-            self.signupVM.showAlert( "Phải điền đày đủ thông tin", alert)
+            self.CommonVC.showAlert( "Phải điền đày đủ thông tin", alert)
         }
         
     }

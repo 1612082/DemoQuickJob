@@ -20,8 +20,11 @@ class EditProfileViewController: UIViewController {
     var img:[UIImage] = []
     var idProvice:Int = 0
     var idDistrict:Int = 0
-    var listDistictFilter:[DISTRICT] = []
+    var listDistictFilter:[DISTRICTGHN] = []
     var LoginVM = LobbyViewModel()
+    var GetAddrVM = GetAddrViewModel()
+    var listDistrict:[DISTRICTGHN] = []
+    var listWard:[WARDGHN] = []
     //MARK: VIEW LIFE CYCLE
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -80,7 +83,7 @@ class EditProfileViewController: UIViewController {
         }
     }
     
-
+    
 }
 extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -136,7 +139,7 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate{
                 cell.bindData(CurrentProfile!.dob)
             default:
                 cell.bindData(CurrentProfile!.email)
-
+                
             }
             cell.isUserInteractionEnabled = self.isEdit
             return cell
@@ -154,11 +157,19 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate{
                     let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
                     switch id {
                     case 0:
-                        for i in arrProvice {
-                            let location = UIAlertAction(title: i.name, style: .default) { (action) in
-                                cell.changeProvice(i.name)
-                                self.idProvice = i.id
-                                self.listDistictFilter = listDtrict.filter{ $0.ProvinceID == i.id}
+                        for i in listProvince {
+                            let location = UIAlertAction(title: i.ProvinceName, style: .default) { (action) in
+                                cell.changeProvice(i.ProvinceName)
+                                self.GetAddrVM.provinceID = i.ProvinceID
+                                self.GetAddrVM.GetDistrict {  (model) in
+                                    guard let model = model else{
+                                        return
+                                    }
+                                    if model.code == 200{
+                                        self.listDistrict = model.data
+                                    }
+                                    
+                                }
                             }
                             actionSheet.addAction(location)
                         }
@@ -166,22 +177,21 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate{
                         for i in self.listDistictFilter {
                             let location = UIAlertAction(title: i.DistrictName, style: .default) { (action) in
                                 cell.changeDistrict(i.DistrictName)
-                                
                                 self.idDistrict = i.DistrictID
-                                self.LoginVM.DistrictID = i.DistrictID
-                                self.LoginVM.GetWard { (model) in
-                                     guard let model = model else {
+                                self.GetAddrVM.districtID = i.DistrictID
+                                self.GetAddrVM.GetWard { (model) in
+                                    guard let model = model else {
                                         return
                                     }
                                     if model.code == 1{
-                                        listWard = model.data.Wards
+                                        self.listWard = model.data
                                     }
                                 }
                             }
                             actionSheet.addAction(location)
                         }
                     default:
-                        for i in listWard {
+                        for i in self.listWard {
                             let location = UIAlertAction(title: i.WardName, style: .default) { (action) in
                                 cell.changeWard(i.WardName)
                                 

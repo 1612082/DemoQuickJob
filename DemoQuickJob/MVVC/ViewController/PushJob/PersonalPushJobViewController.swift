@@ -29,6 +29,10 @@ class PersonalPushJobViewController: UIViewController {
     var idJobEdit:Int = -1
     var isEdit = false
     var dataEdit:TYPEJOBDETAIL?
+    var CommonVC = CommonViewModel()
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         doneBtn.layer.cornerRadius = 20
@@ -106,19 +110,19 @@ class PersonalPushJobViewController: UIViewController {
             if PushJobViewModel.result!.title == ""{
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.PushJobVM.showAlert( "Phải có tên công việc", alert)
+                self.CommonVC.showAlert( "Phải có tên công việc", alert)
             }else if PushJobViewModel.result!.salary == ""{
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.PushJobVM.showAlert( "Phải có ngân sách cho công việc", alert)
+                self.CommonVC.showAlert( "Phải có ngân sách cho công việc", alert)
             }else if PushJobViewModel.result!.salary == ""{
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.PushJobVM.showAlert( "Phải có ngân sách cho công việc", alert)
+                self.CommonVC.showAlert( "Phải có ngân sách cho công việc", alert)
             }else if PushJobViewModel.result!.start_date == ""{
                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                self.PushJobVM.showAlert( "Phải có ngày làm việc", alert)
+                self.CommonVC.showAlert( "Phải có ngày làm việc", alert)
             }else{
                 PushJobVM.passData(PushJobViewModel.result!)
                 PushJobVM.pushJob { (model) in
@@ -128,13 +132,13 @@ class PersonalPushJobViewController: UIViewController {
                     if model.code == "201"{
                         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                         self.present(alert, animated: true, completion: nil)
-                        self.PushJobVM.showAlert( "Tạo công việc mới thành công", alert)
+                        self.CommonVC.showAlert( "Tạo công việc mới thành công", alert)
                         self.navigationController?.popToRootViewController(animated: true)
                         
                     } else {
                         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                         self.present(alert, animated: true, completion: nil)
-                        self.PushJobVM.showAlert( "Tạo công việc mới thất bại \(model.code)", alert)
+                        self.CommonVC.showAlert( "Tạo công việc mới thất bại \(model.code)", alert)
                     }
                 }
             }

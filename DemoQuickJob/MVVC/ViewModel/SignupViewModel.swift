@@ -75,13 +75,5 @@ class SignupViewModel {
         self.address = data.addr
         self.confirm = data.confirm
     }
-    func showAlert(_ s:String, _ alert:UIAlertController){
-        alert.message = s
-        // change to desired number of seconds (in this case 5 seconds)
-        let when = DispatchTime.now() + 2
-        DispatchQueue.main.asyncAfter(deadline: when){
-            // your code with delay
-            alert.dismiss(animated: true, completion: nil)
-        }
-    }
+
 }

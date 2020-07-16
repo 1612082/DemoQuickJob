@@ -153,7 +153,7 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         if indexPath.section == 1{
-            let Accept = UITableViewRowAction(style: .default, title: "Chấp nhận") { action, index in
+            let Accept = UITableViewRowAction(style: .normal, title: "Chấp nhận") { action, index in
                 let MomoVC = Main_Storyboard.instantiateViewController(withIdentifier: "PayMomoController") as! PayMomoController
                 MomoVC.idApplicant = self.applying.applicantsList[indexPath.row]?.id_applicant as! Int
                 MomoVC.amount = self.applying.applicantsList[indexPath.row]?.proposed_price as! Int
