@@ -37,16 +37,16 @@ class HomeViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
-        SearchTopProduct.job_type = "true"
-        SearchTopProduct.Search { (model) in
-            guard let model = model else {
-                return
-            }
-            if model.code == "200"{
-                listProductJob = model.data.jobList
-                self.tableView.reloadData()
-            }
-        }
+//        SearchTopProduct.job_type = "true"
+//        SearchTopProduct.Search { (model) in
+//            guard let model = model else {
+//                return
+//            }
+//            if model.code == "200"{
+//                listProductJob = model.data.jobList
+//                self.tableView.reloadData()
+//            }
+//        }
     }
     
     //MARK: - SETUP UI

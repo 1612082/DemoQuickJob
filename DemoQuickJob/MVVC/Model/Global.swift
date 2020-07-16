@@ -63,3 +63,5 @@ public struct dataResponse:Codable{
 }
 
 
+//ADDR
+var listProvince:[PROVINCEGHN] = []

@@ -53,7 +53,11 @@ struct RequestService {
         }
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         do {
-            request.httpBody   = try JSONSerialization.data(withJSONObject: parameters as Any)
+            if parameters != nil
+            {
+                request.httpBody   = try JSONSerialization.data(withJSONObject: parameters as Any)
+            }
+            
         } catch let error {
             print("Error : \(error.localizedDescription)")
         }
@@ -61,20 +65,19 @@ struct RequestService {
             switch (response.result){
             case .success(let data):
                 do {
+                    print(parameters, headers)
                     let json = try JSONDecoder.init().decode(objectType.self, from: data!)
                     // tra gia ra ben ngoai ham bang completion handeler
-                    print(parameters)
-                    print(headers)
+                    
                     completion(true, json, nil)
                 } catch {
                     //parse json khong dc
-                    
-                    print(headers)
-                    print(parameters)
+                    print("Parse ko dc")
+                    print(parameters, headers)
                     completion (false,data,nil)
                 }
             case .failure(let error):
-                print("res khong tra ve dc")
+                print("server khong tra ve du lieu")
                 completion(false,nil,error)
             }
         }

@@ -146,6 +146,7 @@
 		B2FDA4CB244AEC5900A86DE3 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA4CA244AEC5900A86DE3 /* MoreCell.swift */; };
 		BA0DA0C424BEB20200905893 /* ReviewAndReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0DA0C324BEB20200905893 /* ReviewAndReportViewModel.swift */; };
 		BA0DA0C624BEB28100905893 /* APIReviewReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0DA0C524BEB28100905893 /* APIReviewReport.swift */; };
+		BA3BB7B324C009D3009AD62F /* GetAddrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3BB7B224C009D3009AD62F /* GetAddrViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -293,6 +294,7 @@
 		B2FDA4CA244AEC5900A86DE3 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 		BA0DA0C324BEB20200905893 /* ReviewAndReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAndReportViewModel.swift; sourceTree = "<group>"; };
 		BA0DA0C524BEB28100905893 /* APIReviewReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReviewReport.swift; sourceTree = "<group>"; };
+		BA3BB7B224C009D3009AD62F /* GetAddrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAddrViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,6 +452,7 @@
 				B28A077624B78FAF002056F1 /* MomoViewModel.swift */,
 				B28A079824BCBC78002056F1 /* CommonViewModel.swift */,
 				BA0DA0C324BEB20200905893 /* ReviewAndReportViewModel.swift */,
+				BA3BB7B224C009D3009AD62F /* GetAddrViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1037,6 +1040,7 @@
 				B235D0FC24B1ABD6009C257A /* ChatCell.swift in Sources */,
 				B224FFFA247B815900D1BCC7 /* dateWorkingCell.swift in Sources */,
 				B2E8D61524A5F57900D1C10E /* InfoPublicThirdCell.swift in Sources */,
+				BA3BB7B324C009D3009AD62F /* GetAddrViewModel.swift in Sources */,
 				B29A785524953B0400D6D1BB /* PayMomoController.swift in Sources */,
 				B2E8D60F24A5F52000D1C10E /* InfoPublicViewController.swift in Sources */,
 				B29A786924A0672700D6D1BB /* ApplyModel.swift in Sources */,
