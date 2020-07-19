@@ -46,6 +46,7 @@
 		B263A14024C0A8CF00C7C119 /* ReviewAndReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A13F24C0A8CF00C7C119 /* ReviewAndReportViewModel.swift */; };
 		B263A14224C0A95200C7C119 /* GetAddrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A14124C0A95200C7C119 /* GetAddrViewModel.swift */; };
 		B263A14424C0AADA00C7C119 /* APIReviewReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A14324C0AADA00C7C119 /* APIReviewReport.swift */; };
+		B263A14624C34F1F00C7C119 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A14524C34F1F00C7C119 /* ReportViewController.swift */; };
 		B26E233F244A15BB003EA66A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E233E244A15BB003EA66A /* AppDelegate.swift */; };
 		B26E2341244A15BB003EA66A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2340244A15BB003EA66A /* SceneDelegate.swift */; };
 		B26E2343244A15BB003EA66A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2342244A15BB003EA66A /* LoginViewController.swift */; };
@@ -70,6 +71,7 @@
 		B27E60D12471AE6700B3C18B /* BudgetPushJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E60D02471AE6700B3C18B /* BudgetPushJobCell.swift */; };
 		B27E60D32471B28800B3C18B /* FilterPushJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E60D22471B28800B3C18B /* FilterPushJobCell.swift */; };
 		B27E60D52471B2C600B3C18B /* CatePushJobItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E60D42471B2C600B3C18B /* CatePushJobItem.swift */; };
+		B286E03824C4D08900C731D6 /* ReviewReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286E03724C4D08900C731D6 /* ReviewReportModel.swift */; };
 		B28A077524B78EC4002056F1 /* APIMomo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A077424B78EC4002056F1 /* APIMomo.swift */; };
 		B28A077724B78FAF002056F1 /* MomoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A077624B78FAF002056F1 /* MomoViewModel.swift */; };
 		B28A079924BCBC78002056F1 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A079824BCBC78002056F1 /* CommonViewModel.swift */; };
@@ -192,6 +194,7 @@
 		B263A13F24C0A8CF00C7C119 /* ReviewAndReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAndReportViewModel.swift; sourceTree = "<group>"; };
 		B263A14124C0A95200C7C119 /* GetAddrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAddrViewModel.swift; sourceTree = "<group>"; };
 		B263A14324C0AADA00C7C119 /* APIReviewReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReviewReport.swift; sourceTree = "<group>"; };
+		B263A14524C34F1F00C7C119 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B26E233B244A15BB003EA66A /* DemoQuickJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoQuickJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26E233E244A15BB003EA66A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B26E2340244A15BB003EA66A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +221,7 @@
 		B27E60D02471AE6700B3C18B /* BudgetPushJobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetPushJobCell.swift; sourceTree = "<group>"; };
 		B27E60D22471B28800B3C18B /* FilterPushJobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPushJobCell.swift; sourceTree = "<group>"; };
 		B27E60D42471B2C600B3C18B /* CatePushJobItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatePushJobItem.swift; sourceTree = "<group>"; };
+		B286E03724C4D08900C731D6 /* ReviewReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewReportModel.swift; sourceTree = "<group>"; };
 		B28A077424B78EC4002056F1 /* APIMomo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMomo.swift; sourceTree = "<group>"; };
 		B28A077624B78FAF002056F1 /* MomoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomoViewModel.swift; sourceTree = "<group>"; };
 		B28A079824BCBC78002056F1 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
@@ -432,6 +436,7 @@
 				B2E8D60124A36F3E00D1C10E /* AllPostJob.swift */,
 				B2E8D60724A5DA9300D1C10E /* InfoEmployerModel.swift */,
 				B2E8D61A24A7CE6700D1C10E /* ListCandidateModel.swift */,
+				B286E03724C4D08900C731D6 /* ReviewReportModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -733,6 +738,7 @@
 			isa = PBXGroup;
 			children = (
 				B28A079D24BE0A76002056F1 /* ReviewViewController.swift */,
+				B263A14524C34F1F00C7C119 /* ReportViewController.swift */,
 			);
 			path = ReviewAndReport;
 			sourceTree = "<group>";
@@ -1013,6 +1019,7 @@
 				B23DF1B02461175E0094DFDD /* HeaderManageItem.swift in Sources */,
 				B2C323622473064500584C2C /* ShowHighFilterItem.swift in Sources */,
 				B29A7838248A469600D6D1BB /* APIAuthentication.swift in Sources */,
+				B286E03824C4D08900C731D6 /* ReviewReportModel.swift in Sources */,
 				B27E60C124719CEB00B3C18B /* AwardCell.swift in Sources */,
 				B29A7862249A96D600D6D1BB /* SearchResultModel.swift in Sources */,
 				B2E8D60224A36F3E00D1C10E /* AllPostJob.swift in Sources */,
@@ -1033,6 +1040,7 @@
 				B2E8D5FE24A2685600D1C10E /* StateDateCell.swift in Sources */,
 				B26E2359244A17F7003EA66A /* ProfileViewController.swift in Sources */,
 				B29A785F249A8BE900D6D1BB /* SelectJobCell.swift in Sources */,
+				B263A14624C34F1F00C7C119 /* ReportViewController.swift in Sources */,
 				B23DF1A9246116F30094DFDD /* CalenderCell.swift in Sources */,
 				B29A78292489730200D6D1BB /* APIAddress.swift in Sources */,
 				B2240011247E139800D1BCC7 /* TopPostJobViewModel.swift in Sources */,

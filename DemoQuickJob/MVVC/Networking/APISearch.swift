@@ -57,7 +57,7 @@ struct APISearch {
     }
     func search(parameters:[String:Any]?, headers:HTTPHeaders?, completion:@escaping SearchHandel){
         let url = SERVER + ulrSearch
-        RequestService.shared.AFRequestWithRawData(url: url, method: .post, parameters: parameters, headers: nil, objectType: SearchReponse.self) { (result, data, error) in
+        RequestService.shared.AFRequestWithRawData(url: url, method: .post, parameters: parameters, headers: headers, objectType: SearchReponse.self) { (result, data, error) in
             if result {
                 guard let model = data as? SearchReponse else{
                     completion(nil)

@@ -35,7 +35,8 @@ class SearchViewController: UIViewController, UIActionSheetDelegate, DisplayView
     
     //MARK: - SETUP UI
     func setupUI() {
-        
+        navigationItem.title = "Tìm kiếm công việc"
+
     }
     
     //MARK: - CALL API

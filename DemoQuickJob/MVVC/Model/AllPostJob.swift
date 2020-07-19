@@ -29,7 +29,7 @@ public struct JobAllPost:Codable{
         public var area_district : Int
         public var area_province : Int
         public var benefit : String
-        public var candidates : Int
+//        public var candidates : Int
         public var deadline : String?
         public var dealable : Bool
         public var description : String
@@ -53,5 +53,6 @@ public struct JobAllPost:Codable{
         public var start_date : String?
         public var title : String
         public var vacancy : Int
+    
         
 }

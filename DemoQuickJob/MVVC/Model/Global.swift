@@ -8,8 +8,8 @@
 
 import Foundation
 import  UIKit
-let SERVER = "https://f2l-client.herokuapp.com"
-//let SERVER = "http://localhost:8000"
+//let SERVER = "https://f2l-client.herokuapp.com"
+let SERVER = "http://localhost:8000"
 let Home_Storyboard:UIStoryboard = UIStoryboard.init(name: "Home", bundle: nil)
 let Main_Storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
 let PushJob_Storyboard:UIStoryboard = UIStoryboard.init(name: "PushJob", bundle: nil)

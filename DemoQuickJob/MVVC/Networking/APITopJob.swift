@@ -19,7 +19,7 @@ class APITopJob {
     
     func GetTopPersonalJob(parameters:[String:String]?, headers:HTTPHeaders?, completion:@escaping GetTopJobHandel){
         let url = SERVER + APITopPersonalJob
-        RequestService.shared.AFRequestWith(url: url, method: .get, parameters: parameters, headers: nil, objectType: JobPostsResponse.self) { (result, data, error) in
+        RequestService.shared.AFRequestWith(url: url, method: .get, parameters: parameters, headers: headers, objectType: JobPostsResponse.self) { (result, data, error) in
             if result {
                     guard let model = data as? JobPostsResponse else{
                         completion(nil)
@@ -34,7 +34,7 @@ class APITopJob {
         }
     func GetTopCompanyJob(parameters:[String:String]?, headers:HTTPHeaders?, completion:@escaping GetTopJobHandel){
         let url = SERVER + APICompanyJob
-        RequestService.shared.AFRequestWith(url: url, method: .get, parameters: parameters, headers: nil, objectType: JobPostsResponse.self) { (result, data, error) in
+        RequestService.shared.AFRequestWith(url: url, method: .get, parameters: parameters, headers: headers, objectType: JobPostsResponse.self) { (result, data, error) in
             if result {
                 guard let model = data as? JobPostsResponse else{
                     completion(nil)

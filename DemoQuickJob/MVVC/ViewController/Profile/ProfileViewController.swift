@@ -39,7 +39,8 @@ class ProfileViewController: UIViewController {
     
     //MARK: - SETUP UI
     func setupUI() {
-        
+        navigationItem.title = "Trang cá nhân"
+
     }
     
     //MARK: - CALL API

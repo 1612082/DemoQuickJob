@@ -27,12 +27,12 @@ class timeCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBAction func filter(_ sender: Any) {
-        print("click")
-    }
+
     func bindData(_ P:TYPEJOBDETAIL){
-        budget.text = "\(P.salary)"
+        let salary = JobDetailVM.convertDoubleToCurrency(amount: P.salary)
+        budget.text = "\(salary)"
         yourPrice.text = JobDetailVM.FindYourPrice(P.dealers)
-        counter.text = JobDetailVM.DateFormater(P.end_date ?? "2020-01-01 00:00:00") 
+        
+        counter.text = JobDetailVM.DateFormater(P.end_date ?? "2020-10-01 00:00:00")
     }
 }

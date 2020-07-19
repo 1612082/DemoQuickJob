@@ -17,13 +17,15 @@ class ChatViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     //MARK: OTHER VARIABLES
-    var ref: DatabaseReference!
+//    var ref: DatabaseReference!
     var ListFriend:[String] = [""]
     var data = [NSArray]()
     
     //MARK: VIEW LIFE CYCLE
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        ListFriend = [""]
+        data = [NSArray]()
         setupVar()
     }
     override func viewDidLoad() {
@@ -39,7 +41,7 @@ class ChatViewController: UIViewController {
     //MARK: - SETUP VAR
     func setupVar() {
 //        let docRef = db.collection("chats")
-        db.collection("chats").whereField("users", arrayContains: "nguyenhongdang@gmail.com").getDocuments() { (querySnapshot, err) in
+        db.collection("chats").whereField("users", arrayContains: currentUser!.email).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -106,9 +108,25 @@ extension ChatViewController:UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let contentVC = Main_Storyboard.instantiateViewController(withIdentifier: "ContentChatViewController") as! ContentChatViewController
-        contentVC.idDocument = ListFriend[indexPath.row]
-        navigationController?.pushViewController(contentVC, animated: true)
+        
+        if data.count != 0{
+            let contentVC = Main_Storyboard.instantiateViewController(withIdentifier: "ContentChatViewController") as! ContentChatViewController
+            let temp = (data[indexPath.row][0] as! NSDictionary).dictionaryWithValues(forKeys: ["email"]) as? [String:String]
+            let a = temp!["email"]!
+            let temp1 = (data[indexPath.row][1] as! NSDictionary).dictionaryWithValues(forKeys: ["email"]) as? [String:String]
+            let b = temp1!["email"]!
+            let keySearch1 = "\(a):\(b)"
+            let keySearch2 = "\(b):\(a)"
+            let result = ListFriend.filter {$0 == keySearch1}
+            if result.first != nil {
+                contentVC.idDocument = result.first!
+            } else {
+                contentVC.idDocument = keySearch2
+                
+            }
+            navigationController?.pushViewController(contentVC, animated: true)
+        }
+        
     }
 }
 

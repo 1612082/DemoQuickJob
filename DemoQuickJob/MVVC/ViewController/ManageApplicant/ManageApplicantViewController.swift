@@ -24,7 +24,7 @@ class ManageApplicantViewController: UIViewController {
     //MARK: VIEW LIFE CYCLE
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        callAPI()
     }
     
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class ManageApplicantViewController: UIViewController {
         
         setupUI()
         setupVar()
-        callAPI()
+        
     }
     
     //MARK: - SETUP VAR
@@ -100,9 +100,9 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
         case 1:
             return 3
         case 2:
-            return 1
+            return 2
         default:
-            return 1
+            return 2
         }
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -110,7 +110,12 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
         case 0:
              return "Tổng số ứng viên \(Int(applying.total) + Int(applyed.total))"
         case 1:
-            return "Đang chờ duyệt"
+            switch id_status {
+            case 1:
+                return "Đang chờ duyệt"
+            default:
+                return "Danh sách ứng viên"
+            }
         default:
             return "Đã tuyển"
         }
@@ -124,7 +129,13 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
             }
             return applyed.applicantsList.count
         case 1:
-            return applying.applicantsList.count
+            switch id_status {
+            case 1:
+                return applying.applicantsList.count
+            default:
+                return applyed.applicantsList.count
+            }
+            
         default:
             return applyed.applicantsList.count
         }
@@ -144,7 +155,12 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
             let cell = tableView.dequeueReusableCell(withIdentifier: "ApplicantCell", for: indexPath) as! ApplicantCell
             switch indexPath.section {
             case 1:
-                cell.bindData(applying.applicantsList[indexPath.row]!)
+                switch id_status {
+                case 1:
+                    cell.bindData(applying.applicantsList[indexPath.row]!)
+                default:
+                    cell.bindData(applyed.applicantsList[indexPath.row]!)
+                }
             default:
                 cell.bindData(applyed.applicantsList[indexPath.row]!)
             }
@@ -166,10 +182,19 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
                 
             }
             let Review = UITableViewRowAction(style: .destructive, title: "Đánh giá") { action, index in
-                
+                let ReviewVC = Home_Storyboard.instantiateViewController(withIdentifier: "ReviewViewController") as! ReviewViewController
+                ReviewVC.idApplicant = self.applyed.applicantsList[indexPath.row]?.id_applicant
+                ReviewVC.idJob = self.idJob
+                ReviewVC.status = true
+                self.navigationController?.pushViewController(ReviewVC, animated: true)
             }
             let Report = UITableViewRowAction(style: .destructive, title: "Báo cáo") { action, index in
-                
+                let ReportVC = Home_Storyboard.instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+                ReportVC.idApplicant = self.applyed.applicantsList[indexPath.row]?.id_applicant
+                ReportVC.idJob = self.idJob
+                ReportVC.reporterId = self.applyed.applicantsList[indexPath.row]?.id_user
+                ReportVC.yourRole = 1
+                self.navigationController?.pushViewController(ReportVC, animated: true)
             }
             switch id_status {
             case 1:
@@ -186,9 +211,17 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section{
         case 1:
-            let detailVC = Home_Storyboard.instantiateViewController(identifier: "InfoPublicViewController") as InfoPublicViewController
-            detailVC.id = "\(self.applying.applicantsList[indexPath.row]?.id_user ?? 0)"
-            self.navigationController?.pushViewController(detailVC, animated: true)
+            switch id_status {
+            case 1:
+                let detailVC = Home_Storyboard.instantiateViewController(identifier: "InfoPublicViewController") as InfoPublicViewController
+                detailVC.id = "\(self.applying.applicantsList[indexPath.row]?.id_user ?? 0)"
+                self.navigationController?.pushViewController(detailVC, animated: true)
+            default:
+                let detailVC = Home_Storyboard.instantiateViewController(identifier: "InfoPublicViewController") as InfoPublicViewController
+                detailVC.id = "\(self.applyed.applicantsList[indexPath.row]?.id_user ?? 0)"
+                self.navigationController?.pushViewController(detailVC, animated: true)
+            }
+            
         case 2:
             let detailVC = Home_Storyboard.instantiateViewController(identifier: "InfoPublicViewController") as InfoPublicViewController
             detailVC.id = "\(self.applyed.applicantsList[indexPath.row]?.id_user ?? 0)"

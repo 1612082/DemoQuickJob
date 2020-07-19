@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
         let notiBTN   = UIBarButtonItem(image: #imageLiteral(resourceName: "notification"), style: .plain, target: self, action: #selector(didTapNotiBtn))
         navigationItem.rightBarButtonItem = notiBTN
         navigationItem.leftBarButtonItem = logoutBTN
-        navigationItem.title = "Trang Chu"
+        navigationItem.title = "Trang Chủ"
         self.navigationController?.isNavigationBarHidden = false
     }
 

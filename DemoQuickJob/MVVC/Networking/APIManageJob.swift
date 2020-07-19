@@ -14,15 +14,16 @@ typealias GetAllCandidateHandel = ((_ model: listCandidateResponse?)->Void)
 typealias CancelApplyHandel = ((_ model: dataResponse?)->Void)
 typealias DeleteJobHandel = ((_ model: dataResponse?)->Void)
 typealias StopApplyHandel = ((_ model: dataResponse?)->Void)
+typealias DoneJobHandel = ((_ model: dataResponse?)->Void)
 
 struct ManageJobAPI {
     let urlAllJobPost = "/jobs/getJobsByEmployerId"
     let urlAllApplicant = "/jobs/getJobsByApplicantId"
     let urlAllCandidate = "/applicants/getByJobId"
-    let urlCancelApply = "/jobs/rejectApplicant"
+    let urlCancelApply = "/jobs/rejectApplicant"//tu choi ung vien
     let urlDeletejob = "/jobs/deleteJob"
-    let urlStopApply = "/jobs/cancelRecruit"
-    
+    let urlStopApply = "/jobs/cancelRecruit"//ngung tuyen
+    let urlDoneJob = "/jobs/finishJob"
     static var shared = ManageJobAPI()
     func getAllJobPost(parameters:[String:String]?, headers:HTTPHeaders?, completion:@escaping GetAllJobPostHandel){
         let url = SERVER + urlAllJobPost
@@ -106,6 +107,22 @@ struct ManageJobAPI {
     }
     func stopApply(parameters:[String:String]?, headers:HTTPHeaders?, completion:@escaping StopApplyHandel){
         let url = SERVER + urlStopApply
+        RequestService.shared.AFRequestWith(url: url, method: .post, parameters: parameters, headers: headers, objectType: dataResponse.self) { (result, data, error) in
+            if result {
+                guard let model = data as? dataResponse else{
+                    completion(nil)
+                    return
+                }
+                completion(model)
+            } else {
+                print(error?.localizedDescription ?? "error at response data")
+                completion(nil)
+            }
+            
+        }
+    }
+    func doneJob(parameters:[String:String]?, headers:HTTPHeaders?, completion:@escaping DoneJobHandel){
+        let url = SERVER + urlDoneJob
         RequestService.shared.AFRequestWith(url: url, method: .post, parameters: parameters, headers: headers, objectType: dataResponse.self) { (result, data, error) in
             if result {
                 guard let model = data as? dataResponse else{

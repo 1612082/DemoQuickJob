@@ -16,8 +16,8 @@ class ApplyPersonalJobViewController: UIViewController {
     @IBOutlet weak var btnApply: UIButton!
     var ApplicantVM = ApplyJobViewModel()
     var idJob:Int?
+    var budget:Int?
     var CommonVC = CommonViewModel()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,11 +41,15 @@ class ApplyPersonalJobViewController: UIViewController {
     
     //MARK: - BUTTON ACTIONS
     @IBAction func Aplly(_ sender: Any) {
-        ApplicantVM.id_job = "\(idJob ?? -1)"
-        ApplicantVM.id_user = "\(currentUser!.id_user)"
-        ApplicantVM.proposed_price = moneyTf.text ?? ""
-        ApplicantVM.introduction_string = introduction.text ?? ""
-        if (moneyTf.text != ""){
+        if (moneyTf.text == "" || (Int(moneyTf.text!)) == nil || (Int(moneyTf.text!)!) < budget! / 2){
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+            CommonVC.showAlert("Số tiền sai quy định hoặc ít hơn 50% ngân sách", alert)
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            ApplicantVM.id_job = "\(idJob ?? -1)"
+            ApplicantVM.id_user = "\(currentUser!.id_user)"
+            ApplicantVM.proposed_price = moneyTf.text ?? ""
+            ApplicantVM.introduction_string = introduction.text ?? ""
             ApplicantVM.addApplicant { (model) in
                  guard let model = model else {
                     return
@@ -68,11 +72,9 @@ class ApplyPersonalJobViewController: UIViewController {
                     self.CommonVC.showAlert( "Lỗi hệ thống \(model.code)", alert)
                 }
             }
-        } else {
-            let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            self.CommonVC.showAlert( "Vui lòng điền đầy đủ thông tin", alert)
         }
+
+        
         
     }
     

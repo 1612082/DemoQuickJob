@@ -70,7 +70,7 @@ struct RequestService {
                     completion(true, json, nil)
                 } catch {
                     //parse json khong dc
-                    
+                    print("parse json faile")
                     print(headers)
                     print(parameters)
                     completion (false,data,nil)

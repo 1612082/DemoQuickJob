@@ -72,7 +72,7 @@ struct APIMomo {
     }
     func ConfirmMomo(parameters:[String:Any]?, headers:HTTPHeaders?, completion:@escaping GetMomoConfirmHandel){
         let url = "https://test-payment.momo.vn/pay/confirm"
-        RequestService.shared.AFRequestWithRawData(url: url, method: .post, parameters: parameters, headers: nil, objectType: ConfirmMomoResponse.self) { (result, data, error) in
+        RequestService.shared.AFRequestWithRawData(url: url, method: .post, parameters: parameters, headers: headers, objectType: ConfirmMomoResponse.self) { (result, data, error) in
             if result {
                 guard let model = data as? ConfirmMomoResponse else{
                     completion(nil)
@@ -87,7 +87,7 @@ struct APIMomo {
     }
     func GetSign(parameters:[String:Any]?, headers:HTTPHeaders?, completion:@escaping GetSignHandel){
         let url = "https://f2l-client.herokuapp.com/getSignatureMoMoInMobile"
-        RequestService.shared.AFRequestWithRawData(url: url, method: .post, parameters: parameters, headers: nil, objectType: SignatureMomoResponse.self) { (result, data, error) in
+        RequestService.shared.AFRequestWithRawData(url: url, method: .post, parameters: parameters, headers: headers, objectType: SignatureMomoResponse.self) { (result, data, error) in
             if result {
                 guard let model = data as? SignatureMomoResponse else{
                     completion(nil)

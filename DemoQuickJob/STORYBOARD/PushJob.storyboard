@@ -384,61 +384,26 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OptionsFormCell" id="yrR-dg-idW" customClass="OptionsFormCell" customModule="DemoQuickJob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1075" width="414" height="359.5"/>
+                                        <rect key="frame" x="0.0" y="1075" width="414" height="258.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yrR-dg-idW" id="JHC-mv-Wn7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="359.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="258.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Chức năng đấu giá" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8g7-wZ-BTi">
-                                                    <rect key="frame" x="20" y="58" width="153.5" height="36"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="36" id="vvG-nI-UVT"/>
-                                                    </constraints>
-                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JjO-OG-8hw">
-                                                    <rect key="frame" x="345" y="60.5" width="51" height="31"/>
+                                                    <rect key="frame" x="345" y="61" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="Auction:" destination="yrR-dg-idW" eventType="valueChanged" id="xgB-9s-YQo"/>
                                                     </connections>
                                                 </switch>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Chức năng tránh xung đột công việc. ( Người làm việc sẽ không thể đăng ký công việc này nếu bị trùng thời gian )" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DV-ag-Poy">
-                                                    <rect key="frame" x="20" y="106" width="269" height="100.5"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="549-iU-GjC"/>
-                                                    </constraints>
-                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gpS-gC-JIY">
-                                                    <rect key="frame" x="345" y="141" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="Conflict:" destination="yrR-dg-idW" eventType="valueChanged" id="jRC-2q-FUW"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Địa điểm làm việc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2e-ih-WsO">
-                                                    <rect key="frame" x="20" y="218.5" width="134" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="e3v-ur-gf0"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="w2V-3t-IaF">
-                                                    <rect key="frame" x="345" y="213.5" width="51" height="31"/>
+                                                    <rect key="frame" x="345" y="112" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="placeWork:" destination="yrR-dg-idW" eventType="valueChanged" id="sap-vm-pqX"/>
                                                     </connections>
                                                 </switch>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Arm-ea-Dxj">
-                                                    <rect key="frame" x="12" y="259.5" width="390" height="80"/>
+                                                    <rect key="frame" x="12" y="158" width="390" height="80.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="4yc-sQ-0eR"/>
@@ -455,34 +420,46 @@
                                                         <action selector="change:" destination="yrR-dg-idW" eventType="editingChanged" id="LwJ-Vp-c3z"/>
                                                     </connections>
                                                 </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Địa điểm làm việc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2e-ih-WsO">
+                                                    <rect key="frame" x="20" y="117" width="134" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="e3v-ur-gf0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chức năng đấu giá:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddi-Yx-Esl">
+                                                    <rect key="frame" x="20" y="66" width="148" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Klt-Cu-WCl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8g7-wZ-BTi" firstAttribute="top" secondItem="x0b-AR-kUO" secondAttribute="bottom" constant="12" id="3oh-Ah-V51"/>
                                                 <constraint firstAttribute="trailing" secondItem="JjO-OG-8hw" secondAttribute="trailing" constant="20" id="8mP-w2-9s1"/>
+                                                <constraint firstItem="ddi-Yx-Esl" firstAttribute="top" secondItem="x0b-AR-kUO" secondAttribute="bottom" constant="20" id="JC7-CO-Grf"/>
+                                                <constraint firstItem="X2e-ih-WsO" firstAttribute="leading" secondItem="JHC-mv-Wn7" secondAttribute="leading" constant="20" id="JuI-DO-O8i"/>
+                                                <constraint firstItem="X2e-ih-WsO" firstAttribute="top" secondItem="ddi-Yx-Esl" secondAttribute="bottom" constant="30" id="KSm-Sl-UVa"/>
                                                 <constraint firstAttribute="bottom" secondItem="Arm-ea-Dxj" secondAttribute="bottom" constant="20" id="N3V-XM-5pK"/>
-                                                <constraint firstItem="8DV-ag-Poy" firstAttribute="width" secondItem="JHC-mv-Wn7" secondAttribute="width" multiplier="0.649758" id="NNp-7t-F1V"/>
-                                                <constraint firstItem="X2e-ih-WsO" firstAttribute="leading" secondItem="JHC-mv-Wn7" secondAttribute="leading" constant="20" id="SlY-oZ-GGi"/>
-                                                <constraint firstItem="8DV-ag-Poy" firstAttribute="leading" secondItem="JHC-mv-Wn7" secondAttribute="leading" constant="20" id="VmR-8Z-OPj"/>
+                                                <constraint firstItem="JjO-OG-8hw" firstAttribute="centerY" secondItem="ddi-Yx-Esl" secondAttribute="centerY" id="T4e-R4-kk9"/>
                                                 <constraint firstAttribute="trailing" secondItem="Arm-ea-Dxj" secondAttribute="trailing" constant="12" id="W5M-Gh-7w3"/>
                                                 <constraint firstItem="w2V-3t-IaF" firstAttribute="centerY" secondItem="X2e-ih-WsO" secondAttribute="centerY" id="dFF-qz-Ble"/>
                                                 <constraint firstAttribute="trailing" secondItem="x0b-AR-kUO" secondAttribute="trailing" constant="20" id="fE2-dy-Q4K"/>
-                                                <constraint firstAttribute="trailing" secondItem="gpS-gC-JIY" secondAttribute="trailing" constant="20" id="gUa-ix-ViO"/>
+                                                <constraint firstItem="ddi-Yx-Esl" firstAttribute="leading" secondItem="JHC-mv-Wn7" secondAttribute="leading" constant="20" id="fSg-cu-ZDS"/>
                                                 <constraint firstAttribute="trailing" secondItem="w2V-3t-IaF" secondAttribute="trailing" constant="20" id="i1Z-ec-cMU"/>
                                                 <constraint firstItem="Arm-ea-Dxj" firstAttribute="leading" secondItem="JHC-mv-Wn7" secondAttribute="leading" constant="12" id="k2J-Ff-CAu"/>
-                                                <constraint firstItem="gpS-gC-JIY" firstAttribute="centerY" secondItem="8DV-ag-Poy" secondAttribute="centerY" id="m2d-q7-uMv"/>
-                                                <constraint firstItem="JjO-OG-8hw" firstAttribute="centerY" secondItem="8g7-wZ-BTi" secondAttribute="centerY" id="o0R-4A-VhV"/>
-                                                <constraint firstItem="8g7-wZ-BTi" firstAttribute="leading" secondItem="JHC-mv-Wn7" secondAttribute="leading" constant="20" id="oaR-sc-KoF"/>
                                                 <constraint firstItem="Arm-ea-Dxj" firstAttribute="top" secondItem="X2e-ih-WsO" secondAttribute="bottom" constant="20" id="pH8-Rt-s34"/>
                                                 <constraint firstItem="x0b-AR-kUO" firstAttribute="top" secondItem="JHC-mv-Wn7" secondAttribute="top" constant="12" id="sBD-zO-yVK"/>
-                                                <constraint firstItem="8DV-ag-Poy" firstAttribute="top" secondItem="8g7-wZ-BTi" secondAttribute="bottom" constant="12" id="t1h-KL-ntj"/>
-                                                <constraint firstItem="X2e-ih-WsO" firstAttribute="top" secondItem="8DV-ag-Poy" secondAttribute="bottom" constant="12" id="uAI-RD-h63"/>
                                                 <constraint firstItem="x0b-AR-kUO" firstAttribute="leading" secondItem="JHC-mv-Wn7" secondAttribute="leading" constant="20" id="xhr-8j-zSV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="Quantity" destination="x0b-AR-kUO" id="mi2-au-ZUo"/>
                                             <outlet property="SwitchAddr" destination="w2V-3t-IaF" id="d0l-nf-wnd"/>
-                                            <outlet property="SwitchConflict" destination="gpS-gC-JIY" id="XEh-hz-86B"/>
                                             <outlet property="SwitchDeal" destination="JjO-OG-8hw" id="Vg3-8m-cue"/>
                                             <outlet property="viewSearch" destination="Arm-ea-Dxj" id="WGl-Ns-Cpg"/>
                                         </connections>
@@ -544,7 +521,7 @@
                                     <constraint firstAttribute="height" constant="92" id="XY1-7t-TBI"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="Các điều luật mà người đăng việc phải tuân thủ khi đăng việc trên app">
+                                    <fragment content="Hướng dẫn đăng việc">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="Arial-BoldMT"/>
@@ -554,22 +531,22 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HR1-tJ-rVq">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HR1-tJ-rVq">
                                 <rect key="frame" x="0.0" y="136" width="414" height="676"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Bước 1: Điền thông tin đầy đủ vào các trường để đăng công việc.  Bước 2: Khi khi chấp nhận ứng viên bạn phải ứng trước tiền cho chúng tôi. Phần tiền này sẽ được gửi cho ứng viên khi công việc đã hoàn tất  Bước 3: Trong quá trình làm việc nếu bạn có trục trặc gì có thể report cho chúng tôi để chúng tôi giải quyết.  Bước 4: Khi công việc hoàn tất bạn có thể đánh giá ứng viên.</mutableString>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69r-Ki-coY">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <rect key="frame" x="20" y="812" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UDl-TF-az8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Tôi đồng ý với các điều luật trên">
+                                <state key="normal" title="Tôi đã hiểu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -582,9 +559,9 @@
                             <constraint firstItem="HR1-tJ-rVq" firstAttribute="leading" secondItem="XDk-H5-JKT" secondAttribute="leading" id="4jI-g5-oM8"/>
                             <constraint firstItem="HR1-tJ-rVq" firstAttribute="top" secondItem="oAp-xI-KaR" secondAttribute="bottom" id="9F2-3q-Zie"/>
                             <constraint firstItem="XDk-H5-JKT" firstAttribute="bottom" secondItem="69r-Ki-coY" secondAttribute="bottom" id="KNc-WI-wA7"/>
-                            <constraint firstItem="69r-Ki-coY" firstAttribute="leading" secondItem="XDk-H5-JKT" secondAttribute="leading" id="O9p-jd-DCH"/>
+                            <constraint firstItem="69r-Ki-coY" firstAttribute="leading" secondItem="XDk-H5-JKT" secondAttribute="leading" constant="20" id="O9p-jd-DCH"/>
                             <constraint firstItem="XDk-H5-JKT" firstAttribute="trailing" secondItem="HR1-tJ-rVq" secondAttribute="trailing" id="W1Q-wV-Smj"/>
-                            <constraint firstItem="XDk-H5-JKT" firstAttribute="trailing" secondItem="69r-Ki-coY" secondAttribute="trailing" id="XQv-J4-Sbg"/>
+                            <constraint firstItem="XDk-H5-JKT" firstAttribute="trailing" secondItem="69r-Ki-coY" secondAttribute="trailing" constant="20" id="XQv-J4-Sbg"/>
                             <constraint firstItem="XDk-H5-JKT" firstAttribute="trailing" secondItem="oAp-xI-KaR" secondAttribute="trailing" constant="50" id="ehI-Dz-4q9"/>
                             <constraint firstItem="oAp-xI-KaR" firstAttribute="leading" secondItem="XDk-H5-JKT" secondAttribute="leading" constant="50" id="jf6-Zx-YQY"/>
                             <constraint firstItem="69r-Ki-coY" firstAttribute="top" secondItem="HR1-tJ-rVq" secondAttribute="bottom" id="onV-6J-AiG"/>
@@ -592,6 +569,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XDk-H5-JKT"/>
                     </view>
+                    <connections>
+                        <outlet property="btn" destination="69r-Ki-coY" id="SUa-sC-NGz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJA-op-TeF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

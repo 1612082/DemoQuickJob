@@ -12,6 +12,7 @@ class ChatCell: UITableViewCell {
 
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var email: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,6 +34,7 @@ class ChatCell: UITableViewCell {
             }else{
                 let t = temp.dictionaryWithValues(forKeys: ["fullname"]) as? [String:String]
                 name.text = t!["fullname"]!
+                email.text = text
                 let img = temp.dictionaryWithValues(forKeys: ["img"]) as? [String:String]
                 let imgString:String = img!["img"]!
                 let dataDecoded:NSData = NSData(base64Encoded: imgString, options: NSData.Base64DecodingOptions(rawValue: 0))!

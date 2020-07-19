@@ -51,14 +51,14 @@ class JobDetailViewModel {
     func DateFormater(_ s:String) -> String{
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
-
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM dd,yyyy"
+        dateFormatterPrint.dateFormat = "dd/MM/yyyy"
+        dateFormatterPrint.locale = Locale(identifier: "vi_VN") // link:https://gist.github.com/jacobbubu/1836273
 
         if let date = dateFormatterGet.date(from: s) {
             return dateFormatterPrint.string(from: date)
         } else {
-           return "2020-01-01"
+           return "2020-10-01"
         }
     }
 }

@@ -14,7 +14,6 @@ class NotificationViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    
     //MARK: OTHER VARIABLES
     var data = NSArray()
     //MARK: VIEW LIFE CYCLE
@@ -48,7 +47,8 @@ class NotificationViewController: UIViewController {
     
     //MARK: - SETUP UI
     func setupUI() {
-        
+        navigationItem.title = "Thông báo"
+
     }
     
     //MARK: - CALL API

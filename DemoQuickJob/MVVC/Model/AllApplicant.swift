@@ -21,8 +21,9 @@ public struct DataAllAppli:Codable {
         
 }
 public struct JobAllApply:Codable {
-
+    
     public var address : String
+    public var applicant_status : Int
     public var area_district : Int
     public var area_province : Int
     public var avatarImg : String
@@ -34,8 +35,10 @@ public struct JobAllApply:Codable {
     public var district : String
     public var email : String
     public var employer : Int
+    public var end_date : String?
     public var expire_date : String
     public var fullname : String
+    public var id_applicant : Int
     public var id_job : Int
     public var id_status : Int
     public var isCompany : Bool
@@ -48,11 +51,10 @@ public struct JobAllApply:Codable {
     public var province : String
     public var requirement : String
     public var salary : Int
+    public var salary_type : Int?
+    public var start_date : String?
     public var title : String
     public var vacancy : Int
-    public var start_date:String?
-    public var end_date:String?
-    public var salary_type:Int?
 }
 
 

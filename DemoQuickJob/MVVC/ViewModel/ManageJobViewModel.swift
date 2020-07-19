@@ -21,6 +21,9 @@ class ManageJobViewModel{
     var id_job:String = ""{
         didSet{}
     }
+    var job_title:String = ""{
+        didSet{}
+    }
     var id_user:String = ""{
         didSet{}
     }
@@ -34,9 +37,9 @@ class ManageJobViewModel{
         ]
         let param = [
             "page": "1",
-            "take": "10",
+            "take": "15",
             "isASC":"true",
-            "status":"0"
+            "status":"9"
         ]
 
         ManageJobAPI.shared.getAllJobPost(parameters: param, headers: headers) { (model) in
@@ -54,9 +57,9 @@ class ManageJobViewModel{
         ]
         let param = [
             "page": "1",
-            "take": "10",
+            "take": "15",
             "isASC":"true",
-            "status":"0"
+            "status":"9"
         ]
 
         ManageJobAPI.shared.getAllApplicant(parameters: param, headers: headers) { (model) in
@@ -155,7 +158,24 @@ class ManageJobViewModel{
         let param = [
         "id_job": self.id_job
         ]
-        ManageJobAPI.shared.deleteJob(parameters: param, headers: headers) { (model) in
+        ManageJobAPI.shared.stopApply(parameters: param, headers: headers) { (model) in
+            guard let model = model else {
+                completion(nil)
+                return
+            }
+            completion(model)
+        }
+    }
+    func DoneJob(completion:@escaping DeleteJobHandel){
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(self.token)",
+            "Accept": "application/json"
+        ]
+        let param = [
+        "id_job": self.id_job,
+        "job_title": self.job_title
+        ]
+        ManageJobAPI.shared.doneJob(parameters: param, headers: headers) { (model) in
             guard let model = model else {
                 completion(nil)
                 return

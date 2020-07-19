@@ -18,7 +18,7 @@ class APIJobDetail {
     
     func GetDetailJob(_ ulr:String,parameters:[String:String]?, headers:HTTPHeaders?, completion:@escaping GetJobDetailHandel){
         let url = SERVER + URLJobDetail + ulr
-        RequestService.shared.AFRequestWith(url: url, method: .get, parameters: parameters, headers: nil, objectType: JobDetailResponse.self) { (result, data, error) in
+        RequestService.shared.AFRequestWith(url: url, method: .get, parameters: parameters, headers: headers, objectType: JobDetailResponse.self) { (result, data, error) in
         if result {
                 guard let model = data as? JobDetailResponse else{
                     completion(nil)
