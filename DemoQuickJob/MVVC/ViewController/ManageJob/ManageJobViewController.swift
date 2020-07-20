@@ -583,7 +583,16 @@ extension ManageJobViewController:UITableViewDataSource, UITableViewDelegate{
                     ReportVC.yourRole = 0
                     self.navigationController?.pushViewController(ReportVC, animated: true)
                 }
-                return [report]
+                let ToFire = UITableViewRowAction(style: .destructive, title: "Sa thải") { action, index in
+                    let ReportVC = Home_Storyboard.instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+                    ReportVC.idApplicant = listTouch[indexPath.row]?.id_applicant
+                    ReportVC.idJob = "\(listTouch[indexPath.row]!.id_job)"
+                    ReportVC.reporterId = listTouch[indexPath.row]?.employer
+                    ReportVC.yourRole = 1
+                    ReportVC.typ = 1
+                    self.navigationController?.pushViewController(ReportVC, animated: true)
+                }
+                return [report,ToFire]
             } else if listTouch[indexPath.row]?.id_status == 3{
                 let review = UITableViewRowAction(style: .default, title: "Đánh giá") { (action, indexPath) in
                     

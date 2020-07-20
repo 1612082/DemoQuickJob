@@ -14,9 +14,8 @@ class ReportViewController: UIViewController {
     
     @IBOutlet weak var btn: UIButton!
     @IBOutlet weak var reportContent: UITextView!
-    @IBOutlet weak var typeReport: UISegmentedControl!
     //MARK: OTHER VARIABLES
-    //typ:Int?// - int: 0 là báo cáo; 1 là yêu cầu sa thải,
+    var typ:Int?// - int: 0 là báo cáo; 1 là yêu cầu sa thải,
     var idApplicant:Int?// - int,
     var idJob:String?// - int,
     var reporterId:Int?// - int, // id người bị report
@@ -69,7 +68,6 @@ class ReportViewController: UIViewController {
             if model.code == "200"{
                 if model.data?.code == 1{
                     self.reportContent.text = model.data?.report?.content
-                    self.typeReport.selectedSegmentIndex = model.data?.report?.type as! Int
                     
                 }
             }
@@ -82,7 +80,7 @@ class ReportViewController: UIViewController {
         ReportVM.id_applicant = "\(self.idApplicant!)"
         ReportVM.id_job = self.idJob!
         ReportVM.contentReport = reportContent.text
-        ReportVM.type = self.typeReport.selectedSegmentIndex
+        ReportVM.type = self.typ!
         ReportVM.yourRole = self.yourRole!
         ReportVM.report { (model) in
             guard let model = model else{

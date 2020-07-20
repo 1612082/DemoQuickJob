@@ -181,7 +181,7 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
             let Refuse = UITableViewRowAction(style: .destructive, title: "Từ chối") { action, index in
                 
             }
-            let Review = UITableViewRowAction(style: .destructive, title: "Đánh giá") { action, index in
+            let Review = UITableViewRowAction(style: .default, title: "Đánh giá") { action, index in
                 let ReviewVC = Home_Storyboard.instantiateViewController(withIdentifier: "ReviewViewController") as! ReviewViewController
                 ReviewVC.idApplicant = self.applyed.applicantsList[indexPath.row]?.id_applicant
                 ReviewVC.idJob = self.idJob
@@ -194,13 +194,23 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
                 ReportVC.idJob = self.idJob
                 ReportVC.reporterId = self.applyed.applicantsList[indexPath.row]?.id_user
                 ReportVC.yourRole = 1
+                ReportVC.typ = 0
+                self.navigationController?.pushViewController(ReportVC, animated: true)
+            }
+            let ToFire = UITableViewRowAction(style: .destructive, title: "Sa thải") { action, index in
+                let ReportVC = Home_Storyboard.instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+                ReportVC.idApplicant = self.applyed.applicantsList[indexPath.row]?.id_applicant
+                ReportVC.idJob = self.idJob
+                ReportVC.reporterId = self.applyed.applicantsList[indexPath.row]?.id_user
+                ReportVC.yourRole = 1
+                ReportVC.typ = 1
                 self.navigationController?.pushViewController(ReportVC, animated: true)
             }
             switch id_status {
             case 1:
-                return [Accept, Refuse]
+                return [Accept]
             case 2:
-                return [Report]
+                return [Report,ToFire]
             default:
                 return [Review]
             }
