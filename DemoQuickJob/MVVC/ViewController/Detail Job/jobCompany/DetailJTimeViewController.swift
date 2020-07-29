@@ -20,11 +20,12 @@ class DetailJTimeViewController: UIViewController {
     var JobDetailVM = JobDetailViewModel()
     var ApplicantVM = ApplyJobViewModel()
     var CommonVC = CommonViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupUI()
         setupVar()
         callAPI()
     }
@@ -137,15 +138,15 @@ extension DetailJTimeViewController:UITableViewDataSource,UITableViewDelegate{
                 if a != ""{
                     b = String(b.prefix(10))
                 }
-                cell.bindData("\(a) - \(b)", #imageLiteral(resourceName: "calendar-1"), "Time to work")
+                cell.bindData("\(a) - \(b)", #imageLiteral(resourceName: "calendar-1"), "Thời gian làm việc")
             }else if indexPath.section == 4{
-                cell.bindData(CurrentJob?.description ?? "", #imageLiteral(resourceName: "star"), "Description")
+                cell.bindData(CurrentJob?.description ?? "", #imageLiteral(resourceName: "policy"), "Mô tả công việc")
             }else if indexPath.section == 5{
-                cell.bindData(CurrentJob?.benefit ?? "", #imageLiteral(resourceName: "star"), "Benefit")
+                cell.bindData(CurrentJob?.benefit ?? "", #imageLiteral(resourceName: "offer"), "Phúc lợi")
             }else if indexPath.section == 6{
-                cell.bindData(CurrentJob?.requirement ?? "", #imageLiteral(resourceName: "star"), "Require")
+                cell.bindData(CurrentJob?.requirement ?? "", #imageLiteral(resourceName: "checklists"), "Yêu cầu công việc")
             } else {
-                cell.bindData(CurrentJob?.name_employer ?? "", #imageLiteral(resourceName: "star"), "Employer")
+                cell.bindData(CurrentJob?.name_employer ?? "", #imageLiteral(resourceName: "manager"), "Người đăng")
             }
             cell.selectionStyle = .none
             return cell

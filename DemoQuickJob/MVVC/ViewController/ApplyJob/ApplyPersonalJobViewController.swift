@@ -41,9 +41,12 @@ class ApplyPersonalJobViewController: UIViewController {
     
     //MARK: - BUTTON ACTIONS
     @IBAction func Aplly(_ sender: Any) {
-        if (moneyTf.text == "" || (Int(moneyTf.text!)) == nil || (Int(moneyTf.text!)!) < budget! / 2){
+        guard  let money = Int(moneyTf.text!) else {
+            return
+        }
+        if (moneyTf.text == "" || money < budget! / 2){
             let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-            CommonVC.showAlert("Số tiền sai quy định hoặc ít hơn 50% ngân sách", alert)
+            CommonVC.showAlert("Số tiền ít hơn 50% ngân sách", alert)
             self.present(alert, animated: true, completion: nil)
         }else{
             ApplicantVM.id_job = "\(idJob ?? -1)"

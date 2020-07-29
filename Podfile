@@ -17,4 +17,5 @@ pod ‘Firebase/Analytics’
 pod ‘Firebase/Database’
 pod 'Firebase/Firestore'
 pod 'FirebaseFirestoreSwift'
+pod "AlignedCollectionViewFlowLayout"
 end

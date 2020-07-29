@@ -59,7 +59,7 @@ class ReportViewController: UIViewController {
     func fillData() {
         ReportVM.id_user1 = "\(currentUser?.id_user)"
         ReportVM.id_user2 = "\(self.reporterId)"
-        ReportVM.type = 1 // phai sua
+        ReportVM.type =  self.typ!
         ReportVM.id_job = self.idJob!
         ReportVM.loadReport { (model) in
             guard let model = model else{

@@ -51,6 +51,8 @@ public struct TYPEJOBDETAIL:Codable {
     public var title : String
     public var topic_name : String
     public var vacancy : Int
+    
+
         
 }
 public struct Dealer:Codable  {

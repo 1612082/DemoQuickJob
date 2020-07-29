@@ -31,7 +31,7 @@ class JobDetailViewModel {
         numberFormatter.locale = Locale.current
         numberFormatter.currencySymbol = "VND"
         let a = numberFormatter.string(from: NSNumber(value: amount))!
-        return String(a.prefix(a.count - 3))
+        return String(a.prefix(a.count - 4))
     }
     func convertCurrencyToDouble(input: String) -> Double? {
          let numberFormatter = NumberFormatter()

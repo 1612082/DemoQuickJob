@@ -256,25 +256,42 @@
                                             <outlet property="collectionView" destination="XHT-nb-0c3" id="AM2-xm-iK9"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="footerCell" rowHeight="180" id="jyu-fI-UFF" customClass="footerCell" customModule="DemoQuickJob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="614.5" width="414" height="180"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="footerCell" id="jyu-fI-UFF" customClass="footerCell" customModule="DemoQuickJob" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="614.5" width="414" height="104.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jyu-fI-UFF" id="aVp-3a-YsS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="104.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Footer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5C-Qn-TyF">
-                                                    <rect key="frame" x="182" y="79.5" width="50" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5C-Qn-TyF">
+                                                    <rect key="frame" x="120" y="28.5" width="274" height="48"/>
+                                                    <string key="text">Sản phẩm được xây dựng bởi 
+S-Team KHTN</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logof2l" translatesAutoresizingMaskIntoConstraints="NO" id="zwC-uV-bxW">
+                                                    <rect key="frame" x="20" y="12" width="80" height="80.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="HS3-PJ-S4Q"/>
+                                                        <constraint firstAttribute="height" constant="80" id="gxo-pv-Mn4"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="Y5C-Qn-TyF" firstAttribute="centerY" secondItem="aVp-3a-YsS" secondAttribute="centerY" id="FyW-15-wPg"/>
-                                                <constraint firstItem="Y5C-Qn-TyF" firstAttribute="centerX" secondItem="aVp-3a-YsS" secondAttribute="centerX" id="odJ-LO-Era"/>
+                                                <constraint firstItem="Y5C-Qn-TyF" firstAttribute="centerY" secondItem="zwC-uV-bxW" secondAttribute="centerY" id="Kvi-aO-Yqe"/>
+                                                <constraint firstAttribute="trailing" secondItem="Y5C-Qn-TyF" secondAttribute="trailing" constant="20" id="NdY-t8-hOQ"/>
+                                                <constraint firstItem="Y5C-Qn-TyF" firstAttribute="leading" secondItem="zwC-uV-bxW" secondAttribute="trailing" constant="20" id="YGD-nJ-18X"/>
+                                                <constraint firstAttribute="bottom" secondItem="zwC-uV-bxW" secondAttribute="bottom" constant="12" id="eqO-l2-fSf"/>
+                                                <constraint firstItem="zwC-uV-bxW" firstAttribute="leading" secondItem="aVp-3a-YsS" secondAttribute="leading" constant="20" id="r4g-di-Fhk"/>
+                                                <constraint firstItem="zwC-uV-bxW" firstAttribute="top" secondItem="aVp-3a-YsS" secondAttribute="top" constant="12" id="zs7-p2-Ggx"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="img" destination="zwC-uV-bxW" id="sxC-bo-ptX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -298,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3s-dz-yrj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="-342"/>
+            <point key="canvasLocation" x="998.55072463768124" y="-342.1875"/>
         </scene>
         <!--DetailJ Time View Controller-->
         <scene sceneID="imL-qq-cH5">
@@ -313,10 +330,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderJobTimeCell" id="dWS-Ls-FQe" customClass="HeaderJobTimeCell" customModule="DemoQuickJob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="299.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="278.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dWS-Ls-FQe" id="BjS-7Y-WDR">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="299.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="278.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spbg" translatesAutoresizingMaskIntoConstraints="NO" id="8Ha-5e-lQX">
@@ -344,25 +361,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYC-eY-cTt">
-                                                    <rect key="frame" x="30" y="266" width="354" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="v7g-Pr-28c" secondAttribute="trailing" constant="30" id="ELF-Cw-WEa"/>
                                                 <constraint firstItem="v7g-Pr-28c" firstAttribute="top" secondItem="qo3-8s-aR7" secondAttribute="bottom" constant="12" id="HDT-vP-5EX"/>
-                                                <constraint firstItem="IYC-eY-cTt" firstAttribute="leading" secondItem="BjS-7Y-WDR" secondAttribute="leading" constant="30" id="Ht5-CR-zWE"/>
+                                                <constraint firstAttribute="bottom" secondItem="v7g-Pr-28c" secondAttribute="bottom" constant="20" id="IGA-v8-yjm"/>
                                                 <constraint firstItem="v7g-Pr-28c" firstAttribute="leading" secondItem="BjS-7Y-WDR" secondAttribute="leading" constant="30" id="IHU-ff-LRl"/>
-                                                <constraint firstAttribute="bottom" secondItem="IYC-eY-cTt" secondAttribute="bottom" constant="12" id="OdE-aj-GBW"/>
                                                 <constraint firstAttribute="trailing" secondItem="qo3-8s-aR7" secondAttribute="trailing" constant="30" id="Uju-rc-ICB"/>
                                                 <constraint firstItem="ddf-aI-X7p" firstAttribute="top" secondItem="8Ha-5e-lQX" secondAttribute="bottom" multiplier="1/2" id="byc-gY-We2"/>
                                                 <constraint firstItem="qo3-8s-aR7" firstAttribute="top" secondItem="ddf-aI-X7p" secondAttribute="bottom" constant="12" id="cWb-xz-B2Y"/>
-                                                <constraint firstAttribute="trailing" secondItem="IYC-eY-cTt" secondAttribute="trailing" constant="30" id="dFu-UR-A9d"/>
                                                 <constraint firstItem="8Ha-5e-lQX" firstAttribute="leading" secondItem="BjS-7Y-WDR" secondAttribute="leading" id="gZu-20-u7Y"/>
-                                                <constraint firstItem="IYC-eY-cTt" firstAttribute="top" secondItem="v7g-Pr-28c" secondAttribute="bottom" constant="8" id="kVp-vt-CwM"/>
                                                 <constraint firstItem="qo3-8s-aR7" firstAttribute="leading" secondItem="BjS-7Y-WDR" secondAttribute="leading" constant="30" id="nzB-d2-Iqn"/>
                                                 <constraint firstItem="8Ha-5e-lQX" firstAttribute="top" secondItem="BjS-7Y-WDR" secondAttribute="top" constant="10" id="ofb-ag-mPp"/>
                                                 <constraint firstAttribute="trailing" secondItem="8Ha-5e-lQX" secondAttribute="trailing" id="p26-6P-epd"/>
@@ -371,13 +379,12 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="Addr" destination="v7g-Pr-28c" id="IzO-JM-m33"/>
-                                            <outlet property="CateJob" destination="IYC-eY-cTt" id="uzj-CU-yJI"/>
                                             <outlet property="logoCompany" destination="ddf-aI-X7p" id="mNr-Qh-D5O"/>
                                             <outlet property="nameCom" destination="qo3-8s-aR7" id="i9n-wD-zkY"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="salaryCell" id="xgm-Ly-LyD" customClass="salaryCell" customModule="DemoQuickJob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="327.5" width="414" height="90.5"/>
+                                        <rect key="frame" x="0.0" y="306.5" width="414" height="90.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xgm-Ly-LyD" id="iMl-GU-RNl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90.5"/>
@@ -390,8 +397,8 @@
                                                         <constraint firstAttribute="width" constant="50" id="xGM-Ln-6cg"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkt-Zi-x3g">
-                                                    <rect key="frame" x="78" y="33.5" width="60" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lương" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkt-Zi-x3g">
+                                                    <rect key="frame" x="78" y="33.5" width="62" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -418,7 +425,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobTimeCell" id="TtI-VY-gcN" customClass="JobTimeCell" customModule="DemoQuickJob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="418" width="414" height="144.5"/>
+                                        <rect key="frame" x="0.0" y="397" width="414" height="144.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TtI-VY-gcN" id="IYq-Uv-Yue">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="144.5"/>
@@ -466,7 +473,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addressCell" id="1fG-jV-g1s" customClass="addressCell" customModule="DemoQuickJob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="562.5" width="414" height="173.5"/>
+                                        <rect key="frame" x="0.0" y="541.5" width="414" height="173.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1fG-jV-g1s" id="Aoz-Rb-Kzy">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="173.5"/>
@@ -479,8 +486,8 @@
                                                         <constraint firstAttribute="width" constant="50" id="jFr-gX-u6R"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qoc-1z-aBf">
-                                                    <rect key="frame" x="90" y="20" width="52" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vị trí làm việc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qoc-1z-aBf">
+                                                    <rect key="frame" x="90" y="20" width="125.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -554,7 +561,7 @@
                         <viewLayoutGuide key="safeArea" id="6PN-Jy-R65"/>
                     </view>
                     <connections>
-                        <outlet property="btn" destination="Rhr-O8-gkV" id="Z0T-dE-rg9"/>
+                        <outlet property="btn" destination="Rhr-O8-gkV" id="S9F-LP-PED"/>
                         <outlet property="tableView" destination="mad-lI-29M" id="2aY-iM-dwq"/>
                     </connections>
                 </viewController>
@@ -933,7 +940,7 @@
                         <viewLayoutGuide key="safeArea" id="zu0-SY-ehb"/>
                     </view>
                     <connections>
-                        <outlet property="btn" destination="5LX-QR-ulx" id="23I-GM-l6m"/>
+                        <outlet property="btn" destination="5LX-QR-ulx" id="uEJ-bP-b4n"/>
                         <outlet property="tableView" destination="R5e-Mr-QTC" id="mNM-Lc-yGu"/>
                     </connections>
                 </viewController>
@@ -1159,10 +1166,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoPublicThirdCell" id="Ytl-we-FRI" customClass="InfoPublicThirdCell" customModule="DemoQuickJob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="606.5" width="414" height="144"/>
+                                        <rect key="frame" x="0.0" y="606.5" width="414" height="144.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ytl-we-FRI" id="imf-gx-cOX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="144.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số công việc đã làm:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4F-Pg-cEP">
@@ -1181,7 +1188,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điểm trung bình" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWw-y4-ADs">
-                                                    <rect key="frame" x="20" y="51" width="152" height="27"/>
+                                                    <rect key="frame" x="20" y="51" width="152" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1193,7 +1200,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g6i-id-dKh" customClass="CosmosView" customModule="Cosmos">
-                                                    <rect key="frame" x="122" y="90" width="170" height="42"/>
+                                                    <rect key="frame" x="122" y="90.5" width="170" height="42"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="42" id="QJ2-mH-FCI"/>
@@ -1423,6 +1430,7 @@
     </scenes>
     <resources>
         <image name="eton" width="148" height="148"/>
+        <image name="logof2l" width="200" height="200"/>
         <image name="price" width="24" height="24"/>
         <image name="spbg" width="1920" height="1080"/>
     </resources>

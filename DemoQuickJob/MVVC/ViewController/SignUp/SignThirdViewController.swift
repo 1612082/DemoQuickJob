@@ -20,7 +20,7 @@ class SignThirdViewController: UIViewController {
     var userSignup:USERSIGNUP?
     var signupVM = SignupViewModel()
     var CommonVC = CommonViewModel()
-
+    var LoadingView = UIView()
     
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
@@ -47,7 +47,10 @@ class SignThirdViewController: UIViewController {
                 userSignup?.confirm = tfPass.text!
                 print(userSignup!)
                 signupVM.passData(userSignup!)
+                CommonVC.Loading(&self.LoadingView, self.view)
+
                 signupVM.signup { (model) in
+                    self.LoadingView.removeFromSuperview()
                     guard let model = model else {
                         return
                     }
@@ -60,7 +63,7 @@ class SignThirdViewController: UIViewController {
                     } else {
                         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                         self.present(alert, animated: true, completion: nil)
-                        self.CommonVC.showAlert( "Tạo tài khoản mới thất bại \(model.code)", alert)
+                        self.CommonVC.showAlert( "Tạo tài khoản mới thất bại", alert)
                     }
                 }
             }else{

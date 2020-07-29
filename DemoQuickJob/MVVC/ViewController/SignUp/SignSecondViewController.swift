@@ -85,7 +85,6 @@ class SignSecondViewController: UIViewController, UITextFieldDelegate {
                 let location = UIAlertAction(title: i.ProvinceName, style: .default) { (action) in
                     self.tfProvice.text = i.ProvinceName
                     self.GetAddrVM.provinceID = i.ProvinceID
-                    //                    self.listDistictFilter = listDtrict.filter{ $0.ProvinceID == i.id}
                     self.GetAddrVM.GetDistrict {  (model) in
                         guard let model = model else{
                             return

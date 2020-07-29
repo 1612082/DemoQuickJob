@@ -19,6 +19,10 @@ class SearchViewController: UIViewController, UIActionSheetDelegate, DisplayView
     let HighFilterVM = HighFilterViewModel()
     var DistrictSearch:[District] = []
     var ProvinceSearch:[Provice] = []
+    var searchKey = ""
+    var page = 1
+    var LoadingView = UIView()
+    var CommonVM = CommonViewModel()
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,13 @@ class SearchViewController: UIViewController, UIActionSheetDelegate, DisplayView
         setupVar()
         callAPI()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        HighFilterVM.title = ""
+        HighFilterVM.arrTag = []
+        HighFilterVM.page = "1"
+        HighFilterVM.idTopic = ""
+        HighFilterVM.job_type = ""
     }
 
     //MARK: - SETUP VAR
@@ -78,7 +89,9 @@ class SearchViewController: UIViewController, UIActionSheetDelegate, DisplayView
         self.HighFilterVM.title = ""
         self.HighFilterVM.idProvince = ""
         self.HighFilterVM.job_type = jobType
+        CommonVM.Loading(&self.LoadingView, self.view)
         self.HighFilterVM.Search { (model) in
+            self.LoadingView.removeFromSuperview()
             guard let model = model else {
                 return
             }
@@ -106,9 +119,42 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate{
             }
         }
     }
-    
-    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+
+        // UITableView only moves in one direction, y axis
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+
+        // Change 10.0 to adjust the distance from bottom
+        if maximumOffset - currentOffset <= 10.0 {
+            self.loadMore()
+        }
+    }
+    func loadMore(){
+        self.HighFilterVM.page = String.init(page)
+        page += 1
+        self.HighFilterVM.title = searchKey
+        self.HighFilterVM.arrTag = []
+        self.HighFilterVM.idTopic = ""
+        self.HighFilterVM.idProvince = ""
+        CommonVM.Loading(&self.LoadingView, self.view)
+
+        self.HighFilterVM.Search { (model) in
+            self.LoadingView.removeFromSuperview()
+
+            guard let model = model else {
+                return
+            }
+            if model.code == "200" {
+                self.arrSearch += model.data.jobList
+                self.tableView.reloadData()
+            }
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == self.arrSearch.count - 1 {
+            self.loadMore()
+        }
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TabSearchCell") as! TabSearchCell
@@ -121,23 +167,22 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate{
                 self.performSegue(withIdentifier: "PassData", sender: self)
             }
             cell.didSearch = { s in
-                if s != "" {
-                    self.HighFilterVM.title = s
-                    self.HighFilterVM.arrTag = []
-                    self.HighFilterVM.idTopic = ""
-                    self.HighFilterVM.idProvince = ""
-                    self.HighFilterVM.Search { (model) in
-                        guard let model = model else {
-                            return
-                        }
-                        if model.code == "200" {
-                            self.arrSearch = model.data.jobList
-                            tableView.reloadData()
-                        }
+                self.HighFilterVM.page = String.init(self.page)
+                self.page += 1
+                self.HighFilterVM.title = s
+                self.HighFilterVM.arrTag = []
+                self.HighFilterVM.idTopic = ""
+                self.HighFilterVM.idProvince = ""
+                self.CommonVM.Loading(&self.LoadingView, self.view)
+                self.HighFilterVM.Search { (model) in
+                    self.LoadingView.removeFromSuperview()
+                    guard let model = model else {
+                        return
                     }
-                    
-                } else {
-                    print ("nil y")
+                    if model.code == "200" {
+                        self.arrSearch += model.data.jobList
+                        tableView.reloadData()
+                    }
                 }
             }
             cell.selectionStyle = .none
@@ -151,6 +196,8 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate{
                 let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
                 for i in self.ProvinceSearch {
                     let location = UIAlertAction(title: i.name, style: .default) { (action) in
+                        
+
                         cell.tfFilter.text = i.name
                         self.HighFilterVM.idProvince = "\(i.id_province)"
                         self.HighFilterVM.title = ""

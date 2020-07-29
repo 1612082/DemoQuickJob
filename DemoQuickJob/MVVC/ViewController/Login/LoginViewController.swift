@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
         btn.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     func setupTF(_ tf:UITextField){
-        tf.backgroundColor = UIColor.clear
+//        tf.backgroundColor = UIColor.clear
         tf.heightAnchor.constraint(equalToConstant: 50).isActive = true
         tf.font = UIFont(name: "", size: 20)
     }
@@ -67,6 +67,7 @@ class LoginViewController: UIViewController {
         CommonVM.Loading(&self.LoadingView, self.view)
         self.LoginVM.Login { (model) in
             guard let model = model else {
+                self.LoadingView.removeFromSuperview()
                 return
             }
             if model.code == "101"{
@@ -87,6 +88,7 @@ class LoginViewController: UIViewController {
                     
                 }
             }else{
+                self.LoadingView.removeFromSuperview()
                 let when = DispatchTime.now() + 3
                 let alert = UIAlertController(title: "", message: "Sai tên đăng nhập hoặc mật khẩu", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
@@ -113,10 +115,16 @@ class LoginViewController: UIViewController {
     //MARK: - BUTTON ACTIONS
     
     @IBAction func Login(_ sender: Any) {
-        self.LoginVM.email = tfUsername.text!
-        self.LoginVM.password = tfPass.text!
-        login()
         
+        if CommonVM.isValidEmail(tfUsername.text!){
+            self.LoginVM.email = tfUsername.text!
+            self.LoginVM.password = tfPass.text!
+            login()
+        }else{
+            let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            self.CommonVM.showAlert( "Email không đúng định dạng", alert)
+        }
         
     }
     @IBAction func Signup(_ sender: Any) {
@@ -124,6 +132,10 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(signupFirstVC, animated: true)
     }
     
+    @IBAction func forgotPass(_ sender: Any) {
+        let forgotVC = Main_Storyboard.instantiateViewController(withIdentifier: "ForgotPassViewController") as! ForgotPassViewController
+        navigationController?.pushViewController(forgotVC, animated: true)
+    }
     
 }
 

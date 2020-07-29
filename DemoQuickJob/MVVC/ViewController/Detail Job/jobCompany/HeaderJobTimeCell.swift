@@ -18,7 +18,7 @@ class HeaderJobTimeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        CateJob.backgroundColor = .lightGray
+//        CateJob.backgroundColor = .lightGray
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,8 +36,8 @@ class HeaderJobTimeCell: UITableViewCell {
             logoCompany.image = #imageLiteral(resourceName: "avatar")
         }
         nameCom.text = P.title
-        Addr.text = "Phường \(P.area_province), Quận \(P.area_district)"
-        CateJob.text = "part time"
+        Addr.text = "\(P.district_name) \(P.province_name)"
+//        CateJob.text = "part time"
 //        logoCompany.image = img
     }
 

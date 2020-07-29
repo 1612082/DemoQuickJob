@@ -183,4 +183,18 @@ class ManageJobViewModel{
             completion(model)
         }
     }
+    func getSchedule(completion:@escaping GetScheduleHandel){
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(self.token)",
+            "Accept": "application/json"
+        ]
+    
+        ManageJobAPI.shared.getSchedule(parameters: [:], headers: headers) { (model) in
+            guard let model = model else {
+                completion(nil)
+                return
+            }
+            completion(model)
+        }
+    }
 }

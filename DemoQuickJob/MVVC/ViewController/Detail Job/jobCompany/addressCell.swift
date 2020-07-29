@@ -37,6 +37,6 @@ class addressCell: UITableViewCell {
     func bindData(_ P:TYPEJOBDETAIL){
         img.image = #imageLiteral(resourceName: "place")
         lbTiitle.text = "Location"
-        tfaddr.text = "\(P.address), \(P.area_district), \(P.area_province)"
+        tfaddr.text = "\(P.address) \(P.district_name) \(P.province_name)"
     }
 }

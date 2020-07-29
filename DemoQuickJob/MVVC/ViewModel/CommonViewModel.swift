@@ -36,10 +36,17 @@ class CommonViewModel {
     func showAlert(_ s:String, _ alert:UIAlertController){
         alert.message = s
         // change to desired number of seconds (in this case 5 seconds)
-        let when = DispatchTime.now() + 2
+        let when = DispatchTime.now() + 4
         DispatchQueue.main.asyncAfter(deadline: when){
             // your code with delay
             alert.dismiss(animated: true, completion: nil)
         }
     }
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
 }

@@ -101,7 +101,7 @@ struct APIMomo {
         }
     }
     func AcceptApplicant(parameters:[String:Any]?, headers:HTTPHeaders?, completion:@escaping AcceptApplicantHandel){
-        let url = "https://f2l-client.herokuapp.com/applicants/acceptApplicant"
+        let url = "https://f2l-client.herokuapp.com/jobs/acceptApplicant"
         RequestService.shared.AFRequestWithRawData(url: url, method: .post, parameters: parameters, headers: headers, objectType: dataResponse.self) { (result, data, error) in
             if result {
                 guard let model = data as? dataResponse else{

@@ -15,6 +15,7 @@ typealias CancelApplyHandel = ((_ model: dataResponse?)->Void)
 typealias DeleteJobHandel = ((_ model: dataResponse?)->Void)
 typealias StopApplyHandel = ((_ model: dataResponse?)->Void)
 typealias DoneJobHandel = ((_ model: dataResponse?)->Void)
+typealias GetScheduleHandel = ((_ model: ScheduleReponse?)->Void)
 
 struct ManageJobAPI {
     let urlAllJobPost = "/jobs/getJobsByEmployerId"
@@ -24,6 +25,7 @@ struct ManageJobAPI {
     let urlDeletejob = "/jobs/deleteJob"
     let urlStopApply = "/jobs/cancelRecruit"//ngung tuyen
     let urlDoneJob = "/jobs/finishJob"
+    let urlGetSchedule = "/users/getShedule"
     static var shared = ManageJobAPI()
     func getAllJobPost(parameters:[String:String]?, headers:HTTPHeaders?, completion:@escaping GetAllJobPostHandel){
         let url = SERVER + urlAllJobPost
@@ -126,6 +128,22 @@ struct ManageJobAPI {
         RequestService.shared.AFRequestWith(url: url, method: .post, parameters: parameters, headers: headers, objectType: dataResponse.self) { (result, data, error) in
             if result {
                 guard let model = data as? dataResponse else{
+                    completion(nil)
+                    return
+                }
+                completion(model)
+            } else {
+                print(error?.localizedDescription ?? "error at response data")
+                completion(nil)
+            }
+            
+        }
+    }
+    func getSchedule(parameters:[String:String]?, headers:HTTPHeaders?, completion:@escaping GetScheduleHandel){
+        let url = SERVER + urlGetSchedule
+        RequestService.shared.AFRequestWith(url: url, method: .get, parameters: parameters, headers: headers, objectType: ScheduleReponse.self) { (result, data, error) in
+            if result {
+                guard let model = data as? ScheduleReponse else{
                     completion(nil)
                     return
                 }

@@ -105,7 +105,7 @@ class PushJobViewModel {
             "lat":self.lat,
             "lng":self.lng,
             "description":self.description,
-            "expire_date":self.expire_date,
+            "expire_date":"2020-10-10 00:00:00",
             "dealable":self.dealable,
             "job_type":self.job_type,
             "vacancy":self.vacancy,

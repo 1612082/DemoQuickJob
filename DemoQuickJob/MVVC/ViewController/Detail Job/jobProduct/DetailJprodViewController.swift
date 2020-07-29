@@ -63,6 +63,7 @@ class DetailJprodViewController: UIViewController {
         } else if CurrentJob!.dealable {
              let applyVC = Apply_Storyboard.instantiateViewController(withIdentifier: "ApplyPersonalJobViewController") as! ApplyPersonalJobViewController
             applyVC.idJob = CurrentJob?.id_job
+            applyVC.budget = CurrentJob?.salary
             navigationController?.pushViewController(applyVC, animated: true)
         } else {
             ApplicantVM.id_job = "\(CurrentJob!.id_job)"

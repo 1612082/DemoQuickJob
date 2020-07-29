@@ -14,14 +14,16 @@ class ProfileCell: UITableViewCell {
     @IBOutlet weak var state: UILabel!
     @IBOutlet weak var ID: UILabel!
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var btnAuthentication: UIButton!
+    @IBOutlet weak var btdetail: UIButton!
     var avatar:UIImageView?
     var didChangeScreen:(()->Void)! = nil
-
+    var didAuthenticate:(()->Void)! = nil
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         state.textColor = .red
-        
+
         
         img.layer.cornerRadius = img.frame.height/2
        
@@ -46,8 +48,10 @@ class ProfileCell: UITableViewCell {
         switch CurrentProfile?.account_status {
         case 1:
             state.text = "Chưa xác thực"
+            btnAuthentication.isHidden = false
         default:
             state.text = "Đã xác thực"
+            btnAuthentication.isHidden = true
         }
         ID.text = "\(CurrentProfile?.id_user ?? -1)"
         if P?.avatarImg != nil{
@@ -58,4 +62,11 @@ class ProfileCell: UITableViewCell {
 
         
     }
+    @IBAction func authentication(_ sender: Any) {
+        if didAuthenticate != nil{
+            didAuthenticate()
+        }
+    }
+    
+    
 }

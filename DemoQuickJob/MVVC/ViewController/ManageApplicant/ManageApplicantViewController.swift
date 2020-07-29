@@ -17,10 +17,13 @@ class ManageApplicantViewController: UIViewController {
     var ManaJobVM = ManageJobViewModel()
     var ManaJobVM2 = ManageJobViewModel()
     var idJob:String = ""
+    var jobTitle:String?
     var applying:listCandidate = listCandidate(applicantsList: [], page: 0, total: 0)
     var applyed:listCandidate = listCandidate(applicantsList: [], page: 0, total: 0)
     var id_status = 0 //1 dang tuyen 2 dang thuc hien 3 hoan thanh
     var MomoVM = MomoViewModel()
+    var LoadingView = UIView()
+    var CommonVM = CommonViewModel()
     //MARK: VIEW LIFE CYCLE
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,6 +61,7 @@ class ManageApplicantViewController: UIViewController {
     func fillData() {
         
         ManaJobVM.idJob = self.idJob
+        CommonVM.Loading(&self.LoadingView, self.view)
         if id_status == 1{
             ManaJobVM.status = "0"
             ManaJobVM.token = token
@@ -76,6 +80,7 @@ class ManageApplicantViewController: UIViewController {
         ManaJobVM2.status = "1"
         ManaJobVM2.token = token
         ManaJobVM2.GetAllCandidate { (model) in
+            self.LoadingView.removeFromSuperview()
             guard let model = model else {
                 return
             }
@@ -173,6 +178,10 @@ extension ManageApplicantViewController:UITableViewDataSource, UITableViewDelega
                 let MomoVC = Main_Storyboard.instantiateViewController(withIdentifier: "PayMomoController") as! PayMomoController
                 MomoVC.idApplicant = self.applying.applicantsList[indexPath.row]?.id_applicant as! Int
                 MomoVC.amount = self.applying.applicantsList[indexPath.row]?.proposed_price as! Int
+                MomoVC.idJob = self.idJob
+                MomoVC.emailEmployee = self.applying.applicantsList[indexPath.row]?.email as! String
+                MomoVC.idEmployee = String.init(self.applying.applicantsList[indexPath.row]!.id_user)
+                MomoVC.jobTitle = self.jobTitle!
                 MomoVC.nameApplicant = self.applying.applicantsList[indexPath.row]?.fullname
                 self.navigationController?.pushViewController(MomoVC, animated: true)
                 

@@ -62,6 +62,8 @@
 		B26E235F244A1B32003EA66A /* NaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E235E244A1B32003EA66A /* NaviViewController.swift */; };
 		B26E2368244A34B6003EA66A /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2367244A34B6003EA66A /* BannerCell.swift */; };
 		B26E236A244A34E1003EA66A /* BannerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E2369244A34E1003EA66A /* BannerItem.swift */; };
+		B272514024CA0593008C267A /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272513F24CA0593008C267A /* ForgotPassViewController.swift */; };
+		B272514224CA0C8C008C267A /* ChangePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272514124CA0C8C008C267A /* ChangePassViewController.swift */; };
 		B27E60C124719CEB00B3C18B /* AwardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E60C024719CEB00B3C18B /* AwardCell.swift */; };
 		B27E60C324719D0F00B3C18B /* AwardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E60C224719D0F00B3C18B /* AwardItem.swift */; };
 		B27E60C62471A55300B3C18B /* PushJob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27E60C52471A55300B3C18B /* PushJob.storyboard */; };
@@ -72,6 +74,8 @@
 		B27E60D32471B28800B3C18B /* FilterPushJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E60D22471B28800B3C18B /* FilterPushJobCell.swift */; };
 		B27E60D52471B2C600B3C18B /* CatePushJobItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E60D42471B2C600B3C18B /* CatePushJobItem.swift */; };
 		B286E03824C4D08900C731D6 /* ReviewReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286E03724C4D08900C731D6 /* ReviewReportModel.swift */; };
+		B286E03A24C7574800C731D6 /* ScheduleModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286E03924C7574800C731D6 /* ScheduleModule.swift */; };
+		B286E03D24C887D500C731D6 /* AuthenticateIDCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286E03C24C887D500C731D6 /* AuthenticateIDCardViewController.swift */; };
 		B28A077524B78EC4002056F1 /* APIMomo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A077424B78EC4002056F1 /* APIMomo.swift */; };
 		B28A077724B78FAF002056F1 /* MomoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A077624B78FAF002056F1 /* MomoViewModel.swift */; };
 		B28A079924BCBC78002056F1 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A079824BCBC78002056F1 /* CommonViewModel.swift */; };
@@ -212,6 +216,8 @@
 		B26E235E244A1B32003EA66A /* NaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviViewController.swift; sourceTree = "<group>"; };
 		B26E2367244A34B6003EA66A /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		B26E2369244A34E1003EA66A /* BannerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerItem.swift; sourceTree = "<group>"; };
+		B272513F24CA0593008C267A /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
+		B272514124CA0C8C008C267A /* ChangePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassViewController.swift; sourceTree = "<group>"; };
 		B27E60C024719CEB00B3C18B /* AwardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardCell.swift; sourceTree = "<group>"; };
 		B27E60C224719D0F00B3C18B /* AwardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardItem.swift; sourceTree = "<group>"; };
 		B27E60C52471A55300B3C18B /* PushJob.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PushJob.storyboard; sourceTree = "<group>"; };
@@ -222,6 +228,8 @@
 		B27E60D22471B28800B3C18B /* FilterPushJobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPushJobCell.swift; sourceTree = "<group>"; };
 		B27E60D42471B2C600B3C18B /* CatePushJobItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatePushJobItem.swift; sourceTree = "<group>"; };
 		B286E03724C4D08900C731D6 /* ReviewReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewReportModel.swift; sourceTree = "<group>"; };
+		B286E03924C7574800C731D6 /* ScheduleModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModule.swift; sourceTree = "<group>"; };
+		B286E03C24C887D500C731D6 /* AuthenticateIDCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateIDCardViewController.swift; sourceTree = "<group>"; };
 		B28A077424B78EC4002056F1 /* APIMomo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMomo.swift; sourceTree = "<group>"; };
 		B28A077624B78FAF002056F1 /* MomoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomoViewModel.swift; sourceTree = "<group>"; };
 		B28A079824BCBC78002056F1 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
@@ -437,6 +445,7 @@
 				B2E8D60724A5DA9300D1C10E /* InfoEmployerModel.swift */,
 				B2E8D61A24A7CE6700D1C10E /* ListCandidateModel.swift */,
 				B286E03724C4D08900C731D6 /* ReviewReportModel.swift */,
+				B286E03924C7574800C731D6 /* ScheduleModule.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -629,6 +638,7 @@
 				B26E2366244A3450003EA66A /* Login */,
 				B29A782C2489CBAD00D6D1BB /* SignUp */,
 				B26E2365244A3443003EA66A /* Profile */,
+				B286E03B24C887A500C731D6 /* AuthenticateIDCard */,
 				B29A784724909E9000D6D1BB /* EditProfile */,
 				B26E2364244A343C003EA66A /* ManageJob */,
 				B2E8D61C24A8B99200D1C10E /* ManageApplicant */,
@@ -702,6 +712,7 @@
 			isa = PBXGroup;
 			children = (
 				B26E2342244A15BB003EA66A /* LoginViewController.swift */,
+				B272513F24CA0593008C267A /* ForgotPassViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -732,6 +743,15 @@
 				B27E60C82471ABC300B3C18B /* PersonalPushJobViewController.swift */,
 			);
 			path = PushJob;
+			sourceTree = "<group>";
+		};
+		B286E03B24C887A500C731D6 /* AuthenticateIDCard */ = {
+			isa = PBXGroup;
+			children = (
+				B286E03C24C887D500C731D6 /* AuthenticateIDCardViewController.swift */,
+				B272514124CA0C8C008C267A /* ChangePassViewController.swift */,
+			);
+			path = AuthenticateIDCard;
 			sourceTree = "<group>";
 		};
 		B28A079C24BE0A4E002056F1 /* ReviewAndReport */ = {
@@ -949,6 +969,7 @@
 			files = (
 				B26E2357244A17E7003EA66A /* SearchViewController.swift in Sources */,
 				B224000B247E0D5E00D1BCC7 /* APITopJob.swift in Sources */,
+				B286E03A24C7574800C731D6 /* ScheduleModule.swift in Sources */,
 				B2C323602473062500584C2C /* showHighFilterCell.swift in Sources */,
 				B26E235D244A1904003EA66A /* ManageJobViewController.swift in Sources */,
 				B2E8D5FC24A266DA00D1C10E /* multiDateWorkingCell.swift in Sources */,
@@ -960,6 +981,7 @@
 				B29A921A244D643400B5FF88 /* JobTimeCell.swift in Sources */,
 				B2E8D60C24A5EEAD00D1C10E /* InforEmployerViewModel.swift in Sources */,
 				B2E8D61124A5F55200D1C10E /* InfoPublicFirstCell.swift in Sources */,
+				B286E03D24C887D500C731D6 /* AuthenticateIDCardViewController.swift in Sources */,
 				B28A079924BCBC78002056F1 /* CommonViewModel.swift in Sources */,
 				B2E8D61324A5F56B00D1C10E /* InfoPublicSecondCell.swift in Sources */,
 				B2240005247D706800D1BCC7 /* ImageContentJobCell.swift in Sources */,
@@ -977,6 +999,7 @@
 				B29A7846248E9F8600D6D1BB /* EventAndAdvertisementModel.swift in Sources */,
 				B23DF1AB246117100094DFDD /* ContentManageCell.swift in Sources */,
 				B29A78302489CBEF00D6D1BB /* SignSecondViewController.swift in Sources */,
+				B272514024CA0593008C267A /* ForgotPassViewController.swift in Sources */,
 				B27E60D52471B2C600B3C18B /* CatePushJobItem.swift in Sources */,
 				B29A784924909EE500D6D1BB /* EditProfileViewController.swift in Sources */,
 				B26E2355244A17DC003EA66A /* HomeViewController.swift in Sources */,
@@ -1029,6 +1052,7 @@
 				B28A077724B78FAF002056F1 /* MomoViewModel.swift in Sources */,
 				B29A784F2490A1EC00D6D1BB /* EditAddrCell.swift in Sources */,
 				B29A78512490A20C00D6D1BB /* EditGenderCell.swift in Sources */,
+				B272514224CA0C8C008C267A /* ChangePassViewController.swift in Sources */,
 				B29A78532490A95B00D6D1BB /* ChangePassCell.swift in Sources */,
 				B2E8D61724A5F67300D1C10E /* InfoImageCell.swift in Sources */,
 				B2D4E497245746ED0006AF39 /* TabSearchCell.swift in Sources */,

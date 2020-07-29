@@ -40,10 +40,14 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+
 	<key>NSCameraUsageDescription</key>
 	<string>camera description.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string> photos description.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string> photos add description.</string>
+    
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

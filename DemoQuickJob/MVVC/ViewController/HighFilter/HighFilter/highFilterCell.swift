@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import  AlignedCollectionViewFlowLayout
 class highFilterCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -18,6 +18,13 @@ class highFilterCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//        let alignedFlowLayout = self.collectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout
+//        alignedFlowLayout?.horizontalAlignment = .left
+//        alignedFlowLayout?.verticalAlignment = .top
+
+//        alignedFlowLayout?.minimumInteritemSpacing = 10
+//        alignedFlowLayout?.minimumLineSpacing = 10
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,16 +47,7 @@ extension highFilterCell:UICollectionViewDataSource, UICollectionViewDelegate{
         } else {
             cell.contentView.backgroundColor = .orange
         }
-//         if ketCate ==  1 {
-//
-//        } else {
-//            cell.lb.text = listTopic[indexPath.row].name
-//            if arrType.contains(indexPath.row){
-//                cell.contentView.backgroundColor = .gray
-//            } else {
-//                cell.contentView.backgroundColor = .orange
-//            }
-//        }
+
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -63,5 +61,6 @@ extension highFilterCell:UICollectionViewDataSource, UICollectionViewDelegate{
         }
         
     }
+
     
 }

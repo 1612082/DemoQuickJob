@@ -14,7 +14,7 @@ typealias GetJobDetailHandel = ((_ model: JobDetailResponse?)->Void)
 class APIJobDetail {
     static var shared = APIJobDetail()
     
-    let URLJobDetail = "/getJobByID/"
+    let URLJobDetail = "/getJobByIdforIOS/"
     
     func GetDetailJob(_ ulr:String,parameters:[String:String]?, headers:HTTPHeaders?, completion:@escaping GetJobDetailHandel){
         let url = SERVER + URLJobDetail + ulr

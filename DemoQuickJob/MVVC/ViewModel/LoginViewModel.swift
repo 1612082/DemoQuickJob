@@ -33,4 +33,16 @@ class LobbyViewModel {
             completion(model)
         }
     }
+    func ForgotPass(completion:@escaping ForgotHandel){
+        let param = [
+            "email": self.email
+        ]
+        AuthenAPI.shared.ForgotPasss(parameters: param, headers: nil) { (model) in
+            guard let model = model else {
+                completion(nil)
+                return
+            }
+            completion(model)
+        }
+    }
 }

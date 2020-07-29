@@ -33,6 +33,18 @@ class MomoViewModel{
     var idApplicant:String = ""{
         didSet{}
     }
+    var id_job:String = ""{
+        didSet{}
+    }
+    var id_user:String = ""{
+        didSet{}
+    }
+    var email:String = ""{
+        didSet{}
+    }
+    var job_title:String = ""{
+        didSet{}
+    }
     func GetHash(completion:@escaping GetHashHandel){
         let params = [
             "partnerRefId": self.partnerRefId as String,
@@ -85,7 +97,11 @@ class MomoViewModel{
             "Accept": "application/json"
         ]
         let params = [
-            "id_applicant": self.idApplicant
+            "id_applicant": self.idApplicant,
+            "id_job":self.id_job,
+            "id_user": self.id_user,//nguoi lam
+            "email":self.email,//nguoi lam
+            "job_title":self.job_title
         ] as [String:Any]
         APIMomo.shared.AcceptApplicant(parameters: params, headers: headers) { (model) in
             guard let model = model else {

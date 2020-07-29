@@ -7,17 +7,113 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "056A7B9E-58EA-4918-95D4-625D5C0D41E5"
+            uuid = "BFCA0D5B-F235-451E-AF0C-68906FF85174"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DemoQuickJob/MVVC/ViewModel/JobDetailViewModel.swift"
+            filePath = "DemoQuickJob/MVVC/ViewController/SignUp/SignSecondViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "DateFormater(_:)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "textFieldDidBeginEditing(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17E25FE2-0D04-4FDA-AAC8-45FD41DDDCDA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoQuickJob/MVVC/ViewController/SignUp/SignSecondViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "textFieldDidBeginEditing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1881BC17-E002-4E1A-8173-2504F5050BE8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoQuickJob/MVVC/ViewController/HighFilter/Search/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "scrollViewDidEndDragging(scrollView:willDecelerate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB6A8CDE-016C-4A08-ABEE-2DD083B09521"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoQuickJob/MVVC/ViewController/ApplyJob/ApplyPersonalJobViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "Aplly(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E814C599-2535-4825-A99A-8A31A0DB4DCE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoQuickJob/MVVC/ViewController/SignUp/SignThirdViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "signUp(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E814C599-2535-4825-A99A-8A31A0DB4DCE - c8b5bed365e09628"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DemoQuickJob.SignThirdViewController.signUp(Any) -&gt; ()"
+                  moduleName = "DemoQuickJob"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hongdang/Desktop/learning/demoProject/DemoQuickJob/DemoQuickJob/MVVC/ViewController/SignUp/SignThirdViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "4076">
+               </Location>
+               <Location
+                  uuid = "E814C599-2535-4825-A99A-8A31A0DB4DCE - 3c54df145894d25b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;DemoQuickJob.SignupResponse&gt;) -&gt; () in DemoQuickJob.SignThirdViewController.signUp(Any) -&gt; ()"
+                  moduleName = "DemoQuickJob"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hongdang/Desktop/learning/demoProject/DemoQuickJob/DemoQuickJob/MVVC/ViewController/SignUp/SignThirdViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "176">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

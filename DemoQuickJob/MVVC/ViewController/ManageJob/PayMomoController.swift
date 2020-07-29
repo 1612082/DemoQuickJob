@@ -29,6 +29,10 @@ class PayMomoController: UIViewController {
     var data:String = ""
     var idApplicant = 90
     var amount = 11000
+    var idJob:String = ""
+    var emailEmployee:String = ""
+    var idEmployee:String = ""
+    var jobTitle:String = ""
     var MomoVM = MomoViewModel()
     var nameApplicant:String?
     var CommonVC = CommonViewModel()
@@ -38,6 +42,7 @@ class PayMomoController: UIViewController {
 
         setupVar()
         setupUI()
+        
  
     }
     
@@ -158,22 +163,27 @@ class PayMomoController: UIViewController {
                                     if model.status == 0{
                                         print("Success confirm")
                                         self.MomoVM.idApplicant = "\(self.idApplicant)"
-                                        self.MomoVM.AcceptApplicant { (model) in
-                                            guard let model = model else{
-                                                return
-                                            }
-                                            if model.code == "202"{
-                                                let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+                                         self.MomoVM.id_job = "\(self.idJob)"
+                                         self.MomoVM.id_user = self.idEmployee
+                                         self.MomoVM.email = self.emailEmployee
+                                         self.MomoVM.job_title = self.jobTitle
+                                        
+                                         self.MomoVM.AcceptApplicant { (model) in
+                                             guard let model = model else{
+                                                 return
+                                             }
+                                             if model.code == "202"{
+                                                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
                                                 self.present(alert, animated: true, completion: nil)
                                                 self.CommonVC.showAlert( "Chấp nhận ứng viên thành công", alert)
-                                                self.navigationController?.popViewController(animated: true)
-                                            }else{
-                                                let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-                                                self.present(alert, animated: true, completion: nil)
-                                                self.CommonVC.showAlert( "Chấp nhận ứng viên thất bại \(model.code)", alert)
-                                            }
-                                            
-                                        }
+                                                self.navigationController?.popToRootViewController(animated: false)
+                                             }else{
+                                                 let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+                                                 self.present(alert, animated: true, completion: nil)
+                                                 self.CommonVC.showAlert( "Chấp nhận ứng viên thất bại \(model.code)", alert)
+                                             }
+                                             
+                                         }
                                     }else{
                                         print(model)
                                     }

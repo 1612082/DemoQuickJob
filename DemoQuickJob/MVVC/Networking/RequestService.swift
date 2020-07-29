@@ -24,8 +24,9 @@ struct RequestService {
                     switch (reponse.result){
                     case .success(let data):
                         do {
-
-                            print(parameters)
+                            let result = try JSONSerialization.jsonObject(with: data!, options: []) as? [String:AnyObject]
+                            print(result)
+//                            print(parameters)
                             let json = try JSONDecoder.init().decode(objectType.self, from: data!)
                             // tra gia ra ben ngoai ham bang completion handeler
                             
@@ -63,16 +64,17 @@ struct RequestService {
             switch (response.result){
             case .success(let data):
                 do {
+                    print("H-",headers)
                     let json = try JSONDecoder.init().decode(objectType.self, from: data!)
                     // tra gia ra ben ngoai ham bang completion handeler
-                    print(parameters)
-                    print(headers)
+//                    print(parameters)
+                    
                     completion(true, json, nil)
                 } catch {
                     //parse json khong dc
                     print("parse json faile")
-                    print(headers)
-                    print(parameters)
+                    print("H-",headers)
+//                    print(parameters)
                     completion (false,data,nil)
                 }
             case .failure(let error):

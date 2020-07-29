@@ -94,10 +94,7 @@ class ChatViewController: UIViewController {
 }
 extension ChatViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if ListFriend[0] == ""{
-//            return 0
-//        }
-//        return ListFriend.count
+        print(data.count)
         return data.count
     }
     

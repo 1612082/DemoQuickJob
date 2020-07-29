@@ -16,6 +16,8 @@ class ManageJobViewController: UIViewController {
     @IBOutlet weak var pushJobBtn: UIButton!
     //MARK: OTHER VARIABLES
     var ManageVM = ManageJobViewModel()
+    var dataSchedule:DataSchedule?
+    
     var allApplicant:[JobAllApply?] = []
     var DangTuyenAppli:[JobAllApply?] = []
     var DaTuyenChuaLam:[JobAllApply?] = []
@@ -30,6 +32,7 @@ class ManageJobViewController: UIViewController {
     var HetHanKoNguoi:[JobAllPost?] = []
     var flag = ""
     var CommonVC = CommonViewModel()
+    var LoadingView = UIView()
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +46,7 @@ class ManageJobViewController: UIViewController {
         fillData()
         //        allApplicant = []
         //        allJobPost = []
+        tableView.reloadData()
     }
     //MARK: - SETUP VAR
     func setupVar() {
@@ -65,7 +69,24 @@ class ManageJobViewController: UIViewController {
     //MARK: - FILL AND BIND DATA
     func fillData() {
         ManageVM.token = token
+//        CommonVC.Loading(&self.LoadingView, self.view)
+        ManageVM.getSchedule { (model) in
+            self.LoadingView.removeFromSuperview()
+            guard let model = model else {
+                return
+            }
+            if model.code == "200"{
+                self.dataSchedule = model.data
+                self.tableView.reloadData()
+                
+            } else {
+                print(model.code)
+            }
+        }
+        
+        
         ManageVM.GetAllApplicant { (model) in
+            self.LoadingView.removeFromSuperview()
             guard let model = model else {
                 return
             }
@@ -78,6 +99,7 @@ class ManageJobViewController: UIViewController {
             }
         }
         ManageVM.GetAllPostJob { (model) in
+            self.LoadingView.removeFromSuperview()
             guard let model = model else {
                 return
             }
@@ -89,6 +111,7 @@ class ManageJobViewController: UIViewController {
                 print(model.code)
             }
         }
+        
     }
     
     //MARK: - BUTTON ACTIONS
@@ -218,6 +241,10 @@ extension ManageJobViewController:UITableViewDataSource, UITableViewDelegate{
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CalenderCell", for: indexPath) as! CalenderCell
                 cell.selectionStyle = .none
+                if dataSchedule != nil{
+                    cell.dataSchedule = self.dataSchedule
+                    cell.filterFromSchedule(self.dataSchedule!)
+                }
                 cell.collectionView.reloadData()
                 return cell
             case 1:
@@ -366,6 +393,7 @@ extension ManageJobViewController:UITableViewDataSource, UITableViewDelegate{
                     let detailVC = Main_Storyboard.instantiateViewController(identifier: "ManageApplicantViewController") as ManageApplicantViewController
                     detailVC.id_status = listTouch[indexPath.row]!.id_status
                     detailVC.idJob = "\(listTouch[indexPath.row]!.id_job)"
+                    detailVC.jobTitle = listTouch[indexPath.row]!.title
                     self.navigationController?.pushViewController(detailVC, animated: true)
                 }))
                 alert.addAction(UIAlertAction(title: "Kết thúc công việc", style: .default , handler:{ [weak alert, weak self] (_)in

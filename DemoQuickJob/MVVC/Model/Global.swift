@@ -8,8 +8,8 @@
 
 import Foundation
 import  UIKit
-//let SERVER = "https://f2l-client.herokuapp.com"
-let SERVER = "http://localhost:8000"
+let SERVER = "https://f2l-client.herokuapp.com"
+//let SERVER = "http://localhost:8000"
 let Home_Storyboard:UIStoryboard = UIStoryboard.init(name: "Home", bundle: nil)
 let Main_Storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
 let PushJob_Storyboard:UIStoryboard = UIStoryboard.init(name: "PushJob", bundle: nil)
@@ -43,8 +43,8 @@ var weekday = calendar.component(.weekday, from: date)
 var month = calendar.component(.month, from: date)
 var year = calendar.component(.year, from: date)
 
-let NameMonth:[String] = ["January","February","March","April","May","June","July","August","September","October","November","December"]
-let Days:[String] = ["Monday","Tuesday","Wednesday","Thusday","Friday","Saturday","Sunday"]
+let NameMonth:[String] = ["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"]
+let Days:[String] = ["T2","T3","T4","T5","T6","T7","CN"]
 var currentMonth:String = ""
 var numberOfEmptyBoxs:Int = 0
 var NextNumberOfEmptyBoxs:Int = 0

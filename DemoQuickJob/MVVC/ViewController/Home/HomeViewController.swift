@@ -19,6 +19,8 @@ class HomeViewController: UIViewController {
     let TopPostJobVM = TopPostJobViewModel()
     var SearchTopTime = HighFilterViewModel()
     var SearchTopProduct = HighFilterViewModel()
+    var LoadingView = UIView()
+    var CommonVM = CommonViewModel()
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,9 @@ class HomeViewController: UIViewController {
     //MARK: - SETUP VAR
     func setupVar() {
         SearchTopTime.job_type = "false"
+        CommonVM.Loading(&self.LoadingView, self.view)
         SearchTopTime.Search { (model) in
+            self.LoadingView.removeFromSuperview()
             guard let model = model else {
                 return
             }
@@ -113,6 +117,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "footerCell", for: indexPath) as! footerCell
+            cell.binfData()
             cell.selectionStyle = .none
             return cell
         }

@@ -14,6 +14,8 @@ class CalenderCell: UITableViewCell {
     @IBOutlet weak var lbMonth: UILabel!
     @IBOutlet weak var btnPrevious: UIButton!
     @IBOutlet weak var btnNext: UIButton!
+    var listDate = [WorkInMonth]()
+    var dataSchedule:DataSchedule?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -47,8 +49,14 @@ class CalenderCell: UITableViewCell {
         btnPrevious.setTitle(nil, for: .normal)
         btnNext.setTitle(nil, for: .normal)
         self.btnNext.setImage(img, for: .normal)
+        
     }
-    
+    func getMiddleString(_ str:String, start:Int, end:Int) ->String{
+        let start = str.index(str.startIndex, offsetBy: start)
+        let end = str.index(str.startIndex, offsetBy: end)
+        let range = start...end
+        return String(str[range])
+    }
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -57,6 +65,7 @@ class CalenderCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func previousMonth(_ sender: Any) {
+        self.filterFromSchedule(self.dataSchedule)
         switch currentMonth {
         case "January":
             month = 12
@@ -75,6 +84,7 @@ class CalenderCell: UITableViewCell {
         }
     }
     @IBAction func nextMonth(_ sender: Any) {
+        self.filterFromSchedule(self.dataSchedule)
         switch currentMonth {
         case "December":
             month = 1
@@ -125,6 +135,32 @@ class CalenderCell: UITableViewCell {
     func getNumberOfEmptyBoxs() -> Int{
         return GetDay(1, month, year)
     }
+    func filterFromSchedule(_ data:DataSchedule?) {
+        if data != nil{
+            self.listDate = []
+            var formatMonth:String = String(month)
+            if month < 10{
+                formatMonth = "0\(month)"
+            }
+            for i in data!.employeeShedule{
+                let yearSub:String = String(i!.end.prefix(4))                
+                let monthSub = getMiddleString(i!.end, start: 5, end: 6)
+                let dateSub = getMiddleString(i!.end, start: 8, end: 9)
+                if (yearSub == "\(year)" && monthSub == formatMonth){
+                    self.listDate.append(WorkInMonth(date: dateSub, type: false))
+                }
+            }
+            for i in data!.employerShedule{
+                let yearSub:String = String(i!.end.prefix(4))
+                
+                let monthSub = getMiddleString(i!.end, start: 5, end: 6)
+                let dateSub = getMiddleString(i!.end, start: 8, end: 9)
+                if (yearSub == "\(year)" && monthSub == formatMonth){
+                    self.listDate.append(WorkInMonth(date: dateSub, type: true))
+                }
+            }
+        }
+    }
 }
 extension CalenderCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -140,7 +176,15 @@ extension CalenderCell: UICollectionViewDataSource, UICollectionViewDelegate, UI
         }
         
         if (cell.lb.text == "\(todaysDate)" && month == Calendar.current.component(.month, from: Date())) {
-            cell.contentView.backgroundColor = .cyan
+            cell.contentView.backgroundColor = .lightGray
+        }else if listDate.filter({ $0.date == cell.lb.text }).first != nil {
+            let temp = listDate.filter({ $0.date == cell.lb.text }).first
+            if temp!.type{
+                cell.contentView.backgroundColor = .cyan
+            }else{
+                cell.contentView.backgroundColor = .systemPink
+            }
+            
         } else {
             cell.contentView.backgroundColor = .white
         }
@@ -159,4 +203,8 @@ extension Date {
     var firstDayOfTheMonth: Date {
         return Calendar.current.date(from: Calendar.current.dateComponents([.year,.month], from: self))!
     }
+}
+struct WorkInMonth {
+    let date:String
+    let type:Bool // false: employee true:employer
 }

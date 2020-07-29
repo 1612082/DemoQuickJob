@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController {
     
     //MARK: OTHER VARIABLES
     let ProfileVM = ProfileViewModel()
+    var LoadingView = UIView()
+    var CommonVM = CommonViewModel()
     //MARK: VIEW LIFE CYCLE
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -52,7 +54,9 @@ class ProfileViewController: UIViewController {
     //MARK: - FILL AND BIND DATA
     func fillData() {
         ProfileVM.token = UserDefaults.standard.string(forKey: "token") ?? ""
+        CommonVM.Loading(&self.LoadingView, self.view)
         ProfileVM.GetProfile { (model) in
+            self.LoadingView.removeFromSuperview()
             guard let model = model else {
                 return
             }
@@ -64,7 +68,7 @@ class ProfileViewController: UIViewController {
     }
     
     //MARK: - BUTTON ACTIONS
-
+    
     
 
     
@@ -84,7 +88,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
             cell.didChangeScreen = {
                 let EditInfoVC = Profile_Storyboard.instantiateViewController(identifier: "EditProfileViewController") as! EditProfileViewController
-                
                 if cell.img != nil {
                     EditInfoVC.img.append(cell.img.image!)
                 } else {
@@ -93,17 +96,29 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
                 }
                 self.navigationController?.pushViewController(EditInfoVC, animated: true)
             }
+            cell.didAuthenticate = {
+                let AuthenVC = Profile_Storyboard.instantiateViewController(identifier: "AuthenticateIDCardViewController") as! AuthenticateIDCardViewController
+                self.navigationController?.pushViewController(AuthenVC, animated: true)
+            }
             cell.bindData(CurrentProfile)
             return cell
         case 1:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ChangePassCell", for: indexPath) as! ChangePassCell
-        
+            cell.didChangePass = {
+                let changPassVc = Profile_Storyboard.instantiateViewController(identifier: "ChangePassViewController") as ChangePassViewController
+                self.navigationController?.pushViewController(changPassVc, animated: true)
+            }
             return cell
         default:
             let num = indexPath.section
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddInfoProfileCell", for: indexPath) as! AddInfoProfileCell
             cell.bindData(arrProfileCell[num-2])
+            cell.didSelect = {
+                let alert = UIAlertController(title: "Thông báo", message: "Tính năng này đang được phát triên và sẽ được triển khai trong thời gian tới", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
             return cell
         }
     }

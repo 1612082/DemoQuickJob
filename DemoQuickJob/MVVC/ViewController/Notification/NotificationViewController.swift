@@ -38,7 +38,7 @@ class NotificationViewController: UIViewController {
             if let querySnapshot = querySnapshot {
                 querySnapshot.get("listNotify").map { (field) in
                     let f = field as! NSArray
-                    self.data = f
+                    self.data =  NSMutableArray(array:f.reverseObjectEnumerator().allObjects).mutableCopy() as! NSMutableArray
                     self.tableView.reloadData()
                 }
             }

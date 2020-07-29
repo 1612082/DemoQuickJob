@@ -27,6 +27,9 @@ class HighFilterViewModel {
     var idTopic:String = ""{
         didSet{}
     }
+    var page:String = "1"{
+        didSet{}
+    }
     func Gettopic(completion:@escaping TopicSuccessHandel){
         APISearch.share.getTopic(parameters: [:], headers: nil) { (model) in
             guard let model = model else {
@@ -57,7 +60,7 @@ class HighFilterViewModel {
             
             ] as [String : Any]
         let param = [
-            "page": "1",
+            "page": self.page,
             "take": "5",
             "isASC":"true",
             "query": query
